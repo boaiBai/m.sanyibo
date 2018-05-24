@@ -12,7 +12,7 @@
                         <p class="error-msg"></p>
                     </div>
                     <div class="edit-div">
-                        <button class="edit-btn">登录</button>
+                        <button class="edit-btn" @click="submit(6)">登录</button>
                         <a href="#/findpw">忘记密码？</a>
                     </div>
                     <div class="regist-div">
@@ -32,7 +32,8 @@
                 formItem:{
                     user:'',
                     psw:''
-                }
+                },
+                isPass:''
             }
         },
         methods: {
@@ -62,10 +63,23 @@
             errorTips(msg){
                 event.target.style.borderColor = 'red';
                 event.target.nextElementSibling.textContent=msg;
+                this.isPass = false;
             },
             resetAgain(){
                 event.target.style.borderColor = '#e6e3e3';
                 event.target.nextElementSibling.textContent='';
+                this.isPass = true;
+            },
+            submit(){
+                event.preventDefault();
+                const inputs = document.getElementsByTagName('input');
+                for(let i = 0;i<inputs.length;i++){
+                    inputs[i].focus();
+                    inputs[i].blur();
+                }
+                if(this.isPass){
+                    console.log('提交了');
+                }
             }
         }
     }

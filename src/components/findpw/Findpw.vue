@@ -9,7 +9,7 @@
                     </div>
                     <div class="form-item">
                         <input class="code-input" name="code" type="number" v-model="formItem.code" placeholder="手机验证码">
-                        <button class="send-code">发送验证码</button>
+                        <button class="send-code" @click="sendCode">发送验证码</button>
                         <p class="error-msg"></p>
                     </div>
                     <div class="form-item">
@@ -21,7 +21,7 @@
                         <p class="error-msg"></p>
                     </div>
                     <div class="reset-div">
-                        <button class="reset-btn">修改密码</button>
+                        <button class="reset-btn" @click="submit">修改密码</button>
                     </div>
                 </form>
             </Col>
@@ -39,17 +39,18 @@
                     code:'',
                     psw1:'',
                     psw2:''
-                }
+                },
+                isPass:'',
+                mobile: /^((13[0-9]|14[579]|15[0-3,5-9]|16[6]|17[0135678]|18[0-9]|19[89])+\d{8})$/
             }
         },
         methods:{
             validate(){
                 var nameInt = event.target.name;
-                const mobile = /^((13[0-9]|14[579]|15[0-3,5-9]|16[6]|17[0135678]|18[0-9]|19[89])+\d{8})$/;
                 const psw = /^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,12}$/;
                 switch (nameInt) {
                     case 'phone':
-                        if(!mobile.test(this.formItem.phone)){
+                        if(!this.mobile.test(this.formItem.phone)){
                             this.errorTips('手机号码不正确，请修改');
                         }else{
                             this.resetAgain();
@@ -82,10 +83,74 @@
             errorTips(msg){
                 event.target.style.borderColor = 'red';
                 event.target.nextElementSibling.textContent=msg;
+                this.isPass = false;
             },
             resetAgain(){
                 event.target.style.borderColor = '#e6e3e3';
                 event.target.nextElementSibling.textContent='';
+                this.isPass = true;
+            },
+            submit(){
+                event.preventDefault();
+                const inputs = document.getElementsByTagName('input');
+                for(let i = 0;i<inputs.length;i++){
+                    inputs[i].focus();
+                    inputs[i].blur();
+                }
+                if(this.isPass){
+                    console.log('提交了');
+                }
+            },
+            sendCode(){
+                event.preventDefault();
+                const sendTime = this.GetCookie('isSend');
+                if(this.mobile.test(this.formItem.phone)){
+                    if (!sendTime){
+                        this.SetCookie('isSend',new Date().getTime());
+                        const ele = event.target;
+                        ele.style.backgroundColor = 'rgb(204,204,204)';
+                        var num = 10;
+                        ele.textContent = num +'s后可重新发送';
+                        var timer = setInterval(function () {
+                            ele.textContent = --num +'s后可重新发送';
+                            if(num == 0){
+                                clearInterval(timer);
+                                ele.style.backgroundColor = '#fe4d4d';
+                                ele.textContent = '发送验证码';
+                            }
+                        },1000);
+                    }else{
+                        this.$Message.error('请稍后再试');
+                    }
+                }else{
+                    document.getElementsByTagName('input')[0].focus();
+                    document.getElementsByTagName('input')[0].blur();
+                }
+            },
+            //设置cookie
+            SetCookie(name, value){
+                var exp = new Date();
+                exp.setTime(exp.getTime() + 10 * 1000);//过期时间
+                document.cookie = name + "=" + escape(value) + ";expires=" + exp.toGMTString();
+            },
+            //获取cookie
+            GetCookie(name) {
+                var arg = name + "=";
+                var alen = arg.length;
+                var clen = document.cookie.length;
+                var i = 0;
+                while (i < clen) {
+                    var j = i + alen;
+                    if (document.cookie.substring(i, j) == arg) return this.getCookieVal(j);
+                    i = document.cookie.indexOf(" ", i) + 1;
+                    if (i == 0) break;
+                }
+                return null;
+            },
+            getCookieVal(offset) {
+                var endstr = document.cookie.indexOf(";", offset);
+                if (endstr == -1) endstr = document.cookie.length;
+                return unescape(document.cookie.substring(offset, endstr));
             }
         }
     }
