@@ -31,7 +31,7 @@
                     <div class="reset-div">
                         <button class="reset-btn" @click="submit">注册投资送888元现金</button>
                     </div>
-                    <p class="tips">已有账号？<a href="#/login">登录</a></p>
+                    <p class="tips">已有账号？<router-link to="/login">登录</router-link></p>
                 </form>
             </Col>
         </Row>
@@ -205,6 +205,7 @@
     }
     .form-item .code-img{
         height: 43px;
+        margin-left: 10%;
     }
     .form-item .user-input{
         background-position: -38.4px -18px;
@@ -238,6 +239,7 @@
     .tips{
         margin-top: 30px;
         font-size: 14px;
+        text-align: center;
     }
     .tips a{
         color: #fe4d4d;

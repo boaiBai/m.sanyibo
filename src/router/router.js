@@ -29,6 +29,16 @@ const loginRouter = {
     },
 }
 
+//忘记密码路由
+const FindpwRouter={
+    path:"/findpw",
+    name:"findpw",
+    component:()=>import("@/components/findpw/Findpw.vue"),
+    meta: {
+        title: webName+"--忘记密码"
+    },
+}
+
 //投资
 const projectRouter={
     path:"/project",
@@ -36,6 +46,16 @@ const projectRouter={
     component:()=>import("@/components/project.vue"),
     meta: {
         title: webName+"--投资"
+    },
+}
+
+//产品详情
+const tinvestDetailRouter={
+    path:"/tinvestDetail",
+    name:"tinvestDetail",
+    component:()=>import("@/components/tinvestDetail/TinvestDetail.vue"),
+    meta: {
+        title: webName+"--产品详情"
     },
 }
 
@@ -68,13 +88,13 @@ const newListRouter = {
     },
     component: ()=>import('@/components/new/newslist.vue'),
 }
-
 export const navRouter=[
     homeRouter,
     loginRouter,
     registRouter,
+    FindpwRouter,
     projectRouter,
+    tinvestDetailRouter,
     centerRouter,
     newRouter,
-    newListRouter
 ]
