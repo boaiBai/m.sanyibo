@@ -13,10 +13,10 @@
                     </div>
                     <div class="edit-div">
                         <button class="edit-btn" @click="submit(6)">登录</button>
-                        <a href="#/findpw">忘记密码？</a>
+                        <router-link to="/findpw">忘记密码？</router-link>
                     </div>
                     <div class="regist-div">
-                        <a href="#/regist" class="regist-btn">立即注册</a>
+                        <router-link to="/regist" class="regist-btn">立即注册</router-link>
                     </div>
                 </form>
             </Col>
