@@ -4,6 +4,7 @@ import HelloWorld from '@/components/HelloWorld';
 import Login from '@/components/login/Login';
 import Findpw from '@/components/findpw/Findpw';
 import Regist from '@/components/regist/Regist';
+import TinvestDetail from '@/components/tinvestDetail/TinvestDetail';
 
 Vue.use(Router);
 
@@ -28,6 +29,11 @@ export default new Router({
             path: '/regist',
             name: 'Regist',
             component: Regist
+        },
+        {
+            path: '/tinvestDetail',
+            name: 'TinvestDetail',
+            component: TinvestDetail
         }
     ]
 })
