@@ -39,9 +39,42 @@ const projectRouter={
     },
 }
 
+//账户
+const centerRouter={
+    path:"/center",
+    name:"center",
+    component:()=>import("@/components/meCenter.vue"),
+    meta: {
+        title: webName+"--账户"
+    },
+}
+
+//公告
+const newRouter = {
+    path: "/new", 
+    name: "new", 
+    component: ()=>import('@/components/new/news.vue'),
+    meta: {
+        title: webName+"--公告"
+    }
+}
+
+//公告列表，查看更多
+const newListRouter = {
+    path: "/newList" , 
+    name: "newList", 
+    meta: {
+        title: webName
+    },
+    component: ()=>import('@/components/new/newslist.vue'),
+}
+
 export const navRouter=[
     homeRouter,
     loginRouter,
     registRouter,
-    projectRouter
+    projectRouter,
+    centerRouter,
+    newRouter,
+    newListRouter
 ]

@@ -1,6 +1,7 @@
 <template>
 <div>
-  <header_top></header_top>
+  <header_top :nav-index="navIndex"></header_top>
+  <div class="normal_div"></div>
   <banner></banner>
   <s_footer></s_footer>
 </div>
@@ -20,6 +21,7 @@ export default {
   },
   data() {
     return {
+      navIndex:0,
       bannerImg: [
         { image: require("../assets/banner/banner1.png") },
         { image: require("../assets/banner/banner2.png") },
@@ -49,6 +51,10 @@ export default {
 
 .demo-carousel img {
   width: 100vw;
+}
+
+.normal_div{
+  height: 50px;;
 }
 </style>
 
