@@ -5,13 +5,12 @@
 </template>
 
 <script>
-// import home from "./components/footer";
+
 export default {
   name: 'App',
-  // components: {
-  //   home: home,
-  // },
 }
+
+
 </script>
 <style>
 
@@ -34,5 +33,10 @@ ul,li{
 
 .clear{
   clear: both;
+}
+
+.normal_div{
+  width: 100vw;
+  height: 95px;
 }
 </style>

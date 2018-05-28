@@ -11,10 +11,10 @@ import header_top from "./header-top";
 import s_footer from "./footer";
 
 export default {
-  name: "project",
+  name: "me",
   data(){
       return{
-        navIndex:1,
+        navIndex:2,
         getIndex:this.$route.query.index,
       }
   },

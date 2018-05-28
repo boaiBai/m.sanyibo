@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="position:fixed;z-index:99;background:#fff">
     <div class="header-top">
       <img src="../assets/logo.png"/>
       <div class="btn-box">
@@ -8,8 +8,8 @@
       </div> 
     </div>
     <ul class="nav">
-      <li  v-for="(item, index) in items" v-on:click="navCheck(index)" v-bind:class="{active:item.check}">
-        <router-link :to="item.toLink"> {{ item.nav }}</router-link>
+      <li  v-for="(item, index) in items" v-bind:class="{active:item.check}">
+        <router-link :to="{path:item.toLink, query:{index:index}}" > {{ item.nav }}</router-link>
       </li>
     </ul>
     <div class="clear"></div>
@@ -22,28 +22,22 @@ export default {
   name: "header-top",
   data() {
     return {
-      checkClass: "",
       items: [
-        { nav: "首页", check: false ,toLink:"/"},
-        { nav: "投资", check: false,toLink:"/project" },
-        { nav: "账户", check: false ,toLink:"/project"},
-        { nav: "公告", check: false ,toLink:"/project"}
-      ]
+        { nav: "首页", check: false, toLink: "/" },
+        { nav: "投资", check: false, toLink: "/project" },
+        { nav: "账户", check: false, toLink: "/center" },
+        { nav: "公告", check: false, toLink: "/New" }
+      ],
+      getIndex: this.$route.query.index || ""
     };
   },
-  methods: {
-    //点击选项切换
-    navCheck: function(index) {
-      this.items[index].check = true;
-      for (var i = 0; i < this.items.length; i++) {
-        if (i !== index) {
-          this.items[i].check = false;
-        }
-      }
-    }
+ props:['navIndex'],
+  mounted: function() {
+    this.items[this.navIndex].check=true;
   }
 };
-</script>
+
+</script>z
 <style scoped>
 .header-top {
   background: #fe4d4d;
@@ -75,13 +69,13 @@ a {
 .reg-btn {
   color: #34b2ed;
 }
-ul{
+ul {
   width: 100vw;
   float: left;
   margin-bottom: 2px;
 }
- ul li {
-   float: left;
+ul li {
+  float: left;
   text-align: center;
   font-size: 16px;
   width: 25%;
@@ -94,10 +88,15 @@ ul{
   border-bottom: solid 1px red;
 }
 
- ul li a{
+ul li a {
   color: #666;
   padding: 0;
   line-height: 40px;
+  text-align: center;
+  display: block;
+  height: 38px;
+  width: 100%;
+  margin: 0;
 }
 </style>
 

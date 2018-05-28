@@ -1,5 +1,5 @@
 <template>
-    <Carousel autoplay v-model="value3" arrow="never" :radius-dot="true" autoplay-speed=5000>
+    <Carousel autoplay v-model="value3" arrow="never" :radius-dot="true" :autoplay-speed=5000>
         <CarouselItem v-for="item in bannerImg">
             <div class="demo-carousel">
                 <img :src="item.image"/>
