@@ -31,7 +31,8 @@ export default {
   font-size: 18px;
   color: #fff;
   position: fixed;
-  top: 0px
+  top: 0px;
+  z-index: 99;
 }
 
 .back {
