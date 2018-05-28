@@ -14,12 +14,12 @@
   <div class="new-count" v-for="item in navItem">
       <h5> {{item.navText}}</h5>
       <ul v-if="item.newsData.length>0">
-        <li v v-for="item in item.newsData">{{item.newsTitle}}<span>{{item.timer}}</span></li>
+        <li v-for="item in item.newsData">{{item.newsTitle}}<span>{{item.timer}}</span></li>
       </ul>
       <ul v-else-if="item.newsData.length===0">
           <li>没有更多数据</li>
       </ul>
-      <a  v-if="item.newsData.length>0" class="moreBtn">查看更多</a>
+       <router-link  v-if="item.newsData.length>0"  :to="{path:'/newList',query:{type:item.type}}" class="moreBtn">查看更多</router-link>
   </div>
   <s_footer></s_footer>
 </div>
@@ -45,7 +45,7 @@ export default {
         {
           navText: "年度报告",
           checked: false,
-          type: "9",
+          type: "2",
           newsData: [
             {
               newsTitle: "网贷平台是否值得信赖 侧面考察不可少1",
@@ -72,7 +72,7 @@ export default {
         {
           navText: "宝友故事",
           checked: false,
-          type: "2",
+          type: "3",
           newsData: [
             {
               newsTitle: "网贷平台是否值得信赖 侧面考察不可少2",
@@ -99,7 +99,7 @@ export default {
         {
           navText: "公告",
           checked: false,
-          type: "3",
+          type: "4",
           newsData: [
             {
               newsTitle: "网贷平台是否值得信赖 侧面考察不可少3",
@@ -131,7 +131,7 @@ export default {
         {
           navText: "媒体报道",
           checked: false,
-          type: "4",
+          type: "5",
           newsData: [
             {
               newsTitle: "网贷平台是否值得信赖 侧面考察不可少4",
@@ -163,7 +163,7 @@ export default {
         {
           navText: "财富快讯",
           checked: false,
-          type: "5",
+          type: "6",
           newsData: [
             {
               newsTitle: "网贷平台是否值得信赖 侧面考察不可少5",
@@ -190,7 +190,7 @@ export default {
         {
           navText: "帮助中心",
           checked: false,
-          type: "6",
+          type: "7",
           newsData: [
             {
               newsTitle: "网贷平台是否值得信赖 侧面考察不可少6",
@@ -217,7 +217,7 @@ export default {
         {
           navText: "平台动态",
           checked: false,
-          type: "7",
+          type: "8",
           newsData: [
             {
               newsTitle: "网贷平台是否值得信赖 侧面考察不可少7",
@@ -244,7 +244,7 @@ export default {
         {
           navText: "app帮助中心",
           checked: false,
-          type: "8",
+          type: "9",
           newsData: [
             {
               newsTitle: "网贷平台是否值得信赖 侧面考察不可少8",

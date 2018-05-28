@@ -83,9 +83,6 @@ const newRouter = {
 const newListRouter = {
     path: "/newList" , 
     name: "newList", 
-    meta: {
-        title: webName
-    },
     component: ()=>import('@/components/new/newslist.vue'),
 }
 export const navRouter=[
@@ -97,4 +94,5 @@ export const navRouter=[
     tinvestDetailRouter,
     centerRouter,
     newRouter,
+    newListRouter
 ]
