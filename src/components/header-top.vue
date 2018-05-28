@@ -3,8 +3,8 @@
     <div class="header-top">
       <img src="../assets/logo.png"/>
       <div class="btn-box">
-        <router-link  to="/login" class="login-btn">登&nbsp;录</router-link>
-        <router-link  to="/regist" class="reg-btn">注&nbsp;册</router-link>
+        <router-link  :to="{path:'/login',query:{name:'登录'}}" class="login-btn" >登&nbsp;录</router-link>
+        <router-link  :to="{path:'/regist',query:{name:'注册'}}" class="reg-btn">注&nbsp;册</router-link>
       </div> 
     </div>
     <ul class="nav">

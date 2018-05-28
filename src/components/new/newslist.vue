@@ -30,7 +30,7 @@ import header_top from "./../header-top";
 import s_footer from "./../footer";
 
 export default {
-  name: "new",
+  name: "newList",
   data() {
     return {
       //传递过来的type

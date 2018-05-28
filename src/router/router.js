@@ -85,6 +85,14 @@ const newListRouter = {
     name: "newList", 
     component: ()=>import('@/components/new/newslist.vue'),
 }
+
+//公告详情
+const newsInfoRouter = {
+    path: "/newsInfo" , 
+    name: "newsInfo", 
+    component: ()=>import('@/components/new/newsInfo.vue'),
+}
+
 export const navRouter=[
     homeRouter,
     loginRouter,
@@ -94,5 +102,6 @@ export const navRouter=[
     tinvestDetailRouter,
     centerRouter,
     newRouter,
-    newListRouter
+    newListRouter,
+    newsInfoRouter
 ]
