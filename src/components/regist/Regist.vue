@@ -177,6 +177,11 @@ export default {
       if (endstr == -1) endstr = document.cookie.length;
       return unescape(document.cookie.substring(offset, endstr));
     }
+  },
+   mounted:function(){
+    //滚动顶部
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
   }
 };
 </script>
