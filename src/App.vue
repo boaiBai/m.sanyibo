@@ -37,6 +37,6 @@ ul,li{
 
 .normal_div{
   width: 100vw;
-  height: 95px;
+  height: 90px;
 }
 </style>

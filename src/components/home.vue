@@ -2,7 +2,10 @@
 <div>
   <header_top :nav-index="navIndex"></header_top>
   <div class="normal_div"></div>
+  <!-- 轮播图 -->
   <banner></banner>
+  <!-- 项目列表 -->
+  <!-- 底部通用 -->
   <s_footer></s_footer>
 </div>
 </template>
@@ -51,10 +54,6 @@ export default {
 
 .demo-carousel img {
   width: 100vw;
-}
-
-.normal_div{
-  height: 50px;;
 }
 </style>
 
