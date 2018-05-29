@@ -25,7 +25,7 @@ export default {
       items: [
         { nav: "首页", check: false, toLink: "/" },
         { nav: "投资", check: false, toLink: "/project" },
-        { nav: "账户", check: false, toLink: "/center" },
+        { nav: "账户", check: false, toLink: "/center?name=我的账户" },
         { nav: "公告", check: false, toLink: "/New" }
       ],
       getIndex: this.$route.query.index || ""

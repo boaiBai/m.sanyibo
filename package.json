@@ -10,8 +10,8 @@
     "build": "node build/build.js"
   },
   "dependencies": {
-    "iview": "^2.14.0-rc.5",
-    "vue": "^2.5.2",
+    "iview": "^2.14.0",
+    "vue": "^2.5.16",
     "vue-router": "^3.0.1",
     "vue-wechat-title": "^2.0.4"
   },
