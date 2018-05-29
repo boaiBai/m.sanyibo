@@ -49,11 +49,6 @@
         components:{
             second_nav:second_nav,
             s_footer: s_footer
-        },
-        mounted:function(){
-            //滚动顶部
-            document.body.scrollTop = 0;
-            document.documentElement.scrollTop = 0;
         }
     }
 </script>
