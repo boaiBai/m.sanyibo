@@ -91,6 +91,9 @@ export default {
     s_footer: s_footer
   },
   mounted: function() {
+    //滚动顶部
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
     //判断用户是否已登陆
     if (!this.loginType) {
       this.$router.push({ path: "/login", query: { name: "登陆" } });
