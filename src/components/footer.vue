@@ -29,6 +29,7 @@ export default {
     color: #b9b9b9;
     padding: 10px;
     line-height: 30px;
+    padding-bottom: 40px;
 }
 
 ul{

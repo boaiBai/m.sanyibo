@@ -14,12 +14,14 @@
   <div class="new-count" v-for="item in navItem">
       <h5> {{item.navText}}</h5>
       <ul v-if="item.newsData.length>0">
-        <li v-for="item in item.newsData">{{item.newsTitle}}<span>{{item.timer}}</span></li>
+        <li v-for="items in item.newsData">
+          <router-link :to="{path:'/newsInfo',query:{name:item.navText}}">{{items.newsTitle}}</router-link>
+          <span>{{items.timer}}</span></li>
       </ul>
       <ul v-else-if="item.newsData.length===0">
           <li>没有更多数据</li>
       </ul>
-       <router-link  v-if="item.newsData.length>0"  :to="{path:'/newList',query:{type:item.type}}" class="moreBtn">查看更多</router-link>
+       <router-link  v-if="item.newsData.length>0" :to="{path:'/newList',query:{type:item.type}}" class="moreBtn">查看更多</router-link>
   </div>
   <s_footer></s_footer>
 </div>
@@ -34,7 +36,7 @@ export default {
   name: "new",
   data() {
     return {
-      navIndex:3,
+      navIndex: 3,
       navItem: [
         {
           navText: "网贷课堂",
@@ -321,6 +323,10 @@ h5 {
 .new-count li {
   line-height: 34px;
   border-bottom: dashed 1px #d3d3d3;
+  color: #666;
+}
+
+.new-count li a {
   color: #666;
 }
 .new-count {

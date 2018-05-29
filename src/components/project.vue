@@ -197,7 +197,7 @@
 </script>
 
 <style scoped>
-    .normol-div{
+    .normal_div{
         width: 100%;
         height: 95px;
     }

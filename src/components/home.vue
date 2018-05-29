@@ -2,8 +2,11 @@
     <div>
         <header_top :nav-index="navIndex"></header_top>
         <div class="normal_div"></div>
+        <!-- 轮播图 -->
         <banner></banner>
+        <!-- 项目列表 -->
         <project_list :tinvestList="tinvestList" :debtList="debtList" @tabInds="tab"></project_list>
+        <!-- 底部通用 -->
         <s_footer></s_footer>
     </div>
 </template>
@@ -43,87 +46,87 @@
                     // trigger: "click",
                     // arrow: "hover"
                 },
-                tinvestList:[
+                tinvestList: [
                     {
-                        img1:'https://www.sanyibao.com/style/mobile/img/dian.png',
-                        img2:'https://www.sanyibao.com/style/mobile/img/jian.png',
-                        tit:'个体贷【GTD201',
-                        tit1:'[新手]',
-                        introduce:'第三方房产保证人保证',
-                        btnText:'立即投资',
-                        rate:'12.00%',
-                        month:'12',
-                        way:'按月到息，到期还本',
-                        surplus:'16',
-                        total:'20'
+                        img1: 'https://www.sanyibao.com/style/mobile/img/dian.png',
+                        img2: 'https://www.sanyibao.com/style/mobile/img/jian.png',
+                        tit: '个体贷【GTD201',
+                        tit1: '[新手]',
+                        introduce: '第三方房产保证人保证',
+                        btnText: '立即投资',
+                        rate: '12.00%',
+                        month: '12',
+                        way: '按月到息，到期还本',
+                        surplus: '16',
+                        total: '20'
                     },
                     {
-                        img1:'https://www.sanyibao.com/style/mobile/img/dian.png',
-                        img2:'https://www.sanyibao.com/style/mobile/img/jian.png',
-                        tit:'个体贷【GTD201',
-                        tit1:'',
-                        introduce:'第三方房产保证人保证',
-                        btnText:'立即投资',
-                        rate:'12.00%',
-                        month:'12',
-                        way:'按月到息，到期还本',
-                        surplus:'16',
-                        total:'20'
+                        img1: 'https://www.sanyibao.com/style/mobile/img/dian.png',
+                        img2: 'https://www.sanyibao.com/style/mobile/img/jian.png',
+                        tit: '个体贷【GTD201',
+                        tit1: '',
+                        introduce: '第三方房产保证人保证',
+                        btnText: '立即投资',
+                        rate: '12.00%',
+                        month: '12',
+                        way: '按月到息，到期还本',
+                        surplus: '16',
+                        total: '20'
                     },
                     {
-                        img1:'https://www.sanyibao.com/style/mobile/img/dian.png',
-                        img2:'https://www.sanyibao.com/style/mobile/img/jian.png',
-                        tit:'个体贷【GTD201',
-                        tit1:'[新手]',
-                        introduce:'第三方房产保证人保证',
-                        btnText:'即将开放',
-                        rate:'12.00%',
-                        month:'12',
-                        way:'按月到息，到期还本',
-                        surplus:'16',
-                        total:'20'
+                        img1: 'https://www.sanyibao.com/style/mobile/img/dian.png',
+                        img2: 'https://www.sanyibao.com/style/mobile/img/jian.png',
+                        tit: '个体贷【GTD201',
+                        tit1: '[新手]',
+                        introduce: '第三方房产保证人保证',
+                        btnText: '即将开放',
+                        rate: '12.00%',
+                        month: '12',
+                        way: '按月到息，到期还本',
+                        surplus: '16',
+                        total: '20'
                     }
                 ],
-                debtList:[
+                debtList: [
                     {
-                        tit:'个体贷【GTD201',
-                        tit1:'[新手]',
-                        introduce:'第三方房产保证人保证',
-                        btnText:'立即购买',
-                        rate:'12.00%',
-                        month:'12',
-                        way:'按月到息，到期还本',
-                        surplus:'16',
-                        total:'20'
+                        tit: '个体贷【GTD201',
+                        tit1: '[新手]',
+                        introduce: '第三方房产保证人保证',
+                        btnText: '立即购买',
+                        rate: '12.00%',
+                        month: '12',
+                        way: '按月到息，到期还本',
+                        surplus: '16',
+                        total: '20'
                     },
                     {
-                        tit:'个体贷【GTD201',
-                        tit1:'',
-                        introduce:'第三方房产保证人保证',
-                        btnText:'立即购买',
-                        rate:'12.00%',
-                        month:'12',
-                        way:'按月到息，到期还本',
-                        surplus:'16',
-                        total:'20'
+                        tit: '个体贷【GTD201',
+                        tit1: '',
+                        introduce: '第三方房产保证人保证',
+                        btnText: '立即购买',
+                        rate: '12.00%',
+                        month: '12',
+                        way: '按月到息，到期还本',
+                        surplus: '16',
+                        total: '20'
                     },
                     {
-                        tit:'个体贷【GTD201',
-                        tit1:'[新手]',
-                        introduce:'第三方房产保证人保证',
-                        btnText:'立即购买',
-                        rate:'14.00%',
-                        month:'12',
-                        way:'按月到息，到期还本',
-                        surplus:'16',
-                        total:'20'
+                        tit: '个体贷【GTD201',
+                        tit1: '[新手]',
+                        introduce: '第三方房产保证人保证',
+                        btnText: '立即购买',
+                        rate: '14.00%',
+                        month: '12',
+                        way: '按月到息，到期还本',
+                        surplus: '16',
+                        total: '20'
                     }
                 ]
             };
         },
-        methods:{
-            tab(data){
-                this.$router.push({name:'project',query:{index:1,num:data}})
+        methods: {
+            tab(data) {
+                this.$router.push({name: 'project', query: {index: 1, num: data}})
             }
         }
     };
@@ -134,12 +137,12 @@
         height: auto;
     }
 
-    .demo-carousel img {
-        width: 100vw;
-    }
-
     .normal_div {
         height: 50px;;
+    }
+
+    .demo-carousel img {
+        width: 100vw;
     }
 </style>
 

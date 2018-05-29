@@ -7,7 +7,7 @@ Vue.use(VueRouter);
 //路由器配置
 const RouterConfig={
     routes:navRouter,
-    mode: "history"
+    // mode: "history"
 }
 
 export const router= new VueRouter(RouterConfig)

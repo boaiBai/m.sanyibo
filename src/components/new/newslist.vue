@@ -13,7 +13,10 @@
   <div class="new-count">
       <h5>{{showText}}</h5>
       <ul v-if="showData.length>0">       
-        <li  v-for="item in showData">{{item.title}}<span>{{item.timer}}</span></li>
+        <li  v-for="item in showData">
+           <router-link :to="{path:'/newsInfo',query:{name:showText}}">{{item.title}}</router-link>
+           <span>{{item.timer}}</span>
+        </li>
       </ul>
       <ul v-else-if="showData.length===0">
           <li>没有更多数据</li>
@@ -30,7 +33,7 @@ import header_top from "./../header-top";
 import s_footer from "./../footer";
 
 export default {
-  name: "new",
+  name: "newList",
   data() {
     return {
       //传递过来的type
@@ -64,7 +67,7 @@ export default {
     //首页分类切换事件
     navClick: function(type) {
       //所选类型是公告，重新渲染顶部分类
-      if (type == 4) {
+      if (type == 4||type>9) {
         this.navItem=[
           { navText: "公告", checked: false, type: "4" },
           { navText: "平台公告", checked: false, type: "10" },
@@ -130,6 +133,10 @@ export default {
         },
         {
           type: "9",
+          dataTite: [{ title: "测试数据会不会动态改变9", timer: "2018-5-28" }]
+        },
+       {
+          type: "11",
           dataTite: [{ title: "测试数据会不会动态改变9", timer: "2018-5-28" }]
         }
       ];
@@ -227,6 +234,10 @@ h5 {
   height: 30px;
   line-height: 30px;
   -webkit-border-radius: 20px;
+}
+
+.new-count li a {
+  color: #666;
 }
 </style>
 

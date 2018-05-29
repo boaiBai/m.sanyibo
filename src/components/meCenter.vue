@@ -1,6 +1,7 @@
 <template>
 <div>
   <header_top :nav-index="navIndex"></header_top>
+  <div class="normal_div"></div>
   <s_footer></s_footer>
 </div>
 </template>
