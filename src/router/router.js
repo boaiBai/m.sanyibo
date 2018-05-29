@@ -93,6 +93,13 @@ const newsInfoRouter = {
     component: ()=>import('@/components/new/newsInfo.vue'),
 }
 
+//应用下载
+const downloadRouter = {
+    path: "/download" ,
+    name: "download",
+    component: ()=>import('@/components/download/download.vue'),
+}
+
 export const navRouter=[
     homeRouter,
     loginRouter,
@@ -103,5 +110,6 @@ export const navRouter=[
     centerRouter,
     newRouter,
     newListRouter,
-    newsInfoRouter
+    newsInfoRouter,
+    downloadRouter
 ]
