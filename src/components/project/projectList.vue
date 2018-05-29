@@ -9,14 +9,14 @@
                                 <div class="list-left-tit">
                                     <img :src="item.img1" alt="">
                                     <img :src="item.img2" alt="">
-                                    <router-link to="/tinvestDetail">
+                                    <router-link :to="{path:'/tinvestDetail',query:{name:item.tit}}">
                                         <strong>{{item.tit}} <font>{{item.tit1}}</font></strong>
                                     </router-link>
                                 </div>
                                 <p class="list-left-introduce">{{item.introduce}}</p>
                             </div>
                             <div class="list-top-right">
-                                <router-link to="/tinvestDetail" class="list-right-btn">{{item.btnText}}</router-link>
+                                <router-link :to="{path:'/tinvestDetail',query:{name:item.tit}}" class="list-right-btn">{{item.btnText}}</router-link>
                             </div>
                         </div>
                         <div class="list-bottom">
