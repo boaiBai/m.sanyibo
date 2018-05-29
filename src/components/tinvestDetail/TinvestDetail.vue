@@ -1,5 +1,6 @@
 <template>
     <div>
+        <second_nav></second_nav>
         <div class="details-pad">
             <Row type="flex" justify="center">
                 <Col span="22">
@@ -140,10 +141,15 @@
 </template>
 
 <script>
+    import second_nav from '@/components/second-nav'
     export default {
         name: "TinvestDetail",
+        components:{
+            second_nav:second_nav
+        },
         data(){
             return {
+                projectName:'项目详情',
                 maleDate:'项目上线时间：2018-05-25 09:00:00',
                 columns1: [
                     {
@@ -190,6 +196,11 @@
                     }
                 ]
             }
+        },
+        mounted:function(){
+            //滚动顶部
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
         }
     }
 </script>
