@@ -33,6 +33,7 @@ export default {
   position: fixed;
   top: 0px;
   z-index: 99;
+  font-weight: bold;
 }
 
 .back {

@@ -63,7 +63,7 @@ const tinvestDetailRouter={
 const centerRouter={
     path:"/center",
     name:"center",
-    component:()=>import("@/components/meCenter.vue"),
+    component:()=>import("@/components/center/meCenter.vue"),
     meta: {
         title: webName+"--账户"
     },
