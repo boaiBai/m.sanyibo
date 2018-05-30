@@ -33,16 +33,16 @@
   <!-- 投资和银行 -->
   <div class="bg_div">
       <div class="box">
+         <router-link to="/project" class="btn">立即投资</router-link>
          <div class="second-box">
            <P>投资时，请输入整百元金额（100元起投）</P>
          </div>
-         <h6>立即投资</h6>
       </div>
-      <div class="box">
+      <div class="box">      
+        <router-link to="/project" class="btn" style="color:blue">未开通银行存管</router-link>
         <div class="second-box">
           <P>您可以通过经常性修改密码更好的保护您的账号安全，以避免您收到意外损失</P>
         </div>
-        <h6>未开通银行存管</h6>
       </div>
   </div>
   <div class="clear"></div>
@@ -223,7 +223,9 @@ ul li:nth-last-child(2) {
   background: #34b2ed;
 }
 
-.bg_div h6 {
+.bg_div .box .btn {
+  padding: 0;
+  margin: 0;
   color: #fff;
   height: 34px;
   line-height: 34px;
@@ -234,8 +236,12 @@ ul li:nth-last-child(2) {
   left: 15%;
   border-radius: 5px;
   font-weight: 100;
+  display: block;
+  font-size: 12px;
 }
-
+.lastH6{
+  color:blue;
+}
 .bg_div .second-box {
   width: 90%;
   background: #f8f8f8;
@@ -243,6 +249,8 @@ ul li:nth-last-child(2) {
   margin: 0 5%;
   margin-top: 17px;
 }
+
+
 
 .bg_div .second-box p{
   text-align: left;
