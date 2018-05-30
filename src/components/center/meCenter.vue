@@ -1,58 +1,63 @@
 <template>
-<div id="noShow">
-  <second_nav></second_nav>
-  <!-- <header_top :nav-index="navIndex"></header_top>
-  <div class="normal_div"></div> -->
-  <!-- 用户信息 -->
-  <div class="UserInfo">
-      <h4>您好，{{UserName}}</h4>
-      <table>
-         <tr>
-           <td>
-             <span>代收金额</span><br/>
-             ￥{{getMoney}}
-             </td>
-           <td>
-             <span>净赚利息</span><br/>
-             ￥{{getLixi}}
-             </td>
-         </tr>
-      </table>
-  </div>
-  <!-- 可用余额 -->
-  <div class="bg_div">
-    <div class="box">
-      可用余额(元)<br/>
-      <span>￥{{money}}</span>
-    </div>
-    <div class="box">
-      <a>提现</a>
-      <a>充值</a>
-    </div>
-  </div>
-  <!-- 投资和银行 -->
-  <div class="bg_div">
-      <div class="box">
-         <router-link to="/project" class="btn">立即投资</router-link>
-         <div class="second-box">
-           <P>投资时，请输入整百元金额（100元起投）</P>
-         </div>
-      </div>
-      <div class="box">      
-        <router-link to="/project" class="btn" style="color:blue">未开通银行存管</router-link>
-        <div class="second-box">
-          <P>您可以通过经常性修改密码更好的保护您的账号安全，以避免您收到意外损失</P>
+    <div id="noShow">
+        <second_nav></second_nav>
+        <!-- <header_top :nav-index="navIndex"></header_top>
+        <div class="normal_div"></div> -->
+        <!-- 用户信息 -->
+        <div class="UserInfo">
+            <h4>您好，{{UserName}}</h4>
+            <table>
+                <tr>
+                    <td>
+                        <span>代收金额</span><br/>
+                        ￥{{getMoney}}
+                    </td>
+                    <td>
+                        <span>净赚利息</span><br/>
+                        ￥{{getLixi}}
+                    </td>
+                </tr>
+            </table>
         </div>
-      </div>
-  </div>
-  <div class="clear"></div>
-  <!-- 我要投资按钮 -->
-  <div class="me_btn">
-    <a>我要投资</a>
-  </div>
-  <ul>
-    <li v-for="item in liList">{{item.liText}} </li>
-  </ul>
+        <!-- 可用余额 -->
+        <div class="bg_div">
+            <div class="box">
+                可用余额(元)<br/>
+                <span>￥{{money}}</span>
+            </div>
+            <div class="box">
+                <a @click="modal = true">提现</a>
+                <a @click="modal = true">充值</a>
+            </div>
+        </div>
+        <!-- 投资和银行 -->
+        <div class="bg_div">
+            <div class="box">
+                <router-link to="/project" class="btn">立即投资</router-link>
+                <div class="second-box">
+                    <P>投资时，请输入整百元金额（100元起投）</P>
+                </div>
+            </div>
+            <div class="box">      
+                <router-link to="/project" class="btn" style="color:blue">未开通银行存管</router-link>
+                <div class="second-box">
+                    <P>您可以通过经常性修改密码更好的保护您的账号安全，以避免您收到意外损失</P>
+                 </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+        <!-- 我要投资按钮 -->
+        <div class="me_btn">
+            <a>我要投资</a>
+        </div>
+        <ul class="con-lists">
+            <li v-for="item in liList">{{item.liText}}</li>
+        </ul>
+        <!--弹窗-->
+        <Modal v-model="modal" class="content-modal" @on-ok="goDownload">
+            <p slot="header">信息提示</p>
+            <p class="modal-txt">请下载三益宝APP！</p>
+        </Modal>
   <s_footer></s_footer>
 </div>
 </template>
@@ -66,6 +71,7 @@ export default {
   name: "me",
   data() {
     return {
+      modal: false,
       loginType: true,
       getIndex: this.$route.query.index,
       liList: [
@@ -100,16 +106,21 @@ export default {
     } else {
       document.querySelector("#noShow").style.display = "block";
     }
+  },
+  methods: {
+    goDownload() {
+      this.$router.push({ name: "download", query: { name: "应用下载" } });
+    }
   }
 };
 </script>
-<style scoped>
+<style>
 #noShow {
   display: none;
   background: #f8f8f8;
 }
 
-ul li {
+ul.con-lists li {
   margin: 15px 0;
   padding: 0 20px;
   background: #ffffff;
@@ -117,17 +128,17 @@ ul li {
   line-height: 40px;
 }
 
-ul li::after {
+ul.con-lists li::after {
   position: absolute;
   content: ">";
   right: 20px;
 }
 
-ul li:last-child {
+ul.con-lists li:last-child {
   color: red;
 }
 
-ul li:nth-last-child(2) {
+ul.con-lists li:nth-last-child(2) {
   color: red;
 }
 
@@ -239,8 +250,8 @@ ul li:nth-last-child(2) {
   display: block;
   font-size: 12px;
 }
-.lastH6{
-  color:blue;
+.lastH6 {
+  color: blue;
 }
 .bg_div .second-box {
   width: 90%;
@@ -250,13 +261,46 @@ ul li:nth-last-child(2) {
   margin-top: 17px;
 }
 
-
-
-.bg_div .second-box p{
+.bg_div .second-box p {
   text-align: left;
   padding: 40px 10px 0 10px;
   font-weight: 100;
   color: #666;
+}
+.content-modal .ivu-modal {
+  width: 70% !important;
+  margin: 20% auto !important;
+}
+.content-modal .ivu-modal-content {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+}
+.content-modal .ivu-modal-close .ivu-icon-ios-close-empty {
+  color: #fff;
+}
+.content-modal .ivu-modal-header {
+  background-color: #ff4540;
+}
+.content-modal .ivu-modal-header p {
+  text-align: center;
+  color: #fff;
+  font-size: 18px;
+}
+.content-modal .modal-txt {
+  font-size: 14px;
+}
+.content-modal .ivu-modal-footer {
+  text-align: center;
+}
+.content-modal .ivu-btn-text {
+  border: 1px solid #dedede;
+  background-color: #f1f1f1;
+  color: #333;
+}
+.content-modal .ivu-btn-primary {
+  background-color: #ff4540;
+  border-color: #ba0001;
 }
 </style>
 
