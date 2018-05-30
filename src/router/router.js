@@ -100,6 +100,20 @@ const downloadRouter = {
     component: () => import('@/components/download/download.vue'),
 }
 
+//登录、退出登录提示
+const editTipsRouter = {
+    path: "/editTips" ,
+    name: "editTips",
+    component: ()=>import('@/components/editTips/editTips.vue'),
+}
+
+//修改密码
+const passwdRouter = {
+    path: "/passwd" ,
+    name: "passwd",
+    component: ()=>import('@/components/passwd/passwd.vue'),
+}
+
 //实名认证
 const  realNameRouter={
     path: "/realName",
@@ -122,5 +136,8 @@ export const navRouter = [
     newListRouter,
     newsInfoRouter,
     downloadRouter,
-    realNameRouter
+    realNameRouter,
+    downloadRouter,
+    editTipsRouter,
+    passwdRouter
 ]

@@ -13,7 +13,7 @@
                         <p class="error-msg"></p>
                     </div>
                     <div class="edit-div">
-                        <button class="edit-btn" @click="submit(6)">登录</button>
+                        <button class="edit-btn" @click="submit">登录</button>
                         <router-link :to="{path:'/findpw',query:{name:'找回密码'}}">忘记密码？</router-link>
                     </div>
                     <div class="regist-div">
@@ -87,6 +87,7 @@ export default {
       }
       if (this.isPass) {
         console.log("提交了");
+        this.$router.push({path:'editTips',query:{txt:'登录成功！'}});
       }
     }
   }

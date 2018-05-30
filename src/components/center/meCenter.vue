@@ -32,7 +32,7 @@
         <!-- 投资和银行 -->
         <div class="bg_div">
             <div class="box">
-                <router-link to="/project" class="btn">立即投资</router-link>
+                <router-link :to="{path:'project',query:{index:1}}" class="btn">立即投资</router-link>
                 <div class="second-box">
                     <P>投资时，请输入整百元金额（100元起投）</P>
                 </div>
@@ -47,10 +47,10 @@
         <div class="clear"></div>
         <!-- 我要投资按钮 -->
         <div class="me_btn">
-            <router-link to="/project">我要投资</router-link>
+            <router-link :to="{path:'project',query:{index:1}}">我要投资</router-link>
         </div>
         <ul class="con-lists">
-            <li v-for="item in liList">{{item.liText}}</li>
+            <li v-for="item in liList" @click="goTo(item.path)">{{item.liText}}</li>
         </ul>
         <!--弹窗-->
         <Modal v-model="modal" class="content-modal" @on-ok="goDownload">
@@ -66,52 +66,64 @@
 import second_nav from "./../second-nav";
 import s_footer from "./../footer";
 
-export default {
-  name: "me",
-  data() {
-    return {
-      modal: false,
-      loginType: true,
-      getIndex: this.$route.query.index,
-      liList: [
-        { liText: "交易记录", path: "" },
-        { liText: "投资总表", path: "" },
-        { liText: "债权转让", path: "" },
-        { liText: "银行账户", path: "" },
-        { liText: "修改登陆密码", path: "" },
-        { liText: "退出当前账号", path: "" }
-      ],
-      UserName: "测试用户",
-      navIndex: "2",
-      //代收金额
-      getMoney: "0.00",
-      //利息
-      getLixi: "0.00",
-      //用户余额
-      money: "0.00"
-    };
-  },
-  components: {
-    second_nav: second_nav,
-    s_footer: s_footer
-  },
-  mounted: function() {
-    //滚动顶部
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-    //判断用户是否已登陆
-    if (!this.loginType) {
-      this.$router.push({ path: "/login", query: { name: "登陆" } });
-    } else {
-      document.querySelector("#noShow").style.display = "block";
+    export default {
+        name: "me",
+        data() {
+            return {
+                modal: false,
+                loginType: true,
+                getIndex: this.$route.query.index,
+                liList: [
+                    {liText: "交易记录", path: ""},
+                    {liText: "投资总表", path: ""},
+                    {liText: "债权转让", path: ""},
+                    {liText: "银行账户", path: "modal"},
+                    {liText: "修改登陆密码", path: "passwd"},
+                    {liText: "退出当前账号", path: "editTips"}
+                ],
+                UserName: "测试用户",
+                navIndex: "2",
+                //代收金额
+                getMoney: "0.00",
+                //利息
+                getLixi: "0.00",
+                //用户余额
+                money: "0.00"
+            };
+        },
+        components: {
+            second_nav: second_nav,
+            s_footer: s_footer
+        },
+        mounted: function () {
+            //滚动顶部
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+            //判断用户是否已登陆
+            if (!this.loginType) {
+                this.$router.push({path: "/login", query: {name: "登陆"}});
+            } else {
+                document.querySelector("#noShow").style.display = "block";
+            }
+        },
+        methods: {
+            goDownload() {
+                this.$router.push({name: 'download', query: {name: '应用下载'}})
+            },
+            goTo(data) {
+                switch (data) {
+                    case 'editTips':
+                        this.$router.push({path: data, query: {txt: '安全退出！'}});
+                        break;
+                    case 'modal':
+                        this.modal = true;
+                        break;
+                    case 'passwd':
+                        this.$router.push({path: data, query: {name: '修改登录密码'}});
+                }
+            }
+        }
     }
-  },
-  methods: {
-    goDownload() {
-      this.$router.push({ name: "download", query: { name: "应用下载" } });
-    }
-  }
-};
 </script>
 <style>
 #noShow {
