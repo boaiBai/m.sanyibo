@@ -36,7 +36,7 @@
                 <div class="second-box">
                     <P>投资时，请输入整百元金额（100元起投）</P>
                 </div>
-                <h6>立即投资</h6>
+                <h6 @click="$router.push({path:'project',query:{index:1}})">立即投资</h6>
             </div>
             <div class="box">
                 <div class="second-box">
@@ -48,10 +48,10 @@
         <div class="clear"></div>
         <!-- 我要投资按钮 -->
         <div class="me_btn">
-            <a>我要投资</a>
+            <router-link :to="{path:'project',query:{index:1}}">我要投资</router-link>
         </div>
         <ul class="con-lists">
-            <li v-for="item in liList">{{item.liText}}</li>
+            <li v-for="item in liList" @click="goTo(item.path)">{{item.liText}}</li>
         </ul>
         <s_footer></s_footer>
         <!--弹窗-->
@@ -78,9 +78,9 @@
                     {liText: "交易记录", path: ""},
                     {liText: "投资总表", path: ""},
                     {liText: "债权转让", path: ""},
-                    {liText: "银行账户", path: ""},
+                    {liText: "银行账户", path: "modal"},
                     {liText: "修改登陆密码", path: ""},
-                    {liText: "退出当前账号", path: ""}
+                    {liText: "退出当前账号", path: "editTips"}
                 ],
                 UserName: "测试用户",
                 navIndex: "2",
@@ -110,6 +110,17 @@
         methods:{
             goDownload(){
                 this.$router.push({name:'download',query:{name:'应用下载'}})
+            },
+            goTo(data){
+                console.log(data);
+                switch (data){
+                    case 'editTips':
+                        this.$router.push({path:data,query:{txt:'安全退出！'}});
+                        break;
+                    case 'modal':
+                        this.modal = true;
+                        break;
+                }
             }
         }
     };

@@ -100,6 +100,13 @@ const downloadRouter = {
     component: ()=>import('@/components/download/download.vue'),
 }
 
+//登录、退出登录提示
+const editTipsRouter = {
+    path: "/editTips" ,
+    name: "editTips",
+    component: ()=>import('@/components/editTips/editTips.vue'),
+}
+
 export const navRouter=[
     homeRouter,
     loginRouter,
@@ -111,5 +118,6 @@ export const navRouter=[
     newRouter,
     newListRouter,
     newsInfoRouter,
-    downloadRouter
+    downloadRouter,
+    editTipsRouter
 ]
