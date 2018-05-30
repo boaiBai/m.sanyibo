@@ -1,10 +1,9 @@
 <template>
     <div id="noShow">
         <second_nav></second_nav>
-        <!-- <header_top :nav-index="navIndex"></header_top>
-        <div class="normal_div"></div> -->
         <!-- 用户信息 -->
         <div class="UserInfo">
+            
             <h4>您好，{{UserName}}</h4>
             <table>
                 <tr>
@@ -39,7 +38,7 @@
                 </div>
             </div>
             <div class="box">      
-                <router-link to="/project" class="btn" style="color:blue">未开通银行存管</router-link>
+                <router-link :to="{path:'/realName',query:{name:'实名认证'}}"  class="btn" style="color:blue">未开通银行存管</router-link>
                 <div class="second-box">
                     <P>您可以通过经常性修改密码更好的保护您的账号安全，以避免您收到意外损失</P>
                  </div>
@@ -48,7 +47,7 @@
         <div class="clear"></div>
         <!-- 我要投资按钮 -->
         <div class="me_btn">
-            <a>我要投资</a>
+            <router-link to="/project">我要投资</router-link>
         </div>
         <ul class="con-lists">
             <li v-for="item in liList">{{item.liText}}</li>

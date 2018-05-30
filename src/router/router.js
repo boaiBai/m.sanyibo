@@ -1,9 +1,9 @@
 //主页面路由
-let webName="三益宝手机站";
-const homeRouter={
-    path:"/",
-    name:"home",
-    component:()=>import("./../components/home.vue"),
+let webName = "三益宝手机站";
+const homeRouter = {
+    path: "/",
+    name: "home",
+    component: () => import("./../components/home.vue"),
     meta: {
         title: webName
     },
@@ -11,96 +11,106 @@ const homeRouter={
 
 //登录路由
 const loginRouter = {
-    path: "/login", 
-    name: "login", 
+    path: "/login",
+    name: "login",
     component: () => import('@/components/login/Login.vue'),
     meta: {
-        title: webName+"--登录"
+        title: webName + "--登录"
     },
 }
 
 //注册路由
- const registRouter={
-    path:"/regist",
-    name:"regist",
-    component:()=>import("@/components/regist/Regist.vue"),
+const registRouter = {
+    path: "/regist",
+    name: "regist",
+    component: () => import("@/components/regist/Regist.vue"),
     meta: {
-        title: webName+"--注册"
+        title: webName + "--注册"
     },
 }
 
 //忘记密码路由
-const FindpwRouter={
-    path:"/findpw",
-    name:"findpw",
-    component:()=>import("@/components/findpw/Findpw.vue"),
+const FindpwRouter = {
+    path: "/findpw",
+    name: "findpw",
+    component: () => import("@/components/findpw/Findpw.vue"),
     meta: {
-        title: webName+"--忘记密码"
+        title: webName + "--忘记密码"
     },
 }
 
 //投资
-const projectRouter={
-    path:"/project",
-    name:"project",
-    component:()=>import("@/components/project.vue"),
+const projectRouter = {
+    path: "/project",
+    name: "project",
+    component: () => import("@/components/project.vue"),
     meta: {
-        title: webName+"--投资"
+        title: webName + "--投资"
     },
 }
 
 //产品详情
-const tinvestDetailRouter={
-    path:"/tinvestDetail",
-    name:"tinvestDetail",
-    component:()=>import("@/components/tinvestDetail/TinvestDetail.vue"),
+const tinvestDetailRouter = {
+    path: "/tinvestDetail",
+    name: "tinvestDetail",
+    component: () => import("@/components/tinvestDetail/TinvestDetail.vue"),
     meta: {
-        title: webName+"--产品详情"
+        title: webName + "--产品详情"
     },
 }
 
 //账户
-const centerRouter={
-    path:"/center",
-    name:"center",
-    component:()=>import("@/components/center/meCenter.vue"),
+const centerRouter = {
+    path: "/center",
+    name: "center",
+    component: () => import("@/components/center/meCenter.vue"),
     meta: {
-        title: webName+"--账户"
-    },
+        title: webName + "--账户"
+    }
 }
 
 //公告
 const newRouter = {
-    path: "/new", 
-    name: "new", 
-    component: ()=>import('@/components/new/news.vue'),
+    path: "/new",
+    name: "new",
+    component: () => import('@/components/new/news.vue'),
     meta: {
-        title: webName+"--公告"
+        title: webName + "--公告"
     }
 }
 
 //公告列表，查看更多
 const newListRouter = {
-    path: "/newList" , 
-    name: "newList", 
-    component: ()=>import('@/components/new/newslist.vue'),
+    path: "/newList",
+    name: "newList",
+    component: () => import('@/components/new/newslist.vue'),
 }
 
 //公告详情
 const newsInfoRouter = {
-    path: "/newsInfo" , 
-    name: "newsInfo", 
-    component: ()=>import('@/components/new/newsInfo.vue'),
+    path: "/newsInfo",
+    name: "newsInfo",
+    component: () => import('@/components/new/newsInfo.vue'),
 }
 
 //应用下载
 const downloadRouter = {
-    path: "/download" ,
+    path: "/download",
     name: "download",
-    component: ()=>import('@/components/download/download.vue'),
+    component: () => import('@/components/download/download.vue'),
 }
 
-export const navRouter=[
+//实名认证
+const  realNameRouter={
+    path: "/realName",
+    name: "realName",
+    component: () => import("@/components/center/realName.vue"),
+    meta: {
+        title: webName + "--实名认证"
+    },
+}
+
+export const navRouter = [
     homeRouter,
     loginRouter,
     registRouter,
@@ -111,5 +121,6 @@ export const navRouter=[
     newRouter,
     newListRouter,
     newsInfoRouter,
-    downloadRouter
+    downloadRouter,
+    realNameRouter
 ]
