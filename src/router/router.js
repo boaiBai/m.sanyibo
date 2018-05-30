@@ -107,6 +107,13 @@ const editTipsRouter = {
     component: ()=>import('@/components/editTips/editTips.vue'),
 }
 
+//修改密码
+const passwdRouter = {
+    path: "/passwd" ,
+    name: "passwd",
+    component: ()=>import('@/components/passwd/passwd.vue'),
+}
+
 export const navRouter=[
     homeRouter,
     loginRouter,
@@ -119,5 +126,6 @@ export const navRouter=[
     newListRouter,
     newsInfoRouter,
     downloadRouter,
-    editTipsRouter
+    editTipsRouter,
+    passwdRouter
 ]

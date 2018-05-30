@@ -79,7 +79,7 @@ import s_footer from "./../footer";
                     {liText: "投资总表", path: ""},
                     {liText: "债权转让", path: ""},
                     {liText: "银行账户", path: "modal"},
-                    {liText: "修改登陆密码", path: ""},
+                    {liText: "修改登陆密码", path: "passwd"},
                     {liText: "退出当前账号", path: "editTips"}
                 ],
                 UserName: "测试用户",
@@ -119,6 +119,8 @@ import s_footer from "./../footer";
                     case 'modal':
                         this.modal = true;
                         break;
+                    case 'passwd':
+                        this.$router.push({path: data, query: {name: '修改登录密码'}});
                 }
             }
         }
