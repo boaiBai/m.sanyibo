@@ -1,0 +1,59 @@
+.mui-bar{
+    background-color: #fff;
+}
+.mui-bar .mui-title{
+    color: #545a68;
+}
+.mui-bar-nav.mui-bar .mui-icon{
+    color: #c9cdd7;
+}
+.safety-lists{
+    width: 100%;
+    margin-top: 52px;
+    background-color: #fff;
+}
+.safety-lists-row{
+    width: 100%;
+    padding: 20px 5%;
+    overflow: hidden;
+}
+.safety-lists-row .safety-lists-col:nth-of-type(1){
+    float: left;
+}
+.safety-lists-row .safety-lists-col:nth-last-of-type(1){
+    float: right;
+}
+.safety-lists-row .safety-lists-col{
+    width: 45%;
+}
+.safety-lists-row .safety-lists-col img{
+    width: 100%;
+}
+.swiper-box{
+    margin-top: 7px;
+    width: 100%;
+    background-color: #fff;
+}
+.swiper-tit{
+    text-align: center;
+    padding: 20px 0;
+    width: 100%;
+}
+.swiper-tit img{
+    width: 25.3%;
+}
+.swiper-main{
+    padding: 0 5%;
+}
+.swiper-main .mui-slider .mui-slider-group .mui-slider-item{
+    height: auto;
+}
+.swiper-main .mui-slider-indicator .mui-indicator{
+    width: 10px;
+    height: 10px;
+    background: #dfe2e8;
+    box-shadow: none;
+}
+.swiper-main .mui-slider-indicator .mui-active.mui-indicator{
+    background: #f23d2a;
+}
