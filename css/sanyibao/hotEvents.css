@@ -1,0 +1,44 @@
+.mui-bar{
+    background-color: #fff;
+}
+.mui-bar .mui-title{
+    color: #545a68;
+}
+.mui-bar-nav.mui-bar .mui-icon{
+    color: #c9cdd7;
+}
+.content{
+    width: 100%;
+    padding: 0 2%;
+    margin-top: 54px;
+}
+.event-list{
+    height: 40vw;
+    margin-bottom: 10px;
+    position: relative;
+}
+.event-list img{
+    width: 100%;
+}
+.event-list .marks{
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,.3);
+}
+.event-list .marks .marks-info{
+    position: absolute;
+    right: 0;
+    top: 5%;
+    padding-left: 3%;
+    padding-right: 1%;
+    height: 22px;
+    line-height: 22px;
+    background-color: #c0c0c0;
+    border-top-left-radius: 11px;
+    border-bottom-left-radius: 11px;
+    font-size: 12px;
+    color: #999999;
+}
