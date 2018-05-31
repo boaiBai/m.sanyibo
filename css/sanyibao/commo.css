@@ -1,0 +1,9 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+/*通用背景色*/
+.bg-color{
+	background-color: #f1f2f6;	
+}
