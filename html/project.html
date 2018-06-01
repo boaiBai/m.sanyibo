@@ -158,7 +158,7 @@
     	</style>
 	</head>
 	<body class="bg-color">
-		<div class="box project-top">
+		<!--<div class="box project-top">
 			<a class="active" href="javascript:void(0)">
 			  	<div class="div_exel_left"></div>
 			  	<div class="div_exel_right"></div>
@@ -169,7 +169,7 @@
 			  	<div class="div_exel_right"></div>
 			  	债权
 			</a>
-		</div>
+		</div>-->
 		
 		<div class="data-box">
 			
@@ -241,6 +241,7 @@
 							   '<div class="tag-box">'+tagHtml+'</div>'+
 							   '<div class="project-shouyi"><span>13.5%</span><br/><span>预期年化收益率</span></div>'+jinDuHtml;
 				document.querySelector(".data-box").appendChild($div);
+				//渲染进度条
 				mui('#pro'+i).progressbar({progress:70.55}).show();
 			}
 		}
