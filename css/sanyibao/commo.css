@@ -20,7 +20,7 @@ img,button{
 .box{
 	width: 100vw;
 	float: left;
-	height: left;
+	height: auto;
 	background: #FFFFFF;
 	margin-bottom: 10px;
 }
@@ -32,7 +32,7 @@ img,button{
 }
 
 
-//清除浮动
+/*清除浮动*/
 .clear{
 	clear: both;
 }

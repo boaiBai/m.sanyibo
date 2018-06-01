@@ -1,8 +1,9 @@
+/*登录样式*/
 body{
     background-color: #fff;
 }
 .logo{
-    margin-top: 23vw;
+    margin-top: 17.7vw;
     text-align: center;
 }
 .logo img{
@@ -33,7 +34,7 @@ body{
 .form-item .phone-input{
     padding-left: 16vw;
 }
-.form-item p{
+.form-item .phone-num{
     position: absolute;
     left: 0;
     top: 3.65vw;
@@ -84,6 +85,8 @@ input:-ms-input-placeholder{  /* Internet Explorer 10-11 */
 .btn-item .btn{
     width: 100%;
     height: 20vw;
+    line-height: 20vw;
+    text-align: center;
     background: url("../../img/edit/btn-bg.png") no-repeat;
     background-size: 100% 100%;
     border: none;
@@ -104,4 +107,93 @@ button:enabled:active{
 }
 .go-tips a{
     color: #f33632;
+}
+
+/*注册样式*/
+.ht5{
+    width: 100%;
+    height: 5px;
+}
+.title{
+    margin-top: 13.3vw;
+    text-align: center;
+}
+.title p{
+    margin: 0;
+}
+.title .title-main{
+    font-size: 24px;
+    color: #333333;
+    margin-bottom: 3.2vw;
+}
+.title .title-sub{
+    font-size: 14px;
+    color: #999999;
+}
+.form-item .send-code{
+    position: absolute;
+    top: 0;
+    right: 1vw;
+    height: 13.3vw;
+    line-height: 13.3vw;
+    font-size: 14px;
+    color: #3b7db4;
+    margin: 0;
+}
+.go-next{
+    margin-top: 8px;
+}
+.register-tips{
+    width: 80vw;
+    margin: 12px auto 0;
+    font-size: 12px;
+    color: #999999;
+}
+.register-tips a{
+    color: #666666;
+}
+
+/*注册成功样式*/
+.bg-red{
+    background-color: #ff5b40;
+}
+.top{
+    width: 100%;
+    margin-top: 10.3vw;
+    text-align: center;
+}
+.top img{
+    display: block;
+    margin: 0 auto;
+    width: 16vw;
+}
+.top p{
+    color: #fff;
+    margin: 0;
+    padding-top: 3.3vw;
+    font-size: 18px;
+}
+.bf{
+    background-color: #fff;
+    width: 94.6vw;
+    margin: 5.87vw auto 0;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.bank-img{
+    width: 70.2vw;
+    margin: 0 auto;
+    padding-top: 8vw;
+}
+.bank-img img{
+    width: 100%;
+}
+.bottom-item{
+    width: 76vw;
+    margin: 0 auto;
+    padding: 20px 0 27px 0;
+}
+.bottom-item a p{
+    font-size: 14px;
+    color: #999999;
 }
