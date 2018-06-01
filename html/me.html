@@ -11,16 +11,16 @@
 	</head>
 	<body class="bg-color">
 		<div class="box">
-			<span class="zichan">现有资产(元)</span><br/>
+			<span class="zichan">现有资产(元)<span id="show"></span></span><br/>
 			<span class="money">5020.50</span><br/>
 			<table class="userTable">
 				<tr>
 					<td>累计收益<br/>
-						<span class="tableFont">1121.72</span>
+						<span class="tableFont shouyi">1121.72</span>
 					</td>
 					<td>可用余额
 						<span class="noMoney">不产生收益</span><br/>
-						<span class="tableFont">1121.72</span>
+						<span class="tableFont yue">1121.72</span>
 					</td>
 				</tr>
 			</table>
@@ -77,4 +77,44 @@
 	</body>
 	<script src="../js/mui.min.js"></script>
 	<script type="text/javascript" src="../js/sanyibao/commo.js" ></script>
+	<script>		
+		//todo:隐藏显示状态如何记录
+		
+		var showType=false//默认显示，客户资金情况
+		var money,shouyi,yue;
+		window.onload=function(){
+			var $show=document.getElementById("show");
+			if(showType){
+				$show.className="syb_icon icon-show"
+			}else{
+				$show.className="syb_icon icon-hide"
+				money=document.querySelector(".money").innerText;
+				shouyi=document.querySelector(".shouyi").innerText;
+				yue=document.querySelector(".yue").innerText;
+				document.querySelector(".money").innerText="****";
+				document.querySelector(".shouyi").innerText="****";
+				document.querySelector(".yue").innerText="****";
+			}
+		}
+		
+		//是否显示资金情况
+		document.getElementById("show").addEventListener("tap",function(){
+			if(showType){
+				showType=false;
+				this.className="syb_icon icon-hide"
+				money=document.querySelector(".money").innerText;
+				shouyi=document.querySelector(".shouyi").innerText;
+				yue=document.querySelector(".yue").innerText;
+				document.querySelector(".money").innerText="****";
+				document.querySelector(".shouyi").innerText="****";
+				document.querySelector(".yue").innerText="****";
+			}else{
+				showType=true;
+				this.className="syb_icon icon-show"
+				document.querySelector(".money").innerText=money;
+				document.querySelector(".shouyi").innerText=shouyi;
+				document.querySelector(".yue").innerText=yue;
+			}
+		})
+	</script>
 </html
