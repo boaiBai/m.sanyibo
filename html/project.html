@@ -2,12 +2,264 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-    	<meta name="viewport" content="width=device-width,initial-scale=1.0">
-    	<title>三益宝手机站V2.0--首页</title>
+    	  <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+    	<title>三益宝--项目列表</title>
     	<link rel="stylesheet" href="../css/mui.min.css"/>
     	<link rel="stylesheet" href="../css/sanyibao/commo.css" />
+    	<style>
+    		
+    		.project-top{
+    			text-align: center;height: 43px;line-height: 23px;font-size: 16px;font-weight: 500;
+    		}
+    		
+    		.project-top a{
+    			display: inline-block;
+    			color: #666;
+    			padding: 0 5px;
+    			padding-top: 10px;
+    			padding-bottom: 7px;
+    			font-family:"copperplate gothic bold";
+    			position: relative;
+    		}
+    		
+    		.project-top a.active{
+    			color: red;
+    			border-bottom: red solid 3px;
+    		}
+    		
+    		/*占位div*/
+    		.div_exel_left{
+    			background: #FFFFFF;
+    			height: 4px;
+    			width: 10px;
+    			left: -1px;
+    			bottom: -3px;
+    			position: absolute;
+    			z-index: 9;
+    		}
+    		
+    		.div_exel_right{
+    			background: #FFFFFF;
+    			height: 4px;
+    			width: 10px;
+    			right: -1px;
+    			bottom: -3px;
+    			position: absolute;
+    			/*border-radius: -5px 0px 0px -5px;*/ 
+    			z-index: 9;
+    		}
+    		
+    		.project-box{
+    			width: 100vw;
+    			background: #FFFFFF;
+    		}
+    		
+    		.project-box .title{
+    			width: 100vw;
+    			font-weight: bold;
+    			font-size: 16px;
+    			padding-top: 10px;
+    			padding-bottom: 3px;
+    			padding-left: 15px;
+    		}
+    		
+    		.tag-box{
+    			width: 100vw;float: left;
+    			padding-left: 15px;
+    		}
+    		
+    		span.tag{
+    			border-bottom: solid 1px #FFCA4C;
+    			border-left: solid 1px #FFCA4C;
+    			border-top: solid 1px #FFF3D6;
+    			border-right: solid 1px #FFF3D6;
+    			font-size: 0.8em;
+    			color:#FFBB5F;
+    			margin-right: 5px;
+    			padding: 1px ;
+    			border-radius: 3px;
+    			float: left;
+    		}
+    		
+    		.project-shouyi{
+    			width: 35vw;
+    			float: left;
+    			padding-left: 15px;
+    		}
+    		
+    		.project-shouyi span:first-child{
+    			color: #F33632;
+    			font-size: 2.2em;
+    			padding:25px 0 5px 5px;
+    			display: inline-block;
+    		}
+    		
+    		.project-shouyi span:last-child{
+    			display: inline-block;
+    			font-size: 14px;
+    			padding-left: 10px;
+    			padding-bottom: 15px;
+    			color:#9F9F9F
+    		}
+    		
+    		.project-jindu{
+    			width: 50vw;float: right;margin-right: 5vw;margin-top:23px 
+    		}
+    		
+    		.project-jindu span{
+    			font-size: 12px;
+    			color: #555555;
+    			display:inline-block;
+    			padding-bottom: 1px;
+    			
+    		}
+    		
+    		.project-jindu span.left{
+    			float: left;
+    			padding-top: 2px;
+    		}
+    		
+    		.project-jindu span.right{
+    			float: right;
+    		}
+    		
+			.project-jindu span.big-red{
+    			font-size: 18px;
+    			color: #F44D4A;
+    			padding-top: 0;
+    		}
+    		
+    		.project-jindu span.small-red{
+    			padding-top: 2px;
+    			color: #F44D4A;
+    		}
+    		
+    		.project-jindu span.bottom{
+    			padding-top: 1px;
+    		}
+    		
+    		.project-jindu span.over{
+    			font-size: 18px;
+    			color: #e7e7e7;
+    			padding-top: 0;;
+    		}
+    		
+    		.mui-progressbar{
+    			height: 5px;
+    			background:#FFE8E5;
+    		}
+    		
+    		.mui-progressbar span{
+    			background: #F44844;
+    		}    		
+    	</style>
 	</head>
 	<body class="bg-color">
+		<div class="box project-top">
+			<a class="active" href="javascript:void(0)">
+			  	<div class="div_exel_left"></div>
+			  	<div class="div_exel_right"></div>
+			  	直投
+			</a>
+			<a href="javascript:void(0)">
+			  	<div class="div_exel_left"></div>
+			  	<div class="div_exel_right"></div>
+			  	债权
+			</a>
+		</div>
+		
+		<!--项目盒子-->
+		<div class="box project-box">
+			 <div class="title">个体贷【GTD20170904-01】</div>
+			 <div class="tag-box">
+			 	 <span class="tag">+1.6%鼓励金</span><span  class="tag">+3%到期返</span><span  class="tag">投就送</span>
+			 </div>
+			
+			 <div class="project-shouyi">
+			 	<span>13.5%</span><br/>
+			 	<span>预期年化收益率</span>
+			 </div>
+			 <!--项目进度-->
+			 <div class="project-jindu">
+			 	<span class="left">12个月</span>
+			 	<span  class="right"><span class="big-red">9:30</span>开始投资</span>
+			 	<div class="mui-progressbar">
+			 		<span></span>
+			 	</div>
+			 	<span  class="right bottom">30万元</span>
+			 </div>
+		</div>
+		
+		<!--项目盒子-->
+		<div class="box project-box">
+			 <div class="title">个体贷【GTD20170904-01】</div>
+			 <div class="tag-box">
+			 	 <span class="tag">+1.6%鼓励金</span><span  class="tag">+3%到期返</span><span  class="tag">投就送</span>
+			 </div>
+			
+			 <div class="project-shouyi">
+			 	<span>13.5%</span><br/>
+			 	<span>预期年化收益率</span>
+			 </div>
+			 <!--项目进度-->
+			 <div class="project-jindu">
+			 	<span class="left">12个月</span>
+			 	<span  class="right"><span class="big-red">6.2万</span>元可投</span>
+			 	<div class="mui-progressbar" id="demo1">
+			 		<span></span>
+			 	</div>
+			 	<span  class="left bottom">开放购买 09-01  09:30</span>
+			 	<span  class="right bottom">30万元</span>
+			 </div>
+		</div>
+		
+		<!--项目盒子-->
+		<div class="box project-box">
+			 <div class="title">个体贷【GTD20170904-01】</div>
+			 <div class="tag-box">
+			 	 <span class="tag">+1.6%鼓励金</span><span  class="tag">+3%到期返</span><span  class="tag">投就送</span>
+			 </div>
+			
+			 <div class="project-shouyi">
+			 	<span>13.5%</span><br/>
+			 	<span>预期年化收益率</span>
+			 </div>
+			 <!--项目进度-->
+			 <div class="project-jindu">
+			 	<span class="left">12个月</span>
+			 	<span  class="right over">已投满</span>
+			 	<div class="mui-progressbar">
+			 		<span></span>
+			 	</div>
+			 	<span  class="right bottom">30万元</span>
+			 </div>
+		</div>
+		
+		
+		<!--项目盒子-->
+		<div class="box project-box">
+			 <div class="title">个体贷【GTD20170904-01】</div>
+			 <div class="tag-box">
+			 	 <span class="tag">+1.6%鼓励金</span><span  class="tag">+3%到期返</span><span  class="tag">投就送</span>
+			 </div>
+			
+			 <div class="project-shouyi">
+			 	<span>13.5%</span><br/>
+			 	<span>预期年化收益率</span>
+			 </div>
+			 <!--项目进度-->
+			 <div class="project-jindu">
+			 	<span class="left">12个月</span>
+			 	<span  class="right small-red">2天后投资</span>
+			 	<div class="mui-progressbar">
+			 		<span></span>
+			 	</div>
+			 	<span  class="right bottom">30万元</span>
+			 </div>
+		</div>
+		
+		
+		<div class="div_normal"></div>
 		<!--底部导航-->
 		<nav class="mui-bar mui-bar-tab">
 		    <a class="mui-tab-item" href="index.html">
@@ -26,4 +278,25 @@
 	</body>
 	<script src="../js/mui.min.js"></script>
 	<script type="text/javascript" src="../js/sanyibao/commo.js" ></script>
-</html
+	<script>
+		window.onload=function(){
+			mui("#demo1").progressbar({progress:70.55}).show();
+		}
+		
+		mui(".project-top").on("tap","a",function(){
+			//判断是否被选中
+			if(this.className.indexOf("active")>=0){
+				return false;
+			}
+			var $parent=this.parentNode;
+			var $a=$parent.querySelectorAll("a");
+			for(var i=0;i<$a.length;i++){
+				if(this==$a[i]){
+					$a[i].className="active"
+				}else{
+					$a[i].className="";
+				}
+			}
+		})
+	</script>
+</html>
