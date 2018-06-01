@@ -1,0 +1,113 @@
+.me-nav a{
+	display: inline-block;
+	width: 88vw;
+	color: #666;
+	border-bottom: solid 1px #F2F2F2;
+	padding-left: 10px;
+	height: 50px;
+	line-height: 50px;
+	float: right;
+	position: relative;
+}
+        		
+.me-nav a:after{
+	content: "";
+	width: 10px;
+	height: 14px;
+	top: 18px;
+	background-image: url(../icon/jiantou.png);
+	background-size:10px 14px;
+	color: #ececec;
+	font-weight: bolder;
+	font-size: 1.2em;
+	position: absolute;
+	right: 15px;
+}
+
+span.zichan{
+	padding:20px 15px 5px 15px;
+	display: inline-block;
+	color: #c6c6c6;
+}
+
+span.money{
+	padding-left: 15px;
+	font-size: 2em;
+	font-weight: bold;
+}
+
+span.tableFont{
+	color: #000000;
+	font-weight: 600;
+	font-size: 16px;
+	font-family: "arial, helvetica, sans-serif";
+}
+
+.userTable{
+	width: 100vw;
+	margin: 20px 0;
+}
+
+
+.userTable td{
+	font-size: 14px;
+	color: #c6c6c6;
+	padding: 0 15px;
+	width: 50vw;
+}
+
+span.noMoney{
+	font-size: 12px;
+	color: #FFC35D;
+	display: inline-block;
+	background: #FFF3BF;
+}
+
+.userTable td:first-child{
+	border-right: solid 1px #E2E2E2;
+}
+
+.me-btn-box{
+	width: 100vw;
+	border-bottom: solid 1px #F2F2F2 ;
+	float: left;
+}
+
+.me-btn-box .me-box{
+	width: 50vw;
+	float: left;
+}
+
+.me-btn-box .me-box a{
+	display: inline-block;
+	text-align: center;
+	padding: 5px;
+	width: 70%;
+	border-radius: 50px;
+	font-size: 14px;
+}
+
+.depositBtn{
+	background: #FFFFFF;
+	color: #666;
+	box-shadow:0px 2px 2px  #EDEDED;
+	border:solid 1px #EDEDED;
+	margin:0  10% 20px 20%;
+}
+
+.rechargeBtn:enabled:active{
+	background: #FF5F41;
+}
+
+.depositBtn:enabled:active{
+	background: #FFF;
+	color: #666666;
+}
+
+.rechargeBtn{
+	background: #FF5F41;
+	color: #ffffff;
+	box-shadow:0px 2px 2px  #FFd8d5;	
+	border:solid 1px #ff5f41;
+	margin: 0 20% 20px 10%;		
+}
