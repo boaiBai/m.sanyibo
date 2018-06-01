@@ -3,7 +3,36 @@
 	padding: 0;
 }
 
+body{
+	font-size: 14px;
+	font-family:"microsoft sans serif"}
+
+img,button{
+	border: none;
+}
+
 /*通用背景色*/
 .bg-color{
 	background-color: #f1f2f6;	
+}
+
+
+.box{
+	width: 100vw;
+	float: left;
+	height: left;
+	background: #FFFFFF;
+	margin-bottom: 10px;
+}
+
+.div_normal{
+	width: 100vw;
+	height: 44px;
+	float: left;
+}
+
+
+//清除浮动
+.clear{
+	clear: both;
 }

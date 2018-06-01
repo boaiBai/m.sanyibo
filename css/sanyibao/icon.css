@@ -1,0 +1,61 @@
+.syb_icon{
+	display: inline-block; 		
+	width: 10vw;
+	height: 50px;
+	float: left;
+}
+
+.icon-guli{
+	background: url(../../icon/guli.png) no-repeat center right;
+	background-size: 28px auto;
+}
+
+.icon-friend{
+	background: url(../../icon/friend.png) no-repeat center right;
+	background-size: 22px auto;
+}
+
+.icon-date{
+	background: url(../../icon/date.png) no-repeat center right;
+	background-size: 22px auto;
+}
+
+.icon-bank{
+	background: url(../../icon/bank.png) no-repeat center right;
+	background-size: 22px auto;
+}
+
+.icon-zh{
+	background: url(../../icon/zh.png) no-repeat center right;
+	background-size: 22px auto;
+}
+   		
+.icon-money{
+	background: url(../../icon/money.png) no-repeat center right;
+	background-size: 22px auto;
+}
+
+.icon-jiaoyi{
+	background: url(../../icon/jiaoyi.png) no-repeat center right;
+	background-size: 22px auto;
+}
+
+.icon-touzi{
+	background: url(../../icon/touzi.png) no-repeat center right;
+	background-size: 22px auto;
+}
+
+.icon-zr{
+	background: url(../../icon/zr.png) no-repeat center right;
+	background-size: 22px auto;
+}
+
+.icon-shouquan{
+	background:url(../icon/shouquan.png) no-repeat center right;
+	background-size: 22px auto;
+}
+
+.icon-more{
+	background: url(../icon/more.png) no-repeat center right;
+	background-size: 22px auto;
+}
