@@ -76,9 +76,8 @@
     			font-size: 0.8em;
     			color:#FFBB5F;
     			margin-right: 5px;
-    			padding: 1px ;
+    			padding:0 1px ;
     			border-radius: 3px;
-    			float: left;
     		}
     		
     		.project-shouyi{
@@ -96,7 +95,7 @@
     		
     		.project-shouyi span:last-child{
     			display: inline-block;
-    			font-size: 14px;
+    			font-size: 12px;
     			padding-left: 10px;
     			padding-bottom: 15px;
     			color:#9F9F9F
@@ -151,11 +150,15 @@
     		
     		.mui-progressbar span{
     			background: #F44844;
-    		}    		
+    		} 
+    		
+    		#more_btn{
+    			width: 100vw;background: #FFFFFF;float: left;margin-bottom: 10px;text-align: center;padding:10px 0;color: #BBBBBB;font-size: 12px;
+    		}   		
     	</style>
 	</head>
 	<body class="bg-color">
-		<div class="box project-top">
+		<!--<div class="box project-top">
 			<a class="active" href="javascript:void(0)">
 			  	<div class="div_exel_left"></div>
 			  	<div class="div_exel_right"></div>
@@ -166,99 +169,13 @@
 			  	<div class="div_exel_right"></div>
 			  	债权
 			</a>
-		</div>
+		</div>-->
 		
-		<!--项目盒子-->
-		<div class="box project-box">
-			 <div class="title">个体贷【GTD20170904-01】</div>
-			 <div class="tag-box">
-			 	 <span class="tag">+1.6%鼓励金</span><span  class="tag">+3%到期返</span><span  class="tag">投就送</span>
-			 </div>
+		<div class="data-box">
 			
-			 <div class="project-shouyi">
-			 	<span>13.5%</span><br/>
-			 	<span>预期年化收益率</span>
-			 </div>
-			 <!--项目进度-->
-			 <div class="project-jindu">
-			 	<span class="left">12个月</span>
-			 	<span  class="right"><span class="big-red">9:30</span>开始投资</span>
-			 	<div class="mui-progressbar">
-			 		<span></span>
-			 	</div>
-			 	<span  class="right bottom">30万元</span>
-			 </div>
 		</div>
-		
-		<!--项目盒子-->
-		<div class="box project-box">
-			 <div class="title">个体贷【GTD20170904-01】</div>
-			 <div class="tag-box">
-			 	 <span class="tag">+1.6%鼓励金</span><span  class="tag">+3%到期返</span><span  class="tag">投就送</span>
-			 </div>
-			
-			 <div class="project-shouyi">
-			 	<span>13.5%</span><br/>
-			 	<span>预期年化收益率</span>
-			 </div>
-			 <!--项目进度-->
-			 <div class="project-jindu">
-			 	<span class="left">12个月</span>
-			 	<span  class="right"><span class="big-red">6.2万</span>元可投</span>
-			 	<div class="mui-progressbar" id="demo1">
-			 		<span></span>
-			 	</div>
-			 	<span  class="left bottom">开放购买 09-01  09:30</span>
-			 	<span  class="right bottom">30万元</span>
-			 </div>
-		</div>
-		
-		<!--项目盒子-->
-		<div class="box project-box">
-			 <div class="title">个体贷【GTD20170904-01】</div>
-			 <div class="tag-box">
-			 	 <span class="tag">+1.6%鼓励金</span><span  class="tag">+3%到期返</span><span  class="tag">投就送</span>
-			 </div>
-			
-			 <div class="project-shouyi">
-			 	<span>13.5%</span><br/>
-			 	<span>预期年化收益率</span>
-			 </div>
-			 <!--项目进度-->
-			 <div class="project-jindu">
-			 	<span class="left">12个月</span>
-			 	<span  class="right over">已投满</span>
-			 	<div class="mui-progressbar">
-			 		<span></span>
-			 	</div>
-			 	<span  class="right bottom">30万元</span>
-			 </div>
-		</div>
-		
-		
-		<!--项目盒子-->
-		<div class="box project-box">
-			 <div class="title">个体贷【GTD20170904-01】</div>
-			 <div class="tag-box">
-			 	 <span class="tag">+1.6%鼓励金</span><span  class="tag">+3%到期返</span><span  class="tag">投就送</span>
-			 </div>
-			
-			 <div class="project-shouyi">
-			 	<span>13.5%</span><br/>
-			 	<span>预期年化收益率</span>
-			 </div>
-			 <!--项目进度-->
-			 <div class="project-jindu">
-			 	<span class="left">12个月</span>
-			 	<span  class="right small-red">2天后投资</span>
-			 	<div class="mui-progressbar">
-			 		<span></span>
-			 	</div>
-			 	<span  class="right bottom">30万元</span>
-			 </div>
-		</div>
-		
-		
+		<div id="more_btn">更&nbsp;&nbsp;多
+			<span class="mui-icon mui-icon-arrowdown" style="font-size: 18px;"></span></div>
 		<div class="div_normal"></div>
 		<!--底部导航-->
 		<nav class="mui-bar mui-bar-tab">
@@ -280,7 +197,53 @@
 	<script type="text/javascript" src="../js/sanyibao/commo.js" ></script>
 	<script>
 		window.onload=function(){
-			mui("#demo1").progressbar({progress:70.55}).show();
+//			mui("#demo1").progressbar({progress:70.55}).show();
+			getData();
+		}
+		
+		
+		//渲染数据
+		function  getData(){
+			for(var i=0;i<4;i++){
+				var jinDuHtml="";
+				//toDo：id建议用数据库逐渐id;
+				var id="pro"+i;
+				switch(i){
+					case 0:
+						jinDuHtml='<div class="project-jindu"><span class="left">12个月</span>'+
+						'<span  class="right"><span class="big-red">9:30</span>开始投资</span>'+
+			 			'<div class="mui-progressbar" id="'+id+'"> <span></span></div><span  class="right bottom">30万元</span></div>'
+					break;
+					case 1:
+						jinDuHtml='<div class="project-jindu"><span class="left">12个月</span>'+
+			 			'<span  class="right"><span class="big-red">6.2万</span>元可投</span>'+
+			 			'<div class="mui-progressbar" id="'+id+'"><span></span></div>'+
+			 			'<span  class="left bottom">开放购买 09-01  09:30</span>'+
+			 			'<span  class="right bottom">30万元</span></div>'
+					break;
+					case 2:
+						jinDuHtml='<div class="project-jindu"><span class="left">12个月</span>'+
+			 			'<span  class="right over">已投满</span>'+
+			 			'<div class="mui-progressbar" id="'+id+'"><span></span></div>'+
+			 			'<span  class="right bottom">30万元</span></div>'
+					break;
+					case 3:
+						jinDuHtml=' <div class="project-jindu"><span class="left">12个月</span>'+
+						'<span  class="right small-red" >2天后投资</span>'+
+						'<div class="mui-progressbar" id="'+id+'"><span></span></div>'+
+			 			'<span  class="right bottom">30万元</span> </div>'
+					break;
+				}
+				var $div=document.createElement("div");
+				$div.className="box project-box";
+				var tagHtml=' <span class="tag">+1.6%鼓励金</span><span  class="tag">+3%到期返</span><span  class="tag">投就送</span>'
+				$div.innerHTML='<div class="title">个体贷【GTD20170904-01】</div>'+
+							   '<div class="tag-box">'+tagHtml+'</div>'+
+							   '<div class="project-shouyi"><span>13.5%</span><br/><span>预期年化收益率</span></div>'+jinDuHtml;
+				document.querySelector(".data-box").appendChild($div);
+				//渲染进度条
+				mui('#pro'+i).progressbar({progress:70.55}).show();
+			}
 		}
 		
 		mui(".project-top").on("tap","a",function(){
@@ -294,9 +257,13 @@
 				if(this==$a[i]){
 					$a[i].className="active"
 				}else{
-					$a[i].className="";
+					$a[i].className=""
 				}
 			}
 		})
+		
+		document.getElementById("more_btn").addEventListener("tap",function(){
+			getData();
+		});
 	</script>
 </html>
