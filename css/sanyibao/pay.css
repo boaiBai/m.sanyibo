@@ -1,0 +1,209 @@
+.top-tit{
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    margin: 0;
+    padding: 0 4vw;
+    font-size: 12px;
+    color: #999999;
+}
+.banks{
+    background-color: #ffffff;
+}
+.bank-list{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 4vw;
+    padding-right: 4vw;
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+    border-bottom: solid 1px #E2E2E2;
+}
+.bank-list-left{
+    display: flex;
+    align-items: center;
+}
+.bank-logo img{
+    display: block;
+    width: 15vw;
+    margin-right: 2vw;
+}
+.bank-tit p{
+    margin: 0;
+    font-size: 15px;
+    color: #999;
+}
+.bank-tit p:nth-of-type(1){
+    color: #333;
+    margin-bottom: 3px;
+}
+.bank-list-right img{
+    width: 7vw;
+    display: block;
+}
+.bank-list-right .goto{
+    width: 5vw;
+}
+.banks .bank-list:nth-last-of-type(1) .bank-tit p{
+    margin: 0;
+}
+.money-content{
+    margin-top: 8px;
+    padding-bottom: 4vw;
+    background-color: #ffffff;
+}
+.money-tit{
+    font-size: 12px;
+    color: #999999;
+    margin: 0;
+    padding: 12px 4vw;
+}
+.money-input{
+    margin-left: 4vw;
+    /*padding-bottom: 2vw;*/
+    /*border-bottom: solid 1px #E2E2E2;*/
+    color: #333333;
+}
+.money-input label{
+    font-size: 25px;
+}
+.money-input input{
+    width: 80vw;
+    padding: 0;
+    margin: 0;
+    border: none;
+    font-size: 40px;
+}
+.btn-div{
+    width: 100%;
+    margin-top: 16px;
+}
+.btn-div .btn{
+    width: 100%;
+    height: 24vw;
+    text-align: center;
+    background: url("../../img/edit/btn-bg.png") no-repeat;
+    background-size: 100% 100%;
+    border: none;
+    outline: none;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    font-size: 18px;
+}
+button:enabled:active{
+    background-color: #efeff4;
+}
+.tips{
+    padding: 0 4vw;
+    margin-top: 12px;
+    color: #999999;
+}
+.tips p{
+    font-size: 12px;
+    margin: 0;
+}
+.layer1{
+    display: none;
+}
+.mask{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 998;
+    background-color: rgba(0,0,0,.3);
+}
+.layer-content{
+    width: 74vw;
+    position: absolute;
+    left: 13vw;
+    top: 35vw;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    z-index: 999;
+}
+.layer1-tit{
+    position: relative;
+    width: 100%;
+    border-bottom: solid 1px #e2e2e2;
+}
+.layer1-tit h1{
+    height: 13.3vw;
+    line-height: 13.3vw;
+    margin: 0;
+    font-size: 18px;
+    color: #333333;
+    text-align: center;
+}
+.layer1-tit span{
+    position: absolute;
+    top: 4.65vw;
+    right: 4vw;
+    width: 4vw;
+    height: 4vw;
+}
+.layer1-tit span img{
+    width: 100%;
+}
+.layer1-main p{
+    color: #333;
+    font-size: 13px;
+    text-align: center;
+    margin-top: 4.5vw;
+    margin-bottom: 6.6vw;
+}
+.input-list{
+    margin: 0 4vw;
+    padding-bottom: 8.6vw;
+    display: flex;
+}
+.input-list input{
+    flex-grow: 1;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    border-color: #aaaaaa;
+    border-right-color: #e2e2e2;
+    border-left: none;
+}
+.input-list input:nth-of-type(1){
+    border-left: solid 1px #aaaaaa;
+}
+.input-list input:nth-last-of-type(1){
+    border-right-color: #aaaaaa;
+}
+.layer1-tit.layer2-top h1{
+    height: 11vw;
+    line-height: 11vw;
+    margin: 0;
+    margin-top: 4vw;
+}
+.layer2-top p{
+    text-align: center;
+    font-size: 13px;
+    color: #b3b3b3;
+    margin-bottom: 6vw;
+}
+.layer2-btn{
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    color: #f83925;
+    margin: 2vw 0 4vw 0;
+}
+.close2{
+    left: 32.5vw;
+    bottom: -18vw;
+    position: absolute;
+}
+.close2 img{
+    width: 9vw;
+}

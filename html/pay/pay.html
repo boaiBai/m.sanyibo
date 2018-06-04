@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+        <title>充值</title>
+        <link rel="stylesheet" href="../../css/mui.min.css" />
+        <link rel="stylesheet" href="../../css/sanyibao/commo.css" />
+        <link rel="stylesheet" href="../../css/sanyibao/pay.css">
+    </head>
+    <body class="bg-red">
+        <p class="top-tit">账户余额：<span class="top-money">100.00</span>元</p>
+        <ul class="banks">
+            <li class="bank-list">
+                <div class="bank-list-left">
+                    <div class="bank-logo">
+                        <img src="../../img/bank/兴业.png" alt="">
+                    </div>
+                    <div class="bank-tit">
+                        <p>兴业银行</p>
+                        <p>************6214</p>
+                    </div>
+                </div>
+                <div class="bank-list-right">
+                    <img src="../../img/checked.png" alt="">
+                </div>
+            </li>
+            <li class="bank-list">
+                <div class="bank-list-left">
+                    <div class="bank-logo">
+                        <img src="../../img/bank/交通.png" alt="">
+                    </div>
+                    <div class="bank-tit">
+                        <p>交通银行</p>
+                        <p>************6214</p>
+                    </div>
+                </div>
+            </li>
+            <li class="bank-list">
+                <div class="bank-list-left">
+                    <div class="bank-logo">
+                        <img src="../../img/addBank.png" alt="">
+                    </div>
+                    <div class="bank-tit">
+                        <p>添加银行卡</p>
+                    </div>
+                </div>
+                <div class="bank-list-right">
+                    <img class="goto" src="../../img/goto.png" alt="">
+                </div>
+            </li>
+        </ul>
+        <div class="money-content">
+            <p class="money-tit">充值金额（元）</p>
+            <div class="money-input">
+                <label for="money">￥</label>
+                <input type="text" id="money">
+            </div>
+        </div>
+        <div class="btn-div">
+            <button class="btn">充值</button>
+        </div>
+        <div class="tips">
+            <p>温馨提示：</p>
+            <p>1、为保障资金安全，充值提现采用同卡进出原则，即提现银行卡需与充值银行卡一致。</p>
+            <p>2、单笔充值金额至少100元，充值实时到账。未投资过用户提现时收取千分之五的手续费。</p>
+        </div>
+
+        <!--验证码弹窗-->
+        <div class="layer1">
+            <div class="mask"></div>
+            <div class="layer-content">
+                <div class="layer1-tit">
+                    <h1>请输入验证码</h1>
+                    <span class="close1"><img src="../../img/close.png" alt=""></span>
+                </div>
+                <div class="layer1-main">
+                    <p>已发送到此卡预留手机号<span>186****6666</span></p>
+                    <div class="input-list">
+                        <input type="number">
+                        <input type="number">
+                        <input type="number">
+                        <input type="number">
+                        <input type="number">
+                        <input type="number">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--确认充值弹窗-->
+        <div class="layer2">
+            <div class="mask"></div>
+            <div class="layer-content">
+                <div class="layer2-top layer1-tit">
+                    <h1>您将充值<font>100</font>元</h1>
+                    <p>点击确认后跳转至恒丰银行页面完成操作</p>
+                </div>
+                <div class="layer2-btn">
+                    <span>确&nbsp;认</span>
+                </div>
+                <div class="close2">
+                    <img src="../../img/close1.png" alt="">
+                </div>
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript" src="../../js/mui.min.js"></script>
+    <script type="text/javascript">
+        // var cWidth = document.documentElement.clientWidth ||  document.body.clientWidth;
+        // var cHeight = document.documentElement.clientHeight || document.body.clientHeight;
+        // var layers = document.getElementsByClassName('layer-content');
+        var layer1 = document.getElementsByClassName('layer1')[0];
+        var layer2 = document.getElementsByClassName('layer2')[0];
+        var inputs = document.querySelectorAll('.input-list input');
+        // inputs[0].focus();
+
+        mui('body').on('tap','.close1',function () {
+            layer1.style.display = 'none';
+        })
+        mui('.input-list').on('input','input',function () {
+            this.value = this.value.slice(0,1);
+            for (let i = 0;i<inputs.length;i++){
+                if(inputs[i].value == ''){
+                    break;
+                }else{
+                    if(i == 5){
+                        layer1.style.display = 'none';
+                    }
+                }
+            }
+        })
+        mui('.layer2-btn').on('tap','span',function () {
+            layer2.style.display = 'none';
+        })
+        mui('.layer-content').on('tap','.close2',function () {
+            layer2.style.display = 'none';
+        })
+    </script>
+</html>
