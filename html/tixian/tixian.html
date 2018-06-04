@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+        <title>提现</title>
+        <link rel="stylesheet" href="../../css/mui.min.css" />
+        <link rel="stylesheet" href="../../css/sanyibao/commo.css" />
+        <link rel="stylesheet" href="../../css/sanyibao/pay.css">
+    </head>
+    <body class="bg-red">
+        <p class="top-tit">账户余额：<span class="top-money">100.00</span>元</p>
+        <ul class="banks">
+            <li class="bank-list">
+                <div class="bank-list-left">
+                    <div class="bank-logo">
+                        <img src="../../img/bank/兴业.png" alt="">
+                    </div>
+                    <div class="bank-tit">
+                        <p>兴业银行</p>
+                        <p>************6214</p>
+                    </div>
+                </div>
+                <div class="bank-list-right1">
+                    <img class="goto" src="../../img/goto.png" alt="">
+                </div>
+            </li>
+        </ul>
+        <div class="money-content tixian-money">
+            <p class="money-tit">提现金额（元）</p>
+            <div class="money-list">
+                <div class="list-left money-left">
+                    <label for="money">￥</label>
+                    <input type="text" id="money">
+                </div>
+                <div class="list-right">
+                    <p class="bl">全部转出</p>
+                </div>
+            </div>
+            <div class="money-list">
+                <div class="list-left">
+                    <input type="text" placeholder="请输入短信验证码">
+                </div>
+                <div class="list-right">
+                    <p>获取验证码</p>
+                </div>
+            </div>
+            <div class="money-list">
+                <div class="list-left money-left">
+                    <p>手续费</p>
+                </div>
+                <div class="list-right">
+                    <span>0.00元</span>
+                </div>
+            </div>
+        </div>
+        <div class="tips">
+            <p>投资过客户，提现手续费由三益宝平台为您垫付；未投资过客户提现手续费为提现金额的千分之五。</p>
+        </div>
+        <div class="btn-div tixian-btn">
+            <button class="btn">提现</button>
+        </div>
+        <!--弹窗-->
+        <div class="tixian-layer">
+            <div class="mask"></div>
+            <div class="choose-bank">
+                <div class="layer1-tit">
+                    <h1>选择银行卡</h1>
+                    <span class="close1"><img src="../../img/close.png" alt=""></span>
+                </div>
+                <ul class="banks">
+                    <li class="bank-list">
+                        <div class="bank-list-left">
+                            <div class="bank-logo">
+                                <img src="../../img/bank/兴业.png" alt="">
+                            </div>
+                            <div class="bank-tit">
+                                <p>兴业银行</p>
+                                <p>************6214</p>
+                            </div>
+                        </div>
+                        <div class="bank-list-right right-show">
+                            <img src="../../img/checked.png" alt="">
+                        </div>
+                    </li>
+                    <li class="bank-list">
+                        <div class="bank-list-left">
+                            <div class="bank-logo">
+                                <img src="../../img/bank/交通.png" alt="">
+                            </div>
+                            <div class="bank-tit">
+                                <p>交通银行</p>
+                                <p>************6214</p>
+                            </div>
+                        </div>
+                        <div class="bank-list-right">
+                            <img src="../../img/checked.png" alt="">
+                        </div>
+                    </li>
+                    <li class="bank-list">
+                        <div class="bank-list-left">
+                            <div class="bank-logo">
+                                <img src="../../img/bank/民生.png" alt="">
+                            </div>
+                            <div class="bank-tit">
+                                <p>民生银行</p>
+                                <p>************6214</p>
+                            </div>
+                        </div>
+                        <div class="bank-list-right">
+                            <img src="../../img/checked.png" alt="">
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript" src="../../js/mui.min.js"></script>
+    <script type="text/javascript">
+        var totalMoney = 500204.36;
+        var mIpt = document.getElementById('money');
+        mIpt.placeholder = '可提现到卡'+totalMoney+'元';
+        var checks = document.querySelectorAll('.tixian-layer .bank-list-right');
+
+        mui('.tixian-layer').on('tap','.bank-list',function () {
+            for (let i = 0;i<checks.length;i++){
+                checks[i].className = 'bank-list-right';
+            }
+            this.children[1].className = 'bank-list-right right-show';
+        })
+
+    </script>
+</html>

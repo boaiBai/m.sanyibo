@@ -21,7 +21,7 @@
                         <p>************6214</p>
                     </div>
                 </div>
-                <div class="bank-list-right">
+                <div class="bank-list-right right-show">
                     <img src="../../img/checked.png" alt="">
                 </div>
             </li>
@@ -35,8 +35,11 @@
                         <p>************6214</p>
                     </div>
                 </div>
+                <div class="bank-list-right">
+                    <img src="../../img/checked.png" alt="">
+                </div>
             </li>
-            <li class="bank-list">
+            <li class="bank-list1">
                 <div class="bank-list-left">
                     <div class="bank-logo">
                         <img src="../../img/addBank.png" alt="">
@@ -45,7 +48,7 @@
                         <p>添加银行卡</p>
                     </div>
                 </div>
-                <div class="bank-list-right">
+                <div class="bank-list-right1">
                     <img class="goto" src="../../img/goto.png" alt="">
                 </div>
             </li>
@@ -112,9 +115,17 @@
         var layer1 = document.getElementsByClassName('layer1')[0];
         var layer2 = document.getElementsByClassName('layer2')[0];
         var inputs = document.querySelectorAll('.input-list input');
+        var checks = document.querySelectorAll('.bank-list-right');
         // inputs[0].focus();
 
-        mui('body').on('tap','.close1',function () {
+        mui('.banks').on('tap','.bank-list',function () {
+            for (let i = 0;i<checks.length;i++){
+                checks[i].className = 'bank-list-right';
+            }
+            this.children[1].className = 'bank-list-right right-show';
+        })
+
+        mui('.layer1-tit').on('tap','.close1',function () {
             layer1.style.display = 'none';
         })
         mui('.input-list').on('input','input',function () {

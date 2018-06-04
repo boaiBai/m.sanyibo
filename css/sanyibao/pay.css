@@ -1,3 +1,4 @@
+/*充值样式*/
 .top-tit{
     width: 100%;
     height: 30px;
@@ -10,7 +11,7 @@
 .banks{
     background-color: #ffffff;
 }
-.bank-list{
+.bank-list,.bank-list1{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -19,6 +20,9 @@
     padding-top: 1vw;
     padding-bottom: 1vw;
     border-bottom: solid 1px #E2E2E2;
+}
+.bank-list:nth-last-of-type(1),.bank-list1{
+    border: none;
 }
 .bank-list-left{
     display: flex;
@@ -38,12 +42,19 @@
     color: #333;
     margin-bottom: 3px;
 }
+.bank-list-right{
+    display: none;
+}
+.bank-list-right.right-show{
+    display: block;
+}
 .bank-list-right img{
     width: 7vw;
     display: block;
 }
-.bank-list-right .goto{
+.bank-list-right1 .goto{
     width: 5vw;
+    display: block;
 }
 .banks .bank-list:nth-last-of-type(1) .bank-tit p{
     margin: 0;
@@ -206,4 +217,87 @@ button:enabled:active{
 }
 .close2 img{
     width: 9vw;
+}
+
+/*提现样式*/
+.money-list{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 4vw;
+    height: 14vw;
+    padding: 1vw 0;
+    border-bottom: solid 1px #E2E2E2;
+    color: #333333;
+}
+.money-list:nth-last-of-type(1){
+    border: none;
+}
+.list-left.money-left{
+    display: flex;
+    align-items: center;
+}
+.list-left label{
+    font-size: 25px;
+}
+.list-left input{
+    width: 60vw;
+    padding: 0;
+    margin: 0;
+    border: none;
+    font-size: 15px;
+}
+.list-left p{
+    font-size: 15px;
+    color: #333;
+    margin: 0;
+}
+.list-right p{
+    margin: 0;
+    font-size: 14px;
+    color: #3b7db4;
+    padding: 2vw 4vw;
+}
+.list-right p.bl{
+    border-left: solid 1px #E2E2E2;
+}
+.list-right span{
+    margin: 0;
+    font-size: 14px;
+    color: #f33632;
+    padding: 2vw 4vw;
+}
+.btn-div.tixian-btn{
+    margin: 0;
+}
+.tixian-money{
+    padding-bottom: 0;
+}
+input::-webkit-input-placeholder{
+    color: #cccccc;
+}
+input::-moz-placeholder{   /* Mozilla Firefox 19+ */
+    color: #cccccc;
+}
+input:-moz-placeholder{    /* Mozilla Firefox 4 to 18 */
+    color: #cccccc;
+}
+input:-ms-input-placeholder{  /* Internet Explorer 10-11 */
+    color: #cccccc;
+}
+
+.choose-bank{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100vw;
+    background-color: #ffffff;
+    z-index: 999;
+    padding-bottom: 4vw;
+}
+.tixian-layer .layer1-tit h1{
+    font-weight: normal;
+}
+.tixian-layer .bank-list{
+    border-bottom: solid 1px #E2E2E2;
 }
