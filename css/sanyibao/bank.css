@@ -77,6 +77,10 @@
     font-size: 18px;
     color: #333333;
 }
+.add-more.enough{
+    background-color: #e1e1e1;
+    color: #999999;
+}
 #bottomLayer.mui-popover.mui-popover-action .mui-table-view{
     margin: 0;
     border-radius: 0;
@@ -107,4 +111,37 @@
 }
 #bottomLayer.mui-popover.mui-popover-action .mui-table-view:nth-of-type(2){
     margin-top: 8px;
+}
+.empty-div{
+    text-align: center;
+    margin-top: 20vw;
+}
+.empty-div img{
+    width: 50vw;
+}
+.empty-div p{
+    color: #4b4b4b;
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+.btn-div{
+    width: 100%;
+    margin-top: 16px;
+}
+.btn-div .btn{
+    width: 90%;
+    height: 22vw;
+    text-align: center;
+    background: url("../../img/edit/btn-bg.png") no-repeat;
+    background-size: 100% 100%;
+    border: none;
+    outline: none;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    font-size: 18px;
+}
+button:enabled:active{
+    background-color: #efeff4;
 }
