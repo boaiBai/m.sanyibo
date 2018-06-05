@@ -9,71 +9,159 @@
         <link rel="stylesheet" href="../../css/sanyibao/bank.css">
     </head>
     <body class="bg-red">
-        <div class="bank-main">
-            <div class="bank-list">
-                <div class="list-top">
-                    <div class="list-top-left">
-                        <div class="bank-logo">
-                            <img src="../../img/bank/兴业.png" alt="">
+        <div class="main">
+            <div class="bank-main">
+                <div class="bank-list">
+                    <div class="list-top">
+                        <div class="list-top-left">
+                            <div class="bank-logo">
+                                <img src="../../img/bank/兴业.png" alt="">
+                            </div>
+                            <div class="bank-tit">
+                                <p class="bank-tit-main">兴业银行</p>
+                                <p class="bank-tit-phone">手机尾号1321</p>
+                            </div>
                         </div>
-                        <div class="bank-tit">
-                            <p class="bank-tit-main">兴业银行</p>
-                            <p class="bank-tit-phone">手机尾号1321</p>
+                        <div class="list-top-right shows">
+                            <span>默认卡</span>
+                            <div>
+                                <img src="../../img/check.png" alt="">
+                            </div>
                         </div>
                     </div>
-                    <div class="list-top-right">
-                        <span>默认卡</span>
-                        <div>
-                            <img src="../../img/check.png" alt="">
-                        </div>
+                    <div class="list-bottom">
+                        <span>••••</span>
+                        <span>••••</span>
+                        <span>••••</span>
+                        <span>6214</span>
                     </div>
                 </div>
-                <div class="list-bottom">
-                    <span>••••</span>
-                    <span>••••</span>
-                    <span>••••</span>
-                    <span>6214</span>
+                <div class="bank-list">
+                    <div class="list-top">
+                        <div class="list-top-left">
+                            <div class="bank-logo">
+                                <img src="../../img/bank/工商.png" alt="">
+                            </div>
+                            <div class="bank-tit">
+                                <p class="bank-tit-main">工商银行</p>
+                                <p class="bank-tit-phone">手机尾号1321</p>
+                            </div>
+                        </div>
+                        <div class="list-top-right">
+                            <span>默认卡</span>
+                            <div>
+                                <img src="../../img/check.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list-bottom">
+                        <span>••••</span>
+                        <span>••••</span>
+                        <span>••••</span>
+                        <span>6215</span>
+                    </div>
+                </div>
+                <div class="bank-list">
+                    <div class="list-top">
+                        <div class="list-top-left">
+                            <div class="bank-logo">
+                                <img src="../../img/bank/民生.png" alt="">
+                            </div>
+                            <div class="bank-tit">
+                                <p class="bank-tit-main">民生银行</p>
+                                <p class="bank-tit-phone">手机尾号1321</p>
+                            </div>
+                        </div>
+                        <div class="list-top-right">
+                            <span>默认卡</span>
+                            <div>
+                                <img src="../../img/check.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list-bottom">
+                        <span>••••</span>
+                        <span>••••</span>
+                        <span>••••</span>
+                        <span>6216</span>
+                    </div>
                 </div>
             </div>
-            <div class="bank-list">
-                <div class="list-top">
-                    <div class="list-top-left">
-                        <div class="bank-logo">
-                            <img src="../../img/bank/工商.png" alt="">
-                        </div>
-                        <div class="bank-tit">
-                            <p class="bank-tit-main">工商银行</p>
-                            <p class="bank-tit-phone">手机尾号1321</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="list-bottom">
-                    <span>••••</span>
-                    <span>••••</span>
-                    <span>••••</span>
-                    <span>6214</span>
-                </div>
-            </div>
-            <div class="bank-list">
-                <div class="list-top">
-                    <div class="list-top-left">
-                        <div class="bank-logo">
-                            <img src="../../img/bank/民生.png" alt="">
-                        </div>
-                        <div class="bank-tit">
-                            <p class="bank-tit-main">民生银行</p>
-                            <p class="bank-tit-phone">手机尾号1321</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="list-bottom">
-                    <span>••••</span>
-                    <span>••••</span>
-                    <span>••••</span>
-                    <span>6214</span>
-                </div>
+            <div class="add-more">添加银行卡</div>
+        </div>
+        <!--弹出菜单-->
+        <div id="bottomLayer" class="mui-popover mui-popover-bottom mui-popover-action">
+            <!-- 可选择菜单 -->
+            <ul class="mui-table-view">
+                <li class="mui-table-view-cell">
+                    <a href="#" class="layer-tit">您可对尾号为<span class="weihao"></span>的银行卡进行操作</a>
+                </li>
+                <li class="mui-table-view-cell">
+                    <a href="#" class="moren">设置为默认卡</a>
+                </li>
+                <li class="mui-table-view-cell">
+                    <a href="#" class="remove-bank">删除银行卡</a>
+                </li>
+            </ul>
+            <!-- 取消菜单 -->
+            <ul class="mui-table-view">
+                <li class="mui-table-view-cell">
+                    <a href="#bottomLayer">取消</a>
+                </li>
+            </ul>
+        </div>
+        <!--空页面-->
+        <div class="empty-div" style="display: none;">
+            <img src="../../img/empty-bank.png" alt="">
+            <p>首次绑卡赠送500元现金券</p>
+            <div class="btn-div">
+                <a href="addBank.html"><button class="btn">添加银行卡</button></a>
             </div>
         </div>
-        <div class="add-more">添加银行卡</div>
     </body>
+    <script type="text/javascript" src="../../js/mui.min.js"></script>
+    <script type="text/javascript">
+        var weiHao = document.querySelector('.weihao');
+        var $this;
+        var defaultBank = document.getElementsByClassName('list-top-right');
+        var bankCards = document.getElementsByClassName('bank-list');
+        if (bankCards.length == 3){
+            document.querySelector('.add-more').className = 'add-more enough';
+        }else if(bankCards.length == 0){
+            document.querySelector('.main').style.display = 'none';
+            document.querySelector('.empty-div').style.display = 'block';
+        }
+        //弹窗
+        mui('.bank-main').on('tap','.bank-list',function () {
+            $this = this;
+            weiHao.textContent = this.children[1].children[3].textContent;
+            mui('#bottomLayer').popover('toggle');
+        })
+        //设置默认卡
+        mui('.mui-table-view-cell').on('tap','.moren',function () {
+            for (let i = 0;i<defaultBank.length;i++){
+                defaultBank[i].className = 'list-top-right';
+            }
+            $this.children[0].children[1].className = 'list-top-right shows';
+            mui('#bottomLayer').popover('toggle');
+        })
+        //删除银行卡
+        mui('.mui-table-view-cell').on('tap','.remove-bank',function () {
+            document.querySelector('.bank-main').removeChild($this);
+            if (bankCards.length < 3){
+                document.querySelector('.add-more').className = 'add-more';
+                if(bankCards.length == 0){
+                    document.querySelector('.main').style.display = 'none';
+                    document.querySelector('.empty-div').style.display = 'block';
+                }
+            }
+            mui('#bottomLayer').popover('toggle');
+        })
+        //添加银行卡
+        mui('body').on('tap','.add-more',function () {
+            if (bankCards.length < 3){
+                location.href='addBank.html';
+            }
+        })
+    </script>
 </html>

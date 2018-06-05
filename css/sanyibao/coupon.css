@@ -1,0 +1,88 @@
+ul,li{
+    list-style: none;
+}
+.tabs{
+    width: 100%;
+    background-color: #ffffff;
+}
+.tabs ul{
+    display: flex;
+    width: 72vw;
+    margin: 0 auto;
+}
+.tabs ul li{
+    width: 24vw;
+    height: 10.6vw;
+    line-height: 10.6vw;
+    text-align: center;
+    font-size: 15px;
+    color: #333333;
+    font-weight: bold;
+}
+.tabs ul li.active{
+    color: #f33632;
+    background: url("../../img/coupon/bg-bottom.png") no-repeat center bottom;
+    background-size: 5.3vw;
+}
+.coupon-list{
+    width: 92vw;
+    height: 30.67vw;
+    margin: 12px auto;
+    background: url("../../img/coupon/bg2.png") no-repeat;
+    background-size: 100% 100%;
+}
+.coupon-list>div{
+    float: left;
+}
+.coupon_tit {
+    width: 78.67vw;
+    height: 30.67vw;
+    color: #fff;
+    padding-left: 30px;
+}
+.coupon_tit>p:nth-of-type(1) {
+    font-size: 30px;
+    padding-top: 5.4vw;
+    padding-bottom: 2.7vw;
+}
+.coupon_tit p,.coupon_tit p span{
+    font-size: 12px;
+    color: #ffffff;
+    margin: 0;
+}
+.coupon_btn{
+    width: 13.33vw;
+}
+.coupon_btn a {
+    display: block;
+    font-size: 12px;
+    text-align: center;
+    padding: 0 4vw;
+    margin-top: 4.5vw;
+    color: #f33632;
+    font-weight: bold;
+}
+.coupon-list.has-use{
+    background: url("../../img/coupon/bg1.png") no-repeat;
+    background-size: 100% 100%;
+}
+.coupon-list.has-use .coupon_btn a{
+    color: #999999;
+    margin-top: 7vw;
+}
+.empty-tips{
+    display: none;
+    text-align: center;
+    margin-top: 20vw;
+}
+.empty-tips.show{
+    display: block;
+}
+.empty-tips img{
+    width: 42.8vw;
+}
+.empty-tips p{
+    margin-top: 4vw;
+    font-size: 15px;
+    color: #999999;
+}
