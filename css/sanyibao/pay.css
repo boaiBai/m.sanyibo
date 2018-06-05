@@ -295,9 +295,21 @@ input:-ms-input-placeholder{  /* Internet Explorer 10-11 */
     z-index: 999;
     padding-bottom: 4vw;
 }
+.tixian-layer{
+    display: none;
+}
 .tixian-layer .layer1-tit h1{
     font-weight: normal;
 }
 .tixian-layer .bank-list{
     border-bottom: solid 1px #E2E2E2;
+}
+.goup{
+    -webkit-animation: up 1s ease;
+    -o-animation: up 1s ease;
+    animation: up 1s ease;
+}
+@keyframes up {
+    from{transform: translate3d(0,100%,0)}
+    to{transform: translate3d(0,0,0)}
 }

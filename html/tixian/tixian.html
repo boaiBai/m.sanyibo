@@ -11,7 +11,7 @@
     <body class="bg-red">
         <p class="top-tit">账户余额：<span class="top-money">100.00</span>元</p>
         <ul class="banks">
-            <li class="bank-list">
+            <li class="bank-list" id="choose-bank">
                 <div class="bank-list-left">
                     <div class="bank-logo">
                         <img src="../../img/bank/兴业.png" alt="">
@@ -90,7 +90,7 @@
                             </div>
                             <div class="bank-tit">
                                 <p>交通银行</p>
-                                <p>************6214</p>
+                                <p>************6215</p>
                             </div>
                         </div>
                         <div class="bank-list-right">
@@ -104,7 +104,7 @@
                             </div>
                             <div class="bank-tit">
                                 <p>民生银行</p>
-                                <p>************6214</p>
+                                <p>************6216</p>
                             </div>
                         </div>
                         <div class="bank-list-right">
@@ -117,16 +117,28 @@
     </body>
     <script type="text/javascript" src="../../js/mui.min.js"></script>
     <script type="text/javascript">
+        var tLayer = document.getElementsByClassName('tixian-layer')[0];
+        var layerContent = document.getElementsByClassName('choose-bank')[0];
         var totalMoney = 500204.36;
         var mIpt = document.getElementById('money');
         mIpt.placeholder = '可提现到卡'+totalMoney+'元';
         var checks = document.querySelectorAll('.tixian-layer .bank-list-right');
+        var $bank = document.querySelector('#choose-bank .bank-list-left');
 
         mui('.tixian-layer').on('tap','.bank-list',function () {
             for (let i = 0;i<checks.length;i++){
                 checks[i].className = 'bank-list-right';
             }
             this.children[1].className = 'bank-list-right right-show';
+            $bank.innerHTML = this.children[0].innerHTML;
+        })
+        mui('.tixian-layer').on('tap','.close1',function () {
+            tLayer.style.display = 'none';
+            layerContent.className = 'choose-bank';
+        })
+        mui('.banks').on('tap','#choose-bank',function () {
+            tLayer.style.display = 'block';
+            layerContent.className = 'choose-bank goup';
         })
 
     </script>
