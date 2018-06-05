@@ -75,6 +75,7 @@
     text-align: center;
     background-color: #ffffff;
     font-size: 18px;
+    color: #333333;
 }
 #bottomLayer.mui-popover.mui-popover-action .mui-table-view{
     margin: 0;
