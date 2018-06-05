@@ -21,7 +21,7 @@
                             <p class="bank-tit-phone">手机尾号1321</p>
                         </div>
                     </div>
-                    <div class="list-top-right">
+                    <div class="list-top-right shows">
                         <span>默认卡</span>
                         <div>
                             <img src="../../img/check.png" alt="">
@@ -46,12 +46,18 @@
                             <p class="bank-tit-phone">手机尾号1321</p>
                         </div>
                     </div>
+                    <div class="list-top-right">
+                        <span>默认卡</span>
+                        <div>
+                            <img src="../../img/check.png" alt="">
+                        </div>
+                    </div>
                 </div>
                 <div class="list-bottom">
                     <span>••••</span>
                     <span>••••</span>
                     <span>••••</span>
-                    <span>6214</span>
+                    <span>6215</span>
                 </div>
             </div>
             <div class="bank-list">
@@ -65,15 +71,67 @@
                             <p class="bank-tit-phone">手机尾号1321</p>
                         </div>
                     </div>
+                    <div class="list-top-right">
+                        <span>默认卡</span>
+                        <div>
+                            <img src="../../img/check.png" alt="">
+                        </div>
+                    </div>
                 </div>
                 <div class="list-bottom">
                     <span>••••</span>
                     <span>••••</span>
                     <span>••••</span>
-                    <span>6214</span>
+                    <span>6216</span>
                 </div>
             </div>
         </div>
         <div class="add-more">添加银行卡</div>
+        <!--弹出菜单-->
+        <div id="bottomLayer" class="mui-popover mui-popover-bottom mui-popover-action">
+            <!-- 可选择菜单 -->
+            <ul class="mui-table-view">
+                <li class="mui-table-view-cell">
+                    <a href="#" class="layer-tit">您可对尾号为<span class="weihao"></span>的银行卡进行操作</a>
+                </li>
+                <li class="mui-table-view-cell">
+                    <a href="#" class="moren">设置为默认卡</a>
+                </li>
+                <li class="mui-table-view-cell">
+                    <a href="#" class="remove-bank">删除银行卡</a>
+                </li>
+            </ul>
+            <!-- 取消菜单 -->
+            <ul class="mui-table-view">
+                <li class="mui-table-view-cell">
+                    <a href="#bottomLayer">取消</a>
+                </li>
+            </ul>
+        </div>
     </body>
+    <script type="text/javascript" src="../../js/mui.min.js"></script>
+    <script type="text/javascript">
+        var weiHao = document.querySelector('.weihao');
+        var $this;
+        var defaultBank = document.getElementsByClassName('list-top-right');
+        //弹窗
+        mui('.bank-main').on('tap','.bank-list',function () {
+            $this = this;
+            weiHao.textContent = this.children[1].children[3].textContent;
+            mui('#bottomLayer').popover('toggle');
+        })
+        //设置默认卡
+        mui('.mui-table-view-cell').on('tap','.moren',function () {
+            for (let i = 0;i<defaultBank.length;i++){
+                defaultBank[i].className = 'list-top-right';
+            }
+            $this.children[0].children[1].className = 'list-top-right shows';
+            mui('#bottomLayer').popover('toggle');
+        })
+        //删除银行卡
+        mui('.mui-table-view-cell').on('tap','.remove-bank',function () {
+            document.querySelector('.bank-main').removeChild($this);
+            mui('#bottomLayer').popover('toggle');
+        })
+    </script>
 </html>
