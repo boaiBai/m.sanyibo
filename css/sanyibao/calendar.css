@@ -1,0 +1,104 @@
+.calendar-box{
+	width: 100vw;
+	text-align: center;
+	color: #b5b5b5;
+	background: #FFFFFF;
+	line-height: 30px;
+}
+
+.calendar-box thead{
+	font-size: 12px;
+}
+
+.calendar-box tbody td{
+	/*line-height: 40px;*/
+	height: 40px;
+}
+
+
+.calendar-box .btn{
+	display: inline-block;
+	color: #666;
+	height: 30px;
+	width: 30px;
+	border-radius: 50%;
+	background: #FFFFFF;
+}
+
+.calendar-box .btn_on{
+	background: #E7E7E7;
+}
+
+.calendar-box .btn_active{
+	background: #F33632;
+	color: #FFF9EC;
+}
+
+
+.calendar-num{
+	width: 100vw;text-align: center;height:30px;line-height:30px;background: #FFF3BF;float: left;color:fAB24d
+}
+
+.calendar-list{
+	width: 100vw;
+	
+}
+
+.calendar-list tr{
+	width: 100%;
+	margin-top: 10px;
+	background: #FFFFFF;
+	float: left;
+}
+
+.calendar-list td{
+	width: 100%;
+}
+
+.calendar-list td span.title{
+	width: 65vw;
+	font-size: 14px;
+	padding:5px 0 5px 5vw;
+	display:block;
+	float: left;
+}
+
+
+.calendar-list td span.time{
+	width: 35vw;
+	font-size: 14px;
+	padding:5px 5vw 5px 0;
+	display:block;
+	float: right;
+	text-align: right;
+	color: #f3AC30;
+}
+
+.calendar-list td span.content{
+	width: 33.3%;
+	float: left;
+	text-align: center;
+	padding: 20px;
+	font-size: 12px;
+}
+
+.calendar-list td span.num{
+	font-size: 16px;
+	font-weight: bold;
+	padding-right: 3px;
+}
+
+.calendar-list td span.info{
+	color: #A8A8A8;
+	padding-top: 5px;
+}
+
+.noData{
+	margin: 20px 0;font-size: 12px; color:#A1A1A1 ;
+}
+
+.noData td{
+	width: 100vw;text-align: center;
+}
+
+

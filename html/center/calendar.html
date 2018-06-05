@@ -1,0 +1,127 @@
+<!DOCTYPE >
+<html>
+	<head>
+		<meta charset="utf-8">
+    	  <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+    	<title>三益宝--还款日历</title>
+    	<link rel="stylesheet" href="../../css/mui.css"/>
+    	<link rel="stylesheet" href="../../css/sanyibao/commo.css" />
+    	<link rel="stylesheet" href="../../css/sanyibao/calendar.css" />
+    	<link rel="stylesheet" href="../../css/mui.picker.min.css" />ss
+	</head>
+	<body class="bg-color">
+		<header class="mui-bar mui-bar-nav">
+		    <h1 class="mui-title"></h1>
+		    <a class="mui-icon mui-pull-right toady" style="font-size: 12px;top:10px">今天</a>
+		</header>
+		<div class="div_normal" style="height: 24px;"></div>
+		<div class="calendar-num">当月还款共计2笔，总金额200元</div>
+		<!--日历-->
+		<div id="date-box">
+			
+		</div>
+		<!--还款列表-->
+		<table class="calendar-list">
+			<tr>
+				<td>
+					<span class="title">鼓励金【GTD20180425-495】</span>
+					<span class="time">2018-06-04</span>
+					<div class="clear"></div>
+					<!--还款详情-->
+					<span class="content">
+						<span class="num">0</span>元<br/>
+						<span class="info">还款本金</span>
+					</span>
+					<span class="content">
+						<span class="num">5.63</span>元<br/>
+						<span  class="info">还款利息</span>
+					</span>
+					<span class="content">
+						<span  class="num">1</span>/12期<br/>
+						<span class="info">当前</span>
+					</span>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<span class="title">鼓励金【GTD20180425-495】</span>
+					<span class="time">2018-06-04</span>
+					<div class="clear"></div>
+					<!--还款详情-->
+					<span class="content">
+						<span class="num">0</span>元<br/>
+						<span class="info">还款本金</span>
+					</span>
+					<span class="content">
+						<span class="num">5.63</span>元<br/>
+						<span  class="info">还款利息</span>
+					</span>
+					<span class="content">
+						<span  class="num">1</span>/12期<br/>
+						<span class="info">当前</span>
+					</span>
+				</td>
+			</tr>
+			<tr class="noData" style="background: none;">
+				<td>
+					<img src="../../img/noData.png"  style="width: 30%;"/><br/>
+					今天没有项目还款哦
+				</td>
+			</tr>
+		</table>
+	</body>
+	<script src="../../js/mui.js"></script>
+	<script type="text/javascript" src="../../js/sanyibao/commo.js" ></script>
+	<script src="../../js/mui.picker.min.js"></script>
+	<script>
+		window.onload=function(){
+			var nowDate=new Date();
+			var year=nowDate.getFullYear();
+			var month=nowDate.getMonth()+1;
+			var date=nowDate.getDate();
+			document.querySelector(".mui-title").innerText=year+"年"+month+"月"+"▾";
+//			获取日历面板
+			//需要还款的日期数组
+			var dateArray=[4,8,7,10,11,13,15]
+			CalendarBox("date-box",year,month,date,dateArray);
+			
+			//点击今天触发
+//			document.querySelector(".toady").addEventListener("tap",function(){
+//				
+//			})
+			
+			//选择日期时触发
+			mui("#date-box").on("tap",".btn",function(){
+				if(this.className.indexOf("btn_active")>=0){
+					return false;
+				}
+				this.classList.add("btn_active");
+				var $td=document.querySelectorAll(".btn_active");
+				for(var i=0;i<$td.length;i++){
+					if(this!=$td[i]){
+						$td[i].classList.remove("btn_active")
+					}				
+				}
+				//获取年月日
+				var selectYear=document.querySelector(".mui-title").innerText;
+				//数据盒子
+				var dataBox=document.querySelector(".calendar-list");
+				dataBox.innerHTML="";
+			})
+			
+			document.querySelector(".mui-title").addEventListener("tap",function(){
+				var dtpicker=new mui.DtPicker({
+					type:"month"
+				});
+				dtpicker.show(function(e){
+					console.log(e.value)
+					//在这里进行数据处理
+					var dateArray=[10,11]
+					document.querySelector("#date-box").innerHTML="";
+					document.querySelector(".mui-title").innerText=e.y.text+"年"+parseInt(e.m.text)+"月"+"▾";
+					CalendarBox("date-box",e.y.text,parseInt(e.m.text),"",dateArray);
+				})
+			})
+		}
+	</script>
+</html>
