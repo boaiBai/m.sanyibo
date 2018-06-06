@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+        <title>账户信息</title>
+        <link rel="stylesheet" href="../../css/mui.min.css" />
+        <link rel="stylesheet" href="../../css/sanyibao/commo.css" />
+        <link rel="stylesheet" href="../../css/sanyibao/accountInfo.css">
+    </head>
+    <body class="bg-red">
+        <div class="item-row">
+            <a href="openAccount.html">
+                <div class="item-col">
+                    <div>
+                        <p class="col-tit">实名认证</p>
+                    </div>
+                    <div>
+                        <span class="col-tit1">王**</span>
+                        <img src="../../icon/jiantou.png" alt="">
+                    </div>
+                </div>
+            </a>
+            <a href="javascript:;">
+                <div class="item-col">
+                    <div>
+                        <p class="col-tit">绑定手机</p>
+                    </div>
+                    <div>
+                        <span class="col-tit1">135****2342</span>
+                    </div>
+                </div>
+            </a>
+            <a href="../changeLoginPsw/changeLoginPsw.html">
+                <div class="item-col">
+                    <div>
+                        <p class="col-tit">登录密码</p>
+                    </div>
+                    <div>
+                        <span class="col-tit1">已设置</span>
+                        <img src="../../icon/jiantou.png" alt="">
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="item-row">
+            <a href="feedback.html">
+                <div class="item-col">
+                    <div>
+                        <p class="col-tit">意见反馈</p>
+                    </div>
+                    <div>
+                        <img src="../../icon/jiantou.png" alt="">
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="out-btn">
+            <button>退出登录</button>
+        </div>
+    </body>
+    <script type="text/javascript" src="../../js/mui.min.js"></script>
+    <script type="text/javascript">
+        //退出登录
+        mui('.out-btn').on('tap','button',function () {
+            console.log('退出了')
+        })
+    </script>
+</html>

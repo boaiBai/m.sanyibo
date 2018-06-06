@@ -1,0 +1,122 @@
+ul,li{
+    list-style: none;
+}
+.mui-bar{
+    background-color: #ffffff;
+    padding: 0 4vw;
+}
+.shaixuan{
+    float: right;
+    width: 4.8vw;
+    height: 44px;
+    line-height: 44px;
+}
+.shaixuan img{
+    width: 100%;
+}
+.main{
+    margin-top: 44px;
+    width: 100%;
+}
+.top-tit {
+    width: 100%;
+    height: 8vw;
+    line-height: 8vw;
+    margin: 0;
+    padding: 0 4vw;
+    font-size: 12px;
+    color: #999999;
+}
+.top-tit.fixed-top{
+    position: fixed;
+    left: 0;
+    top: 44px;
+    background-color: #efeff4;
+}
+.item-ul{
+    background-color: #ffffff;
+}
+.item-list{
+    margin-left: 4vw;
+    padding-right: 4vw;
+    display: flex;
+    justify-content: space-between;
+    height: 16vw;
+    border-bottom: solid 1px #E2E2E2;
+}
+.item-ul .item-list:nth-last-of-type(1){
+    border: none;
+}
+.item-list div{
+    align-self: center;
+}
+.item-list div p{
+    margin: 0;
+}
+.item-list div:nth-last-of-type(1) p{
+    text-align: right;
+}
+.fb{
+    font-size: 15px;
+    color: #333333;
+}
+.fs{
+    font-size: 12px;
+    color: #999999;
+}
+.check-layer{
+    display: none;
+}
+.mask{
+    position: fixed;
+    top: 44px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 22;
+    background-color: rgba(0,0,0,.3);
+}
+.layer-main{
+    width: 100vw;
+    position: fixed;
+    top: 44px;
+    left: 0;
+    z-index: 23;
+    background-color: #ffffff;
+    border-top: solid 1px #E2E2E2;
+}
+.check-ul{
+    width: 100vw;
+    padding: 0 5.4vw 4vw 5.4vw;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.check-list{
+    width: 26.5vw;
+    height: 9.4vw;
+    line-height: 9.4vw;
+    margin-top: 4vw;
+    color: #333333;
+    font-size: 14px;
+    border: solid 1px #e2e2e2;
+    text-align: center;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+.check-list.active{
+    color: #e40800;
+    border-color: #f33632;
+    background-color: #ffe8e5;
+}
+.add-more{
+    width: 20vw;
+    text-align: center;
+    margin: 10px auto 20px auto;
+}
+@media screen and (max-width: 320px) {
+    .fb{
+        font-size: 13px;
+    }
+}
