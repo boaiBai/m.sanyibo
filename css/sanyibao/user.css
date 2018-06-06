@@ -111,3 +111,7 @@ span.noMoney{
 	border:solid 1px #ff5f41;
 	margin: 0 20% 20px 10%;		
 }
+
+span.rightName{
+	display: inline-block;float: right;margin-right: 35px;color: #CCCCCC;font-size: 12px;
+}
