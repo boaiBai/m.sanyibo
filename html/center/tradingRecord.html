@@ -266,69 +266,21 @@
             mui('body').on("tap",'.add-more',function () {
                 var html = '';
                 var html1 = '';
-                var data = [
-                    {
-                        time:'2017年1月',
-                        res:[
-                            {
-                                a:'个体贷【GTD20170903-01】还本',
-                                b:'3-13 15:38',
-                                c:'-109.33元',
-                                d:'余额：110.00元'
-                            },
-                            {
-                                a:'个体贷【GTD20170903-01】还本',
-                                b:'3-13 15:38',
-                                c:'-109.33元',
-                                d:'余额：120.00元'
-                            },
-                            {
-                                a:'个体贷【GTD20170903-01】还本',
-                                b:'3-13 15:38',
-                                c:'-109.33元',
-                                d:'余额：130.00元'
-                            }
-                        ]
-                    },
-                    {
-                        time:'2017年0月',
-                        res:[
-                            {
-                                a:'个体贷【GTD20170903-01】还本',
-                                b:'3-13 15:38',
-                                c:'-109.33元',
-                                d:'余额：110.00元'
-                            },
-                            {
-                                a:'个体贷【GTD20170903-01】还本',
-                                b:'3-13 15:38',
-                                c:'-109.33元',
-                                d:'余额：120.00元'
-                            },
-                            {
-                                a:'个体贷【GTD20170903-01】还本',
-                                b:'3-13 15:38',
-                                c:'-109.33元',
-                                d:'余额：130.00元'
-                            }
-                        ]
-                    }
-                ];
                 //post请求
                 mui.post('http://server-name/login.php',{
                         username:'username',
                         password:'password'
                     },function(data){
-                        for (let i = 0;i<data.length;i++){
-                            if(data[i].time == topTits[topTits.length-1].textContent){
-                                for (let j = 0;j<data[i].res.length;j++){
-                                    html += '<li class="item-list"><div><p class="fb">' +data[i].res[j].a+'</p><p class="fs">' +data[i].res[j].b+'</p></div><div><p class="fb">'+data[i].res[j].c+'</p><p class="fs">'+data[i].res[j].d+ '</p></div></li>';
+                        for (let i = 0;i<data.data.length;i++){
+                            if(data.data[i].name == topTits[topTits.length-1].textContent){
+                                for (let j = 0;j<data.data[i].res.length;j++){
+                                    html += '<li class="item-list"><div><p class="fb">' +data.data[i].value[j].type+'</p><p class="fs">' +data.data[i].value[j].mdhi+'</p></div><div><p class="fb">'+data.data[i].value[j].affect_money+'元</p><p class="fs">余额：'+data.data[i].value[j].account_money+ '元</p></div></li>';
                                 }
                                 uls.innerHTML += html;
                             }else{
-                                html1 += '<div class="main-item"><p class="top-tit">'+data[i].time+'</p><ul class="item-ul">';
-                                for (let j = 0;j<data[i].res.length;j++){
-                                    html1 += '<li class="item-list"><div><p class="fb">' +data[i].res[j].a+'</p><p class="fs">' +data[i].res[j].b+'</p></div><div><p class="fb">'+data[i].res[j].c+'</p><p class="fs">'+data[i].res[j].d+ '</p></div></li>';
+                                html1 += '<div class="main-item"><p class="top-tit">'+data.data[i].name+'</p><ul class="item-ul">';
+                                for (let j = 0;j<data.data[i].res.length;j++){
+                                    html1 += '<li class="item-list"><div><p class="fb">' +data.data[i].value[j].type+'</p><p class="fs">' +data.data[i].value[j].mdhi+'</p></div><div><p class="fb">'+data.data[i].value[j].affect_money+'元</p><p class="fs">余额：'+data.data[i].value[j].account_money+ '元</p></div></li>';
                                 }
                                 html1 += '</ul></div>';
                                 document.querySelector('.main').innerHTML += html1;
