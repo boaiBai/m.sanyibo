@@ -36,3 +36,249 @@ img,button{
 .clear{
 	clear: both;
 }
+
+
+    		/*平台概况*/
+.tableInfo{
+	width: 100vw;
+	text-align: center;
+	background: #FFFFFF;
+	font-size: 12px;
+	color: #999;
+	
+}
+
+.tableInfo  td{
+	padding: 10px 0;
+}
+
+.tableInfo tr:first-child td{
+	padding: 20px 0;
+}
+
+.tableInfo tr:first-child{
+	border-bottom: solid 1px #C9C9C9;
+}
+
+.tableInfo td span.title{
+	font-size: 20px;
+	color: #000;
+	font-weight: bold;
+	padding-right: 5px;
+}
+
+/*底部*/
+footer{
+	text-align: center;
+	color: #CCCCCC;
+	font-size: 12px;
+	background: F6F7F9;
+	padding-bottom: 20px;
+}
+
+footer ul li{
+	list-style: none;
+	float: left;   			
+	width: 33.3vw;
+	height: 50px;
+	line-height: 50px;
+	color: #999999;
+	font-size: 16px;
+}
+
+.hf_logo{
+	font-weight: 100;font-size: 14px;display: inline-block;color: #999
+}
+
+.hf_logo img{
+	float: left;width: 20px;margin-top: 3px;margin-right: 5px
+}
+
+.index-project{
+	position: relative;width: 100vw;float: left;border-top: #EAEAEA 1px solid;
+}
+
+/*推荐项目*/
+.index-project .bg{
+	position: absolute;height: 99%;background: #FFE8E5;top: 0;left: 0;
+}
+
+.index-project .left_box{
+	width: 40vw;margin: 20px 0;position: relative;z-index: 9;border-right: solid 1px #CCCCCC;
+	padding-left: 20px;color:#B1B1B1;
+	font-size: 12px;float: left;
+}
+
+.index-project .right_box{
+	width: 60vw;margin: 20px 0;position: relative;z-index: 9;
+	padding-left: 10px;color:#B1B1B1;font-size: 12px;float: left
+}
+
+.index-project span.left_top{
+	color: #f33632;
+	font-weight: bold;
+	font-size: 16px;
+}
+
+.index-project span.left_font{
+	font-size: 1.5em;
+}
+.index-project .right_box span{
+	/*display: inline-block;*/
+}
+
+.index-project .right_box span.project_name{
+	color: #666;
+	font-size: 1.5em;
+	font-weight: bold;
+}
+
+.index-project .right_box span.project_number{
+	color: #666;
+}
+
+.index-project .right_box span.month{
+	padding: 0 10px 0 0;
+}
+.index-project .right_box span.money{
+	border-left:1px solid #CCCCCC;
+	padding: 0 0 0 11px;
+}
+
+.index-project .right_box span.over{
+	/*border-left:1px solid #CCCCCC;*/
+	padding: 0 11px 0 11px;
+	background: #F7F7F7;
+	color: #D8D8D8;
+}
+
+.index-project .right_box span.start{
+	padding: 0 11px 0 11px;
+	background: #FFF3BF;
+	color: #FFC255;
+}
+
+.box-title{
+	line-height: 40px;
+	width: 100vw;
+}
+
+.box-title span{
+	display:inline-block;
+}
+
+.box-title span.project{
+	float: left;
+	font-size: 18px;
+	font-weight: bold;
+	padding-left: 5px;
+}
+.box-title span.projectInfo{
+	float: right;
+	font-size: 12px;
+	padding-right: 20px;
+	color: #b8B8B8;
+}
+
+.project_tag{
+	position: absolute;z-index: 10;right: 0;width: 45px;
+}
+
+.project-title{
+	float: left;width: 35px;margin-left: 5px;
+}
+
+/*新手专享*/
+.newProject{
+	position: relative;
+}
+
+.newProject div.title{
+	width: 100vw;text-align: center;margin-top: -8px;
+}
+
+.newProject div.content{
+	margin: 10px 0;
+	width: 70vw;margin-left: 15vw;text-align: center;
+	line-height: 24px;color: #f33632;
+}
+
+.newProject span.first{
+	font-size: 2em;font-weight: bold;padding-right: 5px;
+}
+
+.newProject span.second{
+	font-size: 1.2em;font-weight: bold;padding-right: 5px;
+}
+
+.newProject span.last{
+	font-size: 1.2em;font-weight: bold;padding-right: 5px;
+}
+
+.newProject span.tag{
+	border: solid 1px #BBBBBB;
+	color: #C9C9C9;
+	font-size: 12px;
+	padding: 2px;
+	border-radius: 3px;			
+}
+
+.newProject span.bottom{
+	color: #C9C9C9;
+	font-size: 12px;
+	padding-right: 5px;
+}
+
+.newProject span.bottom-right{
+	color: #C9C9C9;
+	font-size: 12px;
+	padding-left: 6px;
+	border-left: solid 1px #eee;
+}
+
+.newProject img.bgLeft{
+	position: absolute;left:0;width:50px;top: 0;
+}
+
+.newProject img.bgRight{
+position: absolute;right:0;width:60px;top: 0;
+}
+
+.newBtn{
+	margin: 10px 0;display: inline-block;background: #ff5d40;color: #fff;padding: 5px 50px; border-radius: 30px;font-size: 16px;font-family: '微软雅黑';"
+}
+
+/*首页分类*/
+.index_nav{
+	margin-bottom: 15px;
+}
+
+.index_nav ul li{
+	width: 25vw;
+	float: left;
+	list-style-type: none;
+}
+
+.index_nav ul li a{
+	margin :0px 2.5vw;
+	width: 20vw;
+	display: inline-block;
+	color: #A1A1A1;
+	text-align: center;		
+	font-size: 12px;	
+}
+
+.index_nav img{
+	width: 100%;
+}
+
+.index_nav span.text{
+	display: inline-block;margin-top:-15px;
+}
+
+.mui-slider .mui-slider-group .mui-slider-item{
+	height: 192px;
+}
+
+#up_zzjs{width:70vw;height:30px;line-height:30px;overflow:hidden;}
+#up_zzjs #up_li a{font-size:14px; line-height:30px;height: 30px;color: #666;}
