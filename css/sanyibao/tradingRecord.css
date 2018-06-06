@@ -27,6 +27,12 @@ ul,li{
     font-size: 12px;
     color: #999999;
 }
+.top-tit.fixed-top{
+    position: fixed;
+    left: 0;
+    top: 44px;
+    background-color: #efeff4;
+}
 .item-ul{
     background-color: #ffffff;
 }
@@ -103,6 +109,11 @@ ul,li{
     color: #e40800;
     border-color: #f33632;
     background-color: #ffe8e5;
+}
+.add-more{
+    width: 20vw;
+    text-align: center;
+    margin: 10px auto 20px auto;
 }
 @media screen and (max-width: 320px) {
     .fb{
