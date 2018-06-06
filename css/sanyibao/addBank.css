@@ -70,3 +70,11 @@ input:-ms-input-placeholder{  /* Internet Explorer 10-11 */
 button:enabled:active{
     background-color: #efeff4;
 }
+.tips{
+    text-align: center;
+    margin-top: 12px;
+    font-size: 14px;
+}
+.tips a{
+    color: #999999;
+}
