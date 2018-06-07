@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+        <title>投资管理</title>
+        <link rel="stylesheet" href="../../css/mui.min.css" />
+        <link rel="stylesheet" href="../../css/sanyibao/commo.css" />
+        <link rel="stylesheet" href="../../css/sanyibao/investManage.css">
+    </head>
+    <body class="bg-red">
+        <div class="tabs">
+            <ul>
+                <a href="#"><li class="active">投资中</li></a>
+                <a href="#"><li>已还本</li></a>
+            </ul>
+        </div>
+        <div style="height: 44px;"></div>
+        <div class="main">
+            <ul class="item-ul">
+                <a href="#">
+                    <li class="item-list">
+                        <div class="list-top">
+                            <div class="top-left">
+                                <span class="top-tit">鼓励金【GTD20180524-805】</span>
+                                <img src="../../img/zhai.png" alt="">
+                            </div>
+                            <div class="top-right">
+                                <span class="top-introduce">待审核</span>
+                            </div>
+                        </div>
+                        <div class="list-bottom">
+                            <div class="list-bottom-list">
+                                <p>3000.00<span>元</span></p>
+                                <p>待收本金</p>
+                            </div>
+                            <div class="list-bottom-list">
+                                <p>360.00<span>元</span></p>
+                                <p>待收利息</p>
+                            </div>
+                            <div class="list-bottom-list">
+                                <p>12<span>个月</span></p>
+                                <p>项目期限</p>
+                            </div>
+                        </div>
+                    </li>
+                </a>
+            </ul>
+        </div>
+        <p class="add-more">更多<span class="mui-icon mui-icon-arrowdown"></span></p>
+    </body>
+    <script type="text/javascript" src="../../js/mui.min.js"></script>
+    <script type="text/javascript" src="../../js/sanyibao/commo.js"></script>
+    <script type="text/javascript">
+        window.onload = function () {
+            //加载更多
+            mui('body').on("tap",'.add-more',function () {
+                //post请求
+                mui.post('http://server-name/login.php',{
+                        username:'username',
+                        password:'password'
+                    },function(data){
+                        addMore();
+                    },'json'
+                );
+            })
+            //加载更多
+            function addMore(data) {
+                var html = '';
+                for (let i = 0;i<3;i++){
+                    html += '<a href="#"><li class="item-list"><div class="list-top"><div class="top-left">'+
+                            '<span class="top-tit">鼓励金【GTD20180524-805】</span><img src="../../img/zhai.png" alt="">'+
+                            '</div><div class="top-right"><span class="top-introduce">待审核</span></div></div><div class="list-bottom">' +
+                            '<div class="list-bottom-list"><p>3000.00<span>元</span></p><p>待收本金</p></div><div class="list-bottom-list">' +
+                            '<p>360.00<span>元</span></p><p>待收利息</p></div><div class="list-bottom-list"><p>12<span>个月</span></p>' +
+                            '<p>项目期限</p></div></div></li></a>';
+                }
+                document.querySelector('.item-ul').innerHTML += html;
+            }
+        }
+    </script>
+</html>
