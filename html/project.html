@@ -242,6 +242,9 @@
 							   '<div class="tag-box">'+tagHtml+'</div>'+
 							   '<div class="project-shouyi"><span>13.5%</span><br/><span>预期年化收益率</span></div>'+jinDuHtml;
 				document.querySelector(".data-box").appendChild($div);
+				$div.addEventListener("tap",function(){
+					window.location.href="project/porjectInfo.html"
+				})
 				//渲染进度条
 				mui('#pro'+i).progressbar({progress:70.55}).show();
 			}
