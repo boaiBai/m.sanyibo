@@ -1,4 +1,4 @@
-mui("body").on('tap','a',function(){
+mui("html").on('tap','a',function(){
 	if(this.href!="javasrcipt:void(0)"){
 		window.location.href=this.href;	
 	}
