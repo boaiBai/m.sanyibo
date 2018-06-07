@@ -86,3 +86,8 @@ ul,li{
     font-size: 15px;
     color: #999999;
 }
+.add-more{
+    width: 20vw;
+    text-align: center;
+    margin: 10px auto 20px auto;
+}

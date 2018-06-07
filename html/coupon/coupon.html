@@ -44,6 +44,30 @@
             <img src="../../img/coupon/no.png" alt="">
             <p>您还没有鼓励金哟</p>
         </div>
+        <p class="add-more">更多<span class="mui-icon mui-icon-arrowdown"></span></p>
     </body>
     <script type="text/javascript" src="../../js/mui.min.js"></script>
+    <script type="text/javascript">
+        window.onload = function () {
+            mui('body').on("tap",'.add-more',function () {
+                //post请求
+                mui.post('http://server-name/login.php',{
+                        username:'username',
+                        password:'password'
+                    },function(data){
+                        addMore(data);
+                    },'json'
+                );
+            })
+            //加载更多
+            function addMore(data) {
+                var html = '';
+                for (let i = 0;i<10;i++){
+                    html += '<li class="coupon-list"><div class="coupon_tit"><p>1000.00<span>元</span></p><p>投资满1000元即可使用</p><p>有效期至2018-03-26</p>' +
+                        '</div><div class="coupon_btn"><a href="#">立即使用</a></div></li>';
+                }
+                document.querySelector('.coupon-content').getElementsByTagName('ul')[0].innerHTML += html;
+            }
+        }
+    </script>
 </html>
