@@ -6,97 +6,225 @@
     	<title>三益宝手机站V2.0--首页</title>
     	<link rel="stylesheet" href="../css/mui.min.css"/>
     	<link rel="stylesheet" href="../css/sanyibao/commo.css" />
-    	<style>
-    		/*平台概况*/
-    		.tableInfo{
-    			width: 100vw;
-    			text-align: center;
-    			background: #FFFFFF;
-    			font-size: 12px;
-    			color: #999;
-    			
-    		}
-    		
-    		.tableInfo  td{
-    			padding: 10px 0;
-    		}
-    		
-    		.tableInfo tr:first-child td{
-    			padding: 20px 0;
-    		}
-    		
-    		.tableInfo tr:first-child{
-    			border-bottom: solid 1px #C9C9C9;
-    		}
-    		
-    		.tableInfo td span.title{
-    			font-size: 20px;
-    			color: #000;
-    			font-weight: bold;
-    			padding-right: 5px;
-    		}
-    		
-    		/*底部*/
-    		footer{
-    			text-align: center;
-    			color: #CCCCCC;
-    			font-size: 12px;
-    			background: F6F7F9;
-    			padding-bottom: 20px;
-    		}
-    		
-    		footer ul li{
-    			list-style: none;
-    			float: left;   			
-    			width: 33.3vw;
-    			height: 50px;
-    			line-height: 50px;
-    			color: #999999;
-    			font-size: 16px;
-    		}
-    		
-    		.hf_logo{
-    			font-weight: 100;font-size: 14px;display: inline-block;color: #999
-    		}
-    		
-    		.hf_logo img{
-    			float: left;width: 20px;margin-top: 3px;margin-right: 5px
-    		}
-    	</style>
 	</head>
 	
-	<!--平台情况-->
-	<table class="tableInfo">
-		<tr>
-			<td width="33.3%">
-				<span class="title">936</span><img src="../icon/up_icon.png"/ style="height: 12px;"><br/>
-				安全运营(天)
-			</td>
-			<td width="33.3%">
-				<span  class="title">13.2</span><img src="../icon/up_icon.png"/ style="height: 12px;"><br/>
-				累计成交(亿)
-			</td>
-			<td>
-				<span  class="title">9918</span><img src="../icon/up_icon.png"/ style="height: 12px;"><br/>
-				已为用户赚取(万)
-			</td>
-		</tr>
-		<tr>
-			<td colspan="3"><span class="hf_logo"><img src="../icon/hf_icon.png"/>恒丰银行存管 合规经营</span></td>
-		</tr>
-	</table>
-	
-	<!--底部通用-->
-	<footer>
-		<ul>
-			<li>联系我们</li>
-			<li>APP下载</li>
-			<li>电脑版</li>
-		</ul>
-		2012-2017版权所有 ©三益宝 京ICP备案12049919号<br/>
-		三平伟业(北京)投资管理有限公司
-	</footer>
 	<body class="bg-color">
+		<!--分类导航-->
+		<div class="box index_nav">
+			<!--banner图轮播-->
+			<div id="slider" class="mui-slider" >
+			  <div class="mui-slider-group mui-slider-loop">
+			    <!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+			    <div class="mui-slider-item mui-slider-item-duplicate">
+			      <a href="#">
+			        <img src="http://placehold.it/400x300">
+			      </a>
+			    </div>
+			    <!-- 第一张 -->
+			    <div class="mui-slider-item">
+			      <a href="#">
+			        <img src="../img/banner/banner1.png">
+			      </a>
+			    </div>
+			    <!-- 第二张 -->
+			    <div class="mui-slider-item">
+			      <a href="#">
+			         <img src="../img/banner/banner2.png">
+			      </a>
+			    </div>
+			    <!-- 第三张 -->
+			    <div class="mui-slider-item">
+			      <a href="#">
+			         <img src="../img/banner/banner3.png">
+			      </a>
+			    </div>
+			    <!-- 第四张 -->
+			    <div class="mui-slider-item">
+			      <a href="#">
+			         <img src="../img/banner/banner4.png">
+			      </a>
+			    </div>
+			    <!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+			    <div class="mui-slider-item mui-slider-item-duplicate">
+			      <a href="#">
+			        <img src="../img/banner/banner1.png">
+			      </a>
+			    </div>
+			  </div>
+			  <div class="mui-slider-indicator">
+			    <div class="mui-indicator mui-active"></div>
+			    <div class="mui-indicator"></div>
+			    <div class="mui-indicator"></div>
+			    <div class="mui-indicator"></div>
+			  </div>
+			</div>
+			<!--首页分类-->
+			<ul>
+				<li><a href=""><img src="../img/nav/ptjs.png"><br/><span class="text">平台介绍</span></a></li>
+				<li><a href="other/safetyCompliance.html"><img src="../img/nav/safe.png"><br/><span class="text">安全合规</span></a></li>
+				<li><a href="other/hotEvents.html"><img src="../img/nav/hot.png"><br/><span class="text">热门活动</span></a></li>
+				<li><a href=""><img src="../img/nav/news.png"><br/><span class="text">新手指引</span></a></li>
+				<li><a href=""><img src="../img/nav/help.png"><br/><span class="text">帮助中心</span></a></li>
+				<li><a href="other/dynamic.html"><img src="../img/nav/ptdt.png"><br/><span class="text">平台动态</span></a></li>
+				<li><a href=""><img src="../img/nav/msg.png"><br/><span class="text">信息批露</span></a></li>
+				<li><a href=""><img src="../img/nav/weixin.png"><br/><span class="text">关注微信</a></span></li>
+			</ul>
+			<!--公告-->
+			<div id="news_ad" style="border-top: solid 1px #eee;height: 30px;float: left;margin-top: 5px;width: 100vw;overflow: hidden;" >
+				<img src="../icon/laba.png" style="height:15px;width: auto;float: left;margin: 7.5px 5px 5px 20px"/>
+				<div id="up_zzjs">
+					<div id="marqueebox">
+						<div id="up_li">
+							<a href="#" target="_blank">
+								<span>滚动文字一号</span>
+							</a>
+						</div>
+						<div id="up_li">
+							<a href="#" target="_blank">
+								<span>滚动文字三号</span>
+							</a>
+						</div>
+						<div id="up_li">
+							<a href="#" target="_blank">
+								<span>滚动文字五号</span>
+							</a> 
+						</div>
+						<div id="up_li">
+							<a href="#" target="_blank">
+								<span>滚动文字七号</span>
+							</a> 
+						</div>		
+					</div>
+				</div>
+			</div>
+		</div>
+			
+		<!--新手专享-->
+		<div class="box newProject">
+			<div class="title">
+				<img src="../img/new-top.png"  style="width: 40vw;"/>
+			</div>
+			<div class="content">
+				<span class="first">13.5</span>% + 
+				<span class="second">1.6</span>% +
+				<span  class="last">3</span>%<br/>
+				<span class="tag">预期年化收益率</span>
+				<span class="tag">鼓励金</span>
+				<span  class="tag">到期返</span><br />
+				<span class="bottom">期限12个月</span>
+				<span class="bottom-right">规模30万元</span><br/>
+				<a class="newBtn" href="javascript:void(0)">首投返现金</a>
+			</div>
+			<img class="bgLeft" src="../img/new-bg-right.png"  >
+			<img class="bgRight" src="../img/new-bg.png"//>
+		</div>
+		<!--推荐项目-->
+		<div class="box">
+			<div class="box-title">
+				<img src="../icon/project_title.png" class="project-title"/>
+				<span class="project">推荐项目</span>
+				<span class="projectInfo">企业借款  实地考察</span>
+			</div>
+			<div class="index-project">
+				<div class="left_box">
+					<span class="left_top">
+						<span class="left_font">13.5</span>%+1.6%
+					</span><br/>
+					预期年化收益
+				</div>
+				<div class="right_box">
+					<span class="project_name">个体贷</span>
+					<span class="project_number">【GTD20170904-01】</span><br/>
+					<span class="month">期限 12个月</span>
+					<span class="money">规模30万元</span>
+				</div>
+				<div class="bg" style="width: 70%;"></div>
+				<img class="project_tag" src="../icon/project_tag.png" />
+			</div>	
+			<div class="index-project">
+				<div class="left_box">
+					<span class="left_top">
+						<span class="left_font">13.5</span>%+1.6%
+					</span><br/>
+					预期年化收益
+				</div>
+				
+				<div class="right_box">
+					<span class="project_name">个体贷</span>
+					<span class="project_number">【GTD20170904-01】</span><br/>
+					<span class="month">期限 12个月</span>
+					<span class="over">已投满</span>
+				</div>
+				<div class="bg" style="width:0;"></div>
+			</div>	
+			<div class="index-project">
+				<div class="left_box">
+					<span class="left_top">
+						<span class="left_font">13.5</span>%+1.6%
+					</span><br/>
+					预期年化收益
+				</div>
+				
+				<div class="right_box">
+					<span class="project_name">个体贷</span>
+					<span class="project_number">【GTD20170904-01】</span><br/>
+					<span class="month">期限 12个月</span>
+					<span class="money">规模30万元</span>
+				</div>
+				<div class="bg" style="width: 13%;"></div>
+			</div>
+			<div class="index-project">
+				<div class="left_box">
+					<span class="left_top">
+						<span class="left_font">13.5</span>%+1.6%
+					</span><br/>
+					预期年化收益
+				</div>
+				
+				<div class="right_box">
+					<span class="project_name">个体贷</span>
+					<span class="project_number">【GTD20170904-01】</span><br/>
+					<span class="month">期限 12个月</span>
+					<span class="start">即将开始</span>
+				</div>
+				<div class="bg" style="width: 100%;"></div>
+				<img class="project_tag" src="../icon/project_tag.png" />
+			</div>
+		</div>
+	
+		<!--平台情况-->
+		<table class="tableInfo">
+			<tr>
+				<td width="33.3%">
+					<span class="title">936</span><img src="../icon/up_icon.png"/ style="height: 12px;"><br/>
+					安全运营(天)
+				</td>
+				<td width="33.3%">
+					<span  class="title">13.2</span><img src="../icon/up_icon.png"/ style="height: 12px;"><br/>
+					累计成交(亿)
+				</td>
+				<td>
+					<span  class="title">9918</span><img src="../icon/up_icon.png"/ style="height: 12px;"><br/>
+					已为用户赚取(万)
+				</td>
+			</tr>
+			<tr>
+				<td colspan="3"><span class="hf_logo"><img src="../icon/hf_icon.png"/>恒丰银行存管 合规经营</span></td>
+			</tr>
+		</table>
+		
+		<!--底部通用-->
+		<footer>
+			<ul>
+				<li>联系我们</li>
+				<li>APP下载</li>
+				<li>电脑版</li>
+			</ul>
+			2012-2017版权所有 ©三益宝 京ICP备案12049919号<br/>
+			三平伟业(北京)投资管理有限公司
+		</footer>
+	
+		<div class="div_normal"></div>
 		<!--底部导航-->
 		<nav class="mui-bar mui-bar-tab">
 		    <a class="mui-tab-item mui-active" href="javascript:void(0)">
@@ -113,8 +241,39 @@
 		        <span class="mui-tab-label">我的</span>
 		    </a>
 		</nav>
-		
 	</body>
 	<script src="../js/mui.min.js"></script>
 	<script type="text/javascript" src="../js/sanyibao/commo.js" ></script>
+	<script>
+		window.onload=function(){
+			var slider=mui("#slider");
+			slider.slider({
+				interval:3000
+			})
+			startmarquee(30,30,1500);
+		}
+		
+		//文字滚动
+		function startmarquee(lh,speed,delay) {
+			var p=false;
+			var t;
+			var o=document.getElementById("marqueebox");
+			o.innerHTML+=o.innerHTML;
+			o.style.marginTop=0;
+			function start(){
+				t=setInterval(scrolling,speed);
+				if(!p) o.style.marginTop=parseInt(o.style.marginTop)-1+"px";
+			}
+			function scrolling(){
+				if(parseInt(o.style.marginTop)%lh!=0){
+					o.style.marginTop=parseInt(o.style.marginTop)-1+"px";
+					if(Math.abs(parseInt(o.style.marginTop))>=o.scrollHeight/2) o.style.marginTop=0;
+				}else{
+					clearInterval(t);
+					setTimeout(start,delay);
+				}
+			}
+			setTimeout(start,delay);
+		}
+	</script>
 </html>
