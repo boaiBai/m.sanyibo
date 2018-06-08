@@ -257,7 +257,7 @@
 					//显示投资表
     				document.querySelector(".project-form").style.display="block";
     				document.querySelector(".jsBtn").style.display="block";
-    				var endTime=new Date("2018/06/08 11:18:00").getTime();
+    				var endTime=new Date("2018/06/08 18:30:00").getTime();
     				var nowTime=new Date().getTime();
 					seconds=endTime-nowTime;
 					seconds=parseInt(seconds/1000) 
@@ -376,24 +376,31 @@
     		var hour=parseInt((seconds-day*86400)/3600);
     		var minute=parseInt((seconds-day*86400-hour*3600)/60)
     		var second=parseInt(seconds-day*86400-hour*3600-minute*60);
-    		if(seconds>0){
-    			if(day<10){
-    				var day="0"+day;	
+    		if(seconds>0){   			
+    			if(day<10&&day>0){
+    				day="0"+day+":";	
+    			}else{
+    				if(day<=0){
+    				day="";
+	    			}else{
+	    				day=day+":"
+	    			} 				
     			}
     			
+    			
     			if(hour<10){
-    				var hour="0"+hour;
+    				 hour="0"+hour;
     			}
     			
     			if(minute<10){
-    				var minute="0"+minute;
+    				minute="0"+minute;
     			}
     			
     			if(second<10){
-    				var second="0"+second;
+    				second="0"+second;
     			}
     			
-    			document.getElementById("time-over").innerHTML=day+":"+hour+":"+minute+":"+second;
+    			document.getElementById("time-over").innerHTML=day+hour+":"+minute+":"+second;
     			count++;
 	    		var offset=new Date().getTime()-(starttime+count*1000);
 	    		var nextTime=1000-offset;
