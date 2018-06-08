@@ -61,7 +61,7 @@
 	    	<a href="../pay/pay.html">充值</a>
 	    	
 		   <!--项目未开始-->
-			<div class="jsBtn">即将开始<span>06:58:35</span></div>
+			<div class="jsBtn">即将开始<span id="time-over"></span></div>
 			<!--项目一开始-->
 			<div class="touziBtn">确认投资</div>
 			<!--查看详情-->
@@ -204,11 +204,12 @@
     		<div  class="choose_box">
     			<div class="title">
     				选择鼓励金
-    				<span>暂不使用</span>
+    				<span id="noUse">暂不使用</span>
     			</div>
-    			<h3>您已选择<span id="num">0</span>张鼓励金，成功投资可返现<span id="money">10.00元</span></h3>
+    			<h3>您已选择<span id="num">0</span>张鼓励金，成功投资可返现<span id="money">0.00元</span></h3>
     			<div class="content" data-type="10">
     				<img src="../../img/noChoose.png" >
+    				<img class="tag" src="../../img/choose-tag.png"/>
     				<div  class="fontBox">
     					<span>10.00</span>元<br/>
     					投资满100元即可使用<br />
@@ -241,8 +242,10 @@
     <script type="text/javascript" src="../../js/sanyibao/commo.js" ></script>
     <script>
     	var loginType=true,
-    		projectState=0;//0未开始，1进行中，2已投满
-    	
+    		projectState=0,//0未开始，1进行中，2已投满
+    		seconds,
+    		starttime=new Date().getTime(),
+    		count=0;
     	if(!loginType){
     		//未登录隐藏,显示登陆按钮
     		document.getElementById("login-btn").style.display="block";
@@ -254,6 +257,11 @@
 					//显示投资表
     				document.querySelector(".project-form").style.display="block";
     				document.querySelector(".jsBtn").style.display="block";
+    				var endTime=new Date("2018/06/08 11:18:00").getTime();
+    				var nowTime=new Date().getTime();
+					seconds=endTime-nowTime;
+					seconds=parseInt(seconds/1000) 
+    				getTime();
 				break;
 				case 1:
 					//显示投资表
@@ -268,6 +276,14 @@
     	
     	}
     	
+    	
+    	//获取鼓励金可用数量
+    	var $content=document.querySelector(".choose_bg").querySelectorAll(".content");
+    	//获取其中过期的
+    	var $past=document.querySelector(".choose_bg").querySelectorAll(".past");
+    	if($content.length-$past.length>0){
+    		document.querySelector(".rightName").innerHTML='<span style="color:red">'+($content.length-$past.length)+"张可用</span>"
+    	}
     
     	//选项卡切换
     	mui(".info_tab").on("tap","li",function(){
@@ -321,7 +337,79 @@
     	
     	//选择完成
     	document.querySelector(".okBtn").addEventListener("tap",function(){
+    		var $choose=document.querySelector(".choose_bg").querySelectorAll(".choose");
+    		//获取鼓励金可用数量
+			var $content=document.querySelector(".choose_bg").querySelectorAll(".content");
+			//获取其中过期的
+			var $past=document.querySelector(".choose_bg").querySelectorAll(".past");
+			if($content.length-$past.length<=0){
+				document.querySelector(".choose_bg").style.display="none"
+				return false;
+			}
+    		
+    		if($choose.length<=0){
+    			mui.toast("请选择鼓励金",{type:"div"})
+    			return false;
+    		}
+    		
+    		document.querySelector(".rightName").innerText=document.getElementById("money").innerHTML;
     		document.querySelector(".choose_bg").style.display="none"
+    		document.body.scrollTop=document.documentElement.scrollTop=0;
+    	})
+    	
+    	//暂不使用
+    	document.getElementById("noUse").addEventListener("tap",function(){    				
+    		var $choose=document.querySelector(".choose_bg").querySelectorAll(".choose");
+    		for(var i=0;i<$choose.length;i++){
+    			$choose[i].querySelector("img").setAttribute("src","../../img/noChoose.png");
+    		}
+    		document.querySelector("#num").innerText=0;
+    		document.querySelector("#money").innerText="0.00元";
+    		document.querySelector(".choose_bg").style.display="none"
+    		document.querySelector(".rightName").innerText=document.getElementById("money").innerHTML;
+    	})
+    	
+    	
+    	//计算项目开始时间
+    	function  getTime(){ 
+    		var day=parseInt(seconds/86400);
+    		var hour=parseInt((seconds-day*86400)/3600);
+    		var minute=parseInt((seconds-day*86400-hour*3600)/60)
+    		var second=parseInt(seconds-day*86400-hour*3600-minute*60);
+    		if(seconds>0){
+    			if(day<10){
+    				var day="0"+day;	
+    			}
+    			
+    			if(hour<10){
+    				var hour="0"+hour;
+    			}
+    			
+    			if(minute<10){
+    				var minute="0"+minute;
+    			}
+    			
+    			if(second<10){
+    				var second="0"+second;
+    			}
+    			
+    			document.getElementById("time-over").innerHTML=day+":"+hour+":"+minute+":"+second;
+    			count++;
+	    		var offset=new Date().getTime()-(starttime+count*1000);
+	    		var nextTime=1000-offset;
+	    		if(nextTime<0){
+	    			nextTime=0;
+	    		}
+	    		timer=setTimeout("getTime()",nextTime)
+    		}else{
+    				document.querySelector(".jsBtn").style.display="none";
+    			document.querySelector(".touziBtn").style.display="block";
+    		}
+    		seconds--;
+    	}
+    	
+    	document.querySelector(".touziBtn").addEventListener("tap",function(){
+    		window.location.href="projectSuccse.html"
     	})
     </script>
 </html>

@@ -308,8 +308,8 @@
 	display: none;
 }
 .choose_box{
-	height: 70vh;
-	 margin-top: 30vh;
+	height: 80vh;
+	 margin-top: 20vh;
 	 width: 100vw;
 	 overflow: scroll;
 	 background: #F1F2F6;
@@ -349,8 +349,8 @@
 	position: fixed;
 	bottom: 0;
 	width: 100vw;
-	height: 40px;
-	line-height: 40px;
+	height: 50px;
+	line-height: 50px;
 	text-align: center;
 	z-index: 100;
 	background: #FFFFFF;
@@ -363,6 +363,12 @@
 .choose_box .content img{
 	width: 100%;
 }
+
+
+.choose_box .content img.tag{
+	position: absolute;width: 15vw;right: 0;top: 0;
+}
+
 
 
 .choose_box .content .fontBox{
