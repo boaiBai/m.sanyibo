@@ -22,58 +22,14 @@
 		</div>
 		<!--还款列表-->
 		<table class="calendar-list">
-			<tr>
-				<td>
-					<span class="title">鼓励金【GTD20180425-495】</span>
-					<span class="time">2018-06-04</span>
-					<div class="clear"></div>
-					<!--还款详情-->
-					<span class="content">
-						<span class="num">0</span>元<br/>
-						<span class="info">还款本金</span>
-					</span>
-					<span class="content">
-						<span class="num">5.63</span>元<br/>
-						<span  class="info">还款利息</span>
-					</span>
-					<span class="content">
-						<span  class="num">1</span>/12期<br/>
-						<span class="info">当前</span>
-					</span>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<span class="title">鼓励金【GTD20180425-495】</span>
-					<span class="time">2018-06-04</span>
-					<div class="clear"></div>
-					<!--还款详情-->
-					<span class="content">
-						<span class="num">0</span>元<br/>
-						<span class="info">还款本金</span>
-					</span>
-					<span class="content">
-						<span class="num">5.63</span>元<br/>
-						<span  class="info">还款利息</span>
-					</span>
-					<span class="content">
-						<span  class="num">1</span>/12期<br/>
-						<span class="info">当前</span>
-					</span>
-				</td>
-			</tr>
-			<tr class="noData" style="background: none;">
-				<td>
-					<img src="../../img/noData.png"  style="width: 30%;"/><br/>
-					今天没有项目还款哦
-				</td>
-			</tr>
+			
 		</table>
 	</body>
 	<script src="../../js/mui.js"></script>
 	<script type="text/javascript" src="../../js/sanyibao/commo.js" ></script>
 	<script src="../../js/mui.picker.min.js"></script>
 	<script>
+		var selectDate;
 		window.onload=function(){
 			var nowDate=new Date();
 			var year=nowDate.getFullYear();
@@ -84,11 +40,10 @@
 			//需要还款的日期数组
 			var dateArray=[4,8,7,10,11,13,15]
 			CalendarBox("date-box",year,month,date,dateArray);
-			
+			//获取数据
+			selectDate=year+"-"+month+"-"+date;
+			getData(selectDate);
 			//点击今天触发
-//			document.querySelector(".toady").addEventListener("tap",function(){
-//				
-//			})
 			
 			//选择日期时触发
 			mui("#date-box").on("tap",".btn",function(){
@@ -106,22 +61,63 @@
 				var selectYear=document.querySelector(".mui-title").innerText;
 				//数据盒子
 				var dataBox=document.querySelector(".calendar-list");
+				date=this.innerText;
+				selectDate=year+"-"+month+"-"+date;
 				dataBox.innerHTML="";
+				getData(selectDate)
 			})
 			
 			document.querySelector(".mui-title").addEventListener("tap",function(){
 				var dtpicker=new mui.DtPicker({
 					type:"month"
 				});
-				dtpicker.show(function(e){
-					console.log(e.value)
+				dtpicker.show(function(e){					
 					//在这里进行数据处理
 					var dateArray=[10,11]
 					document.querySelector("#date-box").innerHTML="";
-					document.querySelector(".mui-title").innerText=e.y.text+"年"+parseInt(e.m.text)+"月"+"▾";
-					CalendarBox("date-box",e.y.text,parseInt(e.m.text),"",dateArray);
+					document.querySelector(".mui-title").innerText=e.y.text+"年"+parseInt(e.m.text)+"月"+"▾";	
+					year=e.y.text;
+					month=e.m.text;
+					date=1;
+					//判断是否是当前日期
+					if(nowDate.getFullYear()==parseInt(e.y.text)&&nowDate.getMonth()+1==parseInt(e.m.text)){
+						date=nowDate.getDate();
+					}
+					selectDate=year+"-"+month+"-"+date;//选择月份默认为一号
+					CalendarBox("date-box",e.y.text,parseInt(e.m.text),date,dateArray);
+					getData(selectDate);
 				})
 			})
+		}
+		
+		//渲染列表数据
+		//可见参数
+		function getData(time){
+			console.log(time)
+			//获取存放数据节点
+			var $box=document.querySelector(".calendar-list");
+			$box.innerHTML="";
+			//没有数据时
+			if(false){
+				var $tr=document.createElement("tr");
+				$tr.className="noData";
+				$tr.style.background="none";
+				$tr.innerHTML='<td><img src="../../img/noData.png"  style="width: 30%;"/><br/>'+
+					'今天没有项目还款哦</td>'
+				$box.appendChild($tr)	
+				return false	
+			}			
+			for(var i=0;i<4;i++){
+				var $tr=document.createElement("tr");
+				$tr.innerHTML='<td><span class="title">鼓励金【GTD20180425-495】</span>'+
+					'<span class="time">'+time+'</span><div class="clear"></div>'+
+					<!--还款详情-->
+					'<span class="content"><span class="num">0</span>元<br/><span class="info">还款本金</span></span>'+
+					'<span class="content"><span class="num">5.63</span>元<br/><span  class="info">还款利息</span></span>'+
+					'<span class="content"><span  class="num">1</span>/12期<br/><span class="info">当前</span></span>'+
+					'</td>'
+					$box.appendChild($tr)
+			}
 		}
 	</script>
 </html>
