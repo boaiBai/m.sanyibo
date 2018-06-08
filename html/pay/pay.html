@@ -7,6 +7,11 @@
         <link rel="stylesheet" href="../../css/mui.min.css" />
         <link rel="stylesheet" href="../../css/sanyibao/commo.css" />
         <link rel="stylesheet" href="../../css/sanyibao/pay.css">
+        <style>
+        	.noUse{
+        		color:#CCCCCC;
+        	}
+        </style>
     </head>
     <body class="bg-red">
         <p class="top-tit">账户余额：<span class="top-money">100.00</span>元</p>
@@ -25,14 +30,14 @@
                     <img src="../../img/checked.png" alt="">
                 </div>
             </li>
-            <li class="bank-list">
+            <li class="bank-list ">
                 <div class="bank-list-left">
                     <div class="bank-logo">
                         <img src="../../img/bank/交通.png" alt="">
                     </div>
                     <div class="bank-tit">
-                        <p>交通银行<span>(尾号6214)</span></p>
-                        <p>************6214</p>
+                        <p style="color: #CCCCCC;">交通银行<span  style="color: #CCCCCC;">(尾号6214)</span></p>
+                        <p style="color: #CCCCCC;">************6214</p>
                     </div>
                 </div>
                 <div class="bank-list-right">
@@ -119,6 +124,10 @@
         // inputs[0].focus();
 
         mui('.banks').on('tap','.bank-list',function () {
+        	if(this.className.indexOf("noUse")>=0){
+        		return false;
+        	}
+        	
             for (let i = 0;i<checks.length;i++){
                 checks[i].className = 'bank-list-right';
             }
