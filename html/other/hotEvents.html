@@ -7,6 +7,13 @@
         <link rel="stylesheet" href="../../css/mui.min.css" />
         <link rel="stylesheet" href="../../css/sanyibao/commo.css" />
         <link rel="stylesheet" href="../../css/sanyibao/hotEvents.css">
+        <style>
+        	.add-more{
+			    width: 100vw;
+			    text-align: center;
+			    margin: 10px auto 20px auto;
+			}
+        </style>
     </head>
     <body class="bg-color">
         <ul class="content">
@@ -29,6 +36,25 @@
                 </a>
             </li>
         </ul>
+         <p class="add-more">更多<span class="mui-icon mui-icon-arrowdown"></span></p>
     </body>
     <script src="../../js/mui.min.js"></script>
+    <script>
+    	document.querySelector(".add-more").addEventListener("tap",function(){
+    		 var $box=document.querySelector(".content");
+    		 for(var i=0;i<3;i++){
+    		 	var $li=document.createElement("li");
+    		 	$li.classList.add("event-list");
+    		 	var marks="";
+    		 	//如果活动借宿
+    		 	if(i==2){
+    		 		marks='<div class="marks"><div class="marks-info">活动已结束</div></div>'
+    		 	}
+    		 	$li.innerHTML='<a href="#"><img src="../../img/hotEvents/'+(i+1)+'.png"/>'+marks+'</a>';
+    		 	$box.appendChild($li)			
+    		 }
+    		 
+    		 
+    	});
+    </script>
 </html>
