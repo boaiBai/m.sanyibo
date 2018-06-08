@@ -1,0 +1,73 @@
+<!DOCTYPE >
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+        <title>投资成功</title>
+        <link rel="stylesheet" href="../../css/mui.min.css" />
+        <link rel="stylesheet" href="../../css/sanyibao/commo.css" />
+        <style scoped>
+        	body{
+        		text-align: center;
+        	}
+        	img{
+        		width: 20vw;margin-top: 30px;margin-bottom: 5px;
+        	}
+        	
+        	h3{
+        		font-size: 18px;
+        		margin-top: 20px;
+        	}
+        	
+        	p{
+        		padding: 10px 15vw;
+        	}
+        	
+        	span{
+        		font-size: 22px;
+        	}
+        	.succse_btn{
+        		/*width: 30vw;*/
+        		background: #Eee;
+        		color: #FFFFFF;
+        		display: inline-block;
+        		padding: 5px 20px; 
+        		border-radius: 5px;
+        		font-size: 14px;
+        		border: solid 1px #666;
+        		color: #666
+        		
+        	}
+        	
+        	.right,.error{
+        		display: none;
+        	}
+        </style>
+    </head>
+    <body class="bg-color" >
+    <div class="right">
+    	 <img src="../../icon/right.png" /><br />
+       	<span>付款成功</span>
+       	<p>资金已成功支付，银行处理中</p><br />
+       	<a class="succse_btn" style="margin-right: 20px;">查看充值进度</a>
+       	<a class="succse_btn back"  href="javascript:void(0)">返回</a>
+    </div>
+        <div class="error">
+    	<img src="../../icon/error.png" /><br />
+       	<span>付款成功</span>
+       	<p>您可在充值页面，再次发起充值操作</p><br />
+       	<a class="succse_btn back"  href="javascript:void(0)">返回</a>
+    </div>
+    </body>
+    <script src="../../js/mui.min.js"></script>
+    <script>
+    		window.onload=function(){
+    			//根据状态，显示
+    			if(false){
+    				document.querySelector(".right").style.display="block"
+    			}else{
+    				document.querySelector(".error").style.display="block"
+    			}
+    		}
+    </script>
+</html>
