@@ -196,7 +196,7 @@
 
 .info_box_list{
 	width: 100vw;
-	height: 80vh;
+	min-height: 80vh;
 	float: left;
 	background: #FFFFFF;
 	display: none;
