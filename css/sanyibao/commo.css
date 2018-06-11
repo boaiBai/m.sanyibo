@@ -16,6 +16,9 @@ img,button{
 	background-color: #f1f2f6;	
 }
 
+a{
+	color: #666
+}
 
 .box{
 	width: 100vw;

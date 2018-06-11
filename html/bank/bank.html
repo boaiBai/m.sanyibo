@@ -132,20 +132,20 @@
             document.querySelector('.empty-div').style.display = 'block';
         }
         //弹窗
-        mui('.bank-main').on('tap','.bank-list',function () {
+        mui('body').on('tap','.bank-list',function () {
             $this = this;
-            weiHao.textContent = this.children[1].children[3].textContent;
+            weiHao.innerText= this.children[1].children[3].innerText;
             mui('#bottomLayer').popover('toggle');
         })
         //设置默认卡
         mui('.mui-table-view-cell').on('tap','.moren',function () {
-            for (let i = 0;i<defaultBank.length;i++){
+            for (var i = 0;i<defaultBank.length;i++){
                 defaultBank[i].className = 'list-top-right';
             }
             $this.children[0].children[1].className = 'list-top-right shows';
             mui('#bottomLayer').popover('toggle');
         })
-        //删除银行卡
+//      //删除银行卡
         mui('.mui-table-view-cell').on('tap','.remove-bank',function () {
             document.querySelector('.bank-main').removeChild($this);
             if (bankCards.length < 3){
@@ -157,10 +157,10 @@
             }
             mui('#bottomLayer').popover('toggle');
         })
-        //添加银行卡
-        mui('body').on('tap','.add-more',function () {
-            if (bankCards.length < 3){
-                location.href='addBank.html';
+//      //添加银行卡
+        mui('body').on('click','.add-more',function () {
+            if (bankCards.length < 2){
+                window.location.href='addBank.html';
             }
         })
     </script>

@@ -128,7 +128,7 @@
         		return false;
         	}
         	
-            for (let i = 0;i<checks.length;i++){
+            for (var i = 0;i<checks.length;i++){
                 checks[i].className = 'bank-list-right';
             }
             this.children[1].className = 'bank-list-right right-show';
@@ -139,7 +139,7 @@
         })
         mui('.input-list').on('input','input',function () {
             this.value = this.value.slice(0,1);
-            for (let i = 0;i<inputs.length;i++){
+            for (var i = 0;i<inputs.length;i++){
                 if(inputs[i].value == ''){
                     break;
                 }else{

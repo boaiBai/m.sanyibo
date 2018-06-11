@@ -118,7 +118,7 @@
             //页面滚动
             document.body.onscroll = function () {
                 var sTop = document.documentElement.scrollTop || document.body.scrollTop;
-                for (let i = 0;i<topTits.length;i++){
+                for (var i = 0;i<topTits.length;i++){
                     if(topTits[i].parentElement.offsetTop < sTop + 44){
                         topTits[i].className = 'top-tit fixed-top';
                     }else {
@@ -133,7 +133,7 @@
             //筛选
             mui('.check-ul').on('tap','.check-list',function () {
                 //console.log(this.dataset.index);//筛选依据
-                for (let i = 0;i<checkLists.length;i++){
+                for (var i = 0;i<checkLists.length;i++){
                     checkLists[i].className = 'check-list';
                 }
                 this.className = 'check-list active';
@@ -148,15 +148,15 @@
                         username:'username',
                         password:'password'
                     },function(data){
-                        for (let i = 0;i<data.data.length;i++){
+                        for (var i = 0;i<data.data.length;i++){
                             if(data.data[i].name == topTits[topTits.length-1].textContent){
-                                for (let j = 0;j<data.data[i].res.length;j++){
+                                for (var j = 0;j<data.data[i].res.length;j++){
                                     html += '<li class="item-list"><div><p class="fb">' +data.data[i].value[j].type+'</p><p class="fs">' +data.data[i].value[j].mdhi+'</p></div><div><p class="fb">'+data.data[i].value[j].affect_money+'元</p><p class="fs">余额：'+data.data[i].value[j].account_money+ '元</p></div></li>';
                                 }
                                 uls.innerHTML += html;
                             }else{
                                 html1 += '<div class="main-item"><p class="top-tit">'+data.data[i].name+'</p><ul class="item-ul">';
-                                for (let j = 0;j<data.data[i].res.length;j++){
+                                for (var j = 0;j<data.data[i].res.length;j++){
                                     html1 += '<li class="item-list"><div><p class="fb">' +data.data[i].value[j].type+'</p><p class="fs">' +data.data[i].value[j].mdhi+'</p></div><div><p class="fb">'+data.data[i].value[j].affect_money+'元</p><p class="fs">余额：'+data.data[i].value[j].account_money+ '元</p></div></li>';
                                 }
                                 html1 += '</ul></div>';

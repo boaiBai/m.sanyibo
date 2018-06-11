@@ -126,7 +126,7 @@
         var $bank = document.querySelector('#choose-bank .bank-list-left');
 
         mui('.tixian-layer').on('tap','.bank-list',function () {
-            for (let i = 0;i<checks.length;i++){
+            for (var i = 0;i<checks.length;i++){
                 checks[i].className = 'bank-list-right';
             }
             this.children[1].className = 'bank-list-right right-show';
