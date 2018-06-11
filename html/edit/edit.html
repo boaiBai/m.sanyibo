@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="../../css/mui.min.css" />
         <link rel="stylesheet" href="../../css/sanyibao/commo.css" />
         <link rel="stylesheet" href="../../css/sanyibao/edit.css">
+        <script type="text/javascript" src="https://www.sanyibao.com/style/v2/js/jquery-1.7.2.min.js?v=1500545297"></script>
     </head>
     <body>
         <div class="logo">
@@ -20,7 +21,7 @@
                 </div>
                 <div class="form-item">
                     <input type="text" placeholder="请输入密码">
-                    <img src="../../img/hide.png" alt="">
+                    <img src="../../img/hide.png" alt="" class="hide-img">
                 </div>
                 <div class="other-item">
                     <a href="edit1.html">
@@ -37,4 +38,13 @@
             <p class="go-tips">没有账号？<a href="../register/register1.html">立即注册</a></p>
         </div>
     </body>
+    <script src="../../js/mui.min.js"></script>
+    <script src="../../js/sanyibao/commo.js"></script>
+    <script>
+        $('.hide-img').toggle(function () {
+            $(this).attr('src','../../img/look.png');
+        },function () {
+            $(this).attr('src','../../img/hide.png');
+        })
+    </script>
 </html>
