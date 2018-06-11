@@ -20,7 +20,7 @@
                     <p class="phone-num">+86</p>
                 </div>
                 <div class="form-item">
-                    <input type="text" placeholder="请输入密码">
+                    <input type="password" placeholder="请输入密码" id="psw">
                     <img src="../../img/hide.png" alt="" class="hide-img">
                 </div>
                 <div class="other-item">
@@ -43,8 +43,10 @@
     <script>
         $('.hide-img').toggle(function () {
             $(this).attr('src','../../img/look.png');
+            $('#psw')[0].type = 'text';
         },function () {
             $(this).attr('src','../../img/hide.png');
+            $('#psw')[0].type = 'password';
         })
     </script>
 </html>
