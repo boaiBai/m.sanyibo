@@ -9,8 +9,27 @@
         <link rel="stylesheet" href="../../css/sanyibao/user.css" />
         <link rel="stylesheet" href="../../css/sanyibao/icon.css" />
         <link rel="stylesheet" href="../../css/sanyibao/project.css" />
+        <style>
+        	.mui-slider .mui-slider-group .mui-slider-item{
+        		height: auto;
+        		width: 100vw;
+        		text-align: center;
+        	}
+        	
+        	.mui-slider .mui-slider-group .mui-slider-item img{
+        		padding: 20px 0;
+        		width: auto;
+        		max-width: 100%;
+        		height: 200px;
+        	
+        	}
+        	
+        	.mui-slider-indicator{
+        		bottom: 0px;
+        	}
+        </style>
     </head>
-    <body class="bg-color">
+    <body class="bg-color">  	
     	<!--项目详情头部概况-->
     	<div class="info-top">
     		<div class="project-name">个体贷[GTD20170904-01]</div>
@@ -103,6 +122,39 @@
 					</table>
 					<div class="title">项目概述</div>
 					<p>10万元,购置经营物资</p>
+					<div class="title">项目图片</div>
+					<div class="mui-slider"	>
+						 <div class="mui-slider-group">
+						    <!--第一个内容区容器-->
+						    <div class="mui-slider-item" >
+						     	<img src="../../img/banner/banner1.png"  />
+						    </div>
+						    <div class="mui-slider-item">
+						     	<img src="../../img/bank/交通.png" />
+						    </div>
+						    <div class="mui-slider-item">
+						     	<img src="../../img/safetyCompliance/list7.png" />
+						    </div>
+						    <div class="mui-slider-item">
+						     	<img src="../../img/nav/help.png" />
+						    </div>
+						    <div class="mui-slider-item">
+						     	<img src="../../img/banner/banner1.png" />
+						    </div>
+						    <div class="mui-slider-item">
+						     	<img src="../../img/banner/banner1.png" />
+						    </div>
+						  </div>
+						 <div class="mui-slider-indicator">
+	                        <div class="mui-indicator mui-active"></div>
+	                        <div class="mui-indicator"></div>
+	                        <div class="mui-indicator"></div>
+	                        <div class="mui-indicator"></div>
+	                        <div class="mui-indicator"></div>
+	                        <div class="mui-indicator"></div>
+	                   	</div>
+					</div>
+					<div class="div_normal"></div>
 				</div>
 				<div class="info_box_list">
 					<div class="title">借款用途</div>
@@ -257,7 +309,7 @@
 					//显示投资表
     				document.querySelector(".project-form").style.display="block";
     				document.querySelector(".jsBtn").style.display="block";
-    				var endTime=new Date("2018/06/08 18:30:00").getTime();
+    				var endTime=new Date("2018/06/11 10:00:00").getTime();
     				var nowTime=new Date().getTime();
 					seconds=endTime-nowTime;
 					seconds=parseInt(seconds/1000) 
@@ -418,5 +470,16 @@
     	document.querySelector(".touziBtn").addEventListener("tap",function(){
     		window.location.href="projectSuccse.html"
     	})
+    	
+    	var options = {
+			 scrollY: false, //是否竖向滚动
+			 scrollX: true, //是否横向滚动
+			 startX: 0, //初始化时滚动至x
+			 startY: 0, //初始化时滚动至y
+			 indicators: true, //是否显示滚动条
+			 deceleration:0.0006, //阻尼系数,系数越小滑动越灵敏
+			 bounce: true //是否启用回弹
+		}
+    	mui('.mui-scroll-wrapper').scroll(options);
     </script>
 </html>
