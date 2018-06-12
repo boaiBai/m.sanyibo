@@ -67,6 +67,13 @@
 .list-bottom span{
     font-size: 25px;
     color: grey;
+    float: left;
+    display: inline-block;
+    padding-top: 5px ;
+}
+
+.list-bottom span:last-child{
+	padding: 0;
 }
 .add-more{
     position: fixed;
