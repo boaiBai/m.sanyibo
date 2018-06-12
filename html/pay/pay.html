@@ -140,25 +140,18 @@
         mui('.layer1-tit').on('tap','.close1',function () {
             layer1.style.display = 'none';
         })
-        mui('.input-content').on('input','input',function () {
-            this.value = this.value.slice(0,1);
-            if(this.value.length == 1){
-                for (var i = 0;i<inputs.length;i++){
-                    if(inputs[i] == this && i<inputs.length-1){
-                        inputs[i+1].removeAttribute('disabled');
-                        inputs[i+1].focus();
-                        inputs[i].setAttribute('disabled','disabled');
-                    }
-                    if(inputs[i].value == ''){
-                        // break;
-                    }else{
-                        if(i == 5){
-                            layer1.style.display = 'none';
-                        }
-                    }
+        mui('.layer1-main').on('input','.layer1-input',function () {
+            for (var i = 0;i<divs.length;i++){
+                divs[i].innerText = this.value.slice(i,i+1);
+                if(this.value.length == 6){
+                    layer1.style.display = 'none';
+                    input1.blur();
+                    break;
                 }
             }
-
+        })
+        mui('.layer1-main').on('tap','.input-list',function () {
+            input1.focus();
         })
         mui('.layer2-btn').on('tap','span',function () {
             layer2.style.display = 'none';

@@ -179,8 +179,9 @@ button:enabled:active{
     display: flex;
 }
 .input-list div{
-    flex-grow: 1;
+    width: 11vw;
     height: 11vw;
+    line-height: 11vw;
     text-align: center;
     border: solid 1px #aaaaaa;
     border-color: #aaaaaa;
@@ -194,8 +195,6 @@ button:enabled:active{
     border-right-color: #aaaaaa;
 }
 .layer1-main .layer1-input{
-    /*width: 0;*/
-    /*height: 0;*/
     padding: 0;
     margin: 0;
     border: none;
@@ -204,6 +203,10 @@ button:enabled:active{
     top: 10px;
     z-index: -20;
     color: transparent;
+    background-color: transparent;
+    text-indent: -999em; /*文本向左缩进*/
+    margin-left: -100%;
+    width: 200%;
 }
 .layer1-tit.layer2-top h1{
     height: 11vw;
