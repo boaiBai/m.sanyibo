@@ -30,6 +30,13 @@ ul,li{
     margin: 12px auto;
     background: url("../../img/coupon/bg2.png") no-repeat;
     background-size: 100% 100%;
+    position: relative;
+}
+.choose-tag{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 12vw;
 }
 .coupon-list>div{
     float: left;
@@ -50,25 +57,13 @@ ul,li{
     color: #ffffff;
     margin: 0;
 }
-.coupon_btn{
-    width: 13.33vw;
-}
-.coupon_btn a {
-    display: block;
-    font-size: 12px;
-    text-align: center;
-    padding: 0 4vw;
-    margin-top: 4.5vw;
-    color: #f33632;
-    font-weight: bold;
-}
 .coupon-list.has-use{
     background: url("../../img/coupon/bg1.png") no-repeat;
     background-size: 100% 100%;
 }
-.coupon-list.has-use .coupon_btn a{
-    color: #999999;
-    margin-top: 7vw;
+.coupon-list.out-time{
+    background: url("../../img/coupon/bg3.png") no-repeat;
+    background-size: 100% 100%;
 }
 .empty-tips{
     display: none;
