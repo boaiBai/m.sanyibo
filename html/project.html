@@ -81,7 +81,7 @@
     		}
     		
     		.project-shouyi{
-    			width: 35vw;
+    			width: 45vw;
     			float: left;
     			padding-left: 15px;
     		}
@@ -225,7 +225,8 @@
 					case 2:
 						jinDuHtml='<div class="project-jindu"><span class="left">12个月</span>'+
 			 			'<span  class="right over">已投满</span>'+
-			 			'<div class="mui-progressbar" id="'+id+'"><span></span></div>'+
+			 			'<div class="mui-progressbar" id="'+id+'"><span style="background:#eee"></span></div>'+
+			 			'<span  class="left bottom">开放购买 09-01  09:30</span>'+
 			 			'<span  class="right bottom">30万元</span></div>'
 					break;
 					case 3:
@@ -238,9 +239,9 @@
 				var $div=document.createElement("div");
 				$div.className="box project-box";
 				var tagHtml=' <span class="tag">+1.6%鼓励金</span><span  class="tag">+3%到期返</span><span  class="tag">投就送</span>'
-				$div.innerHTML='<div class="title"><a href="www.baidu.com">个体贷【GTD20170904-01】</a></div>'+
+				$div.innerHTML='<div class="title"><a href="www.baidu.com">个体贷【GTD20170904-01】</a><img src="../img/news.png" style="height:15px"></div>'+
 							   '<div class="tag-box">'+tagHtml+'</div>'+
-							   '<div class="project-shouyi"><span>13.5%</span><br/><span>预期年化收益率</span></div>'+jinDuHtml;
+							   '<div class="project-shouyi"><span>13.5</span><span style="font-size:14px;color:red">%+1.6%</span><br/><span>预期年化收益率</span></div>'+jinDuHtml;
 				document.querySelector(".data-box").appendChild($div);
 				$div.addEventListener("tap",function(){
 					window.location.href="project/porjectInfo.html"
