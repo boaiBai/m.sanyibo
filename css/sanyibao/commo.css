@@ -179,8 +179,22 @@ footer ul li{
 .box-title span.projectInfo{
 	float: right;
 	font-size: 12px;
-	padding-right: 20px;
+	padding-right: 30px;
 	color: #b8B8B8;
+	position: relative;
+}
+.box-title span.projectInfo:after{
+	content: "";
+	width: 8px;
+	height: 12px;
+	top: 14px;
+	background-image: url(../../icon/jiantou.png);
+	background-size: 8px 12px;
+	color: #ececec;
+	font-weight: bolder;
+	font-size: 1.2em;
+	position: absolute;
+	right: 15px;
 }
 
 .project_tag{
