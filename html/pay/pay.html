@@ -85,13 +85,14 @@
                 <div class="layer1-main">
                     <p>已发送到此卡预留手机号<span>186****6666</span></p>
                     <div class="input-list">
-                        <input type="number">
-                        <input type="number">
-                        <input type="number">
-                        <input type="number">
-                        <input type="number">
-                        <input type="number">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
                     </div>
+                    <input type="number" class="layer1-input">
                 </div>
             </div>
         </div>
@@ -119,8 +120,9 @@
         // var layers = document.getElementsByClassName('layer-content');
         var layer1 = document.getElementsByClassName('layer1')[0];
         var layer2 = document.getElementsByClassName('layer2')[0];
-        var inputs = document.querySelectorAll('.input-list input');
+        var divs = document.querySelectorAll('.input-list div');
         var checks = document.querySelectorAll('.bank-list-right');
+        var input1 = document.querySelector('.layer1-input');
         // inputs[0].focus();
 
         mui('.banks').on('tap','.bank-list',function () {
@@ -137,20 +139,30 @@
         mui('.layer1-tit').on('tap','.close1',function () {
             layer1.style.display = 'none';
         })
-        mui('.input-list').on('input','input',function () {
+        mui('.input-content').on('input','input',function () {
             this.value = this.value.slice(0,1);
-            for (var i = 0;i<inputs.length;i++){
-                if(inputs[i].value == ''){
-                    break;
-                }else{
-                    if(i == 5){
-                        layer1.style.display = 'none';
+            if(this.value.length == 1){
+                for (var i = 0;i<inputs.length;i++){
+                    if(inputs[i] == this && i<inputs.length-1){
+                        inputs[i+1].removeAttribute('disabled');
+                        inputs[i+1].focus();
+                        inputs[i].setAttribute('disabled','disabled');
+                    }
+                    if(inputs[i].value == ''){
+                        // break;
+                    }else{
+                        if(i == 5){
+                            layer1.style.display = 'none';
+                        }
                     }
                 }
             }
+
         })
         mui('.layer2-btn').on('tap','span',function () {
             layer2.style.display = 'none';
+            layer1.style.display = 'block';
+            input1.focus();
         })
         mui('.layer-content').on('tap','.close2',function () {
             layer2.style.display = 'none';

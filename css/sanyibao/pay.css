@@ -178,23 +178,32 @@ button:enabled:active{
     padding-bottom: 8.6vw;
     display: flex;
 }
-.input-list input{
+.input-list div{
     flex-grow: 1;
-    -webkit-border-radius: 0;
-    -moz-border-radius: 0;
-    border-radius: 0;
-    margin: 0;
-    padding: 0;
+    height: 11vw;
     text-align: center;
+    border: solid 1px #aaaaaa;
     border-color: #aaaaaa;
     border-right-color: #e2e2e2;
     border-left: none;
 }
-.input-list input:nth-of-type(1){
+.input-list div:nth-of-type(1){
     border-left: solid 1px #aaaaaa;
 }
-.input-list input:nth-last-of-type(1){
+.input-list div:nth-last-of-type(1){
     border-right-color: #aaaaaa;
+}
+.layer1-main .layer1-input{
+    /*width: 0;*/
+    /*height: 0;*/
+    padding: 0;
+    margin: 0;
+    border: none;
+    position: absolute;
+    opacity: 0;
+    top: 10px;
+    z-index: -20;
+    color: transparent;
 }
 .layer1-tit.layer2-top h1{
     height: 11vw;
