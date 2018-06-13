@@ -63,7 +63,7 @@
             <p class="money-tit">充值金额（元）</p>
             <div class="money-input">
                 <label for="money">￥</label>
-                <input type="text" id="money">
+                <input type="number" id="money">
             </div>
         </div>
         <div class="btn-div">
@@ -93,12 +93,12 @@
                         <div></div>
                         <div></div>
                     </div>
-                    <input type="number" class="layer1-input">
+                    <input type="tel" class="layer1-input">
                 </div>
             </div>
         </div>
         <!--确认充值弹窗-->
-        <div class="layer2">
+        <div class="layer2" style="display: none;">
             <div class="mask"></div>
             <div class="layer-content">
                 <div class="layer2-top layer1-tit">
@@ -138,6 +138,7 @@
         })
 
         mui('.layer1-tit').on('tap','.close1',function () {
+            input1.blur();
             layer1.style.display = 'none';
         })
         mui('.layer1-main').on('input','.layer1-input',function () {
@@ -160,6 +161,11 @@
         })
         mui('.layer-content').on('tap','.close2',function () {
             layer2.style.display = 'none';
+        })
+        mui('.btn-div').on('tap','.btn',function () {
+            layer2.style.display = 'none';
+            layer1.style.display = 'block';
+            input1.focus();
         })
     </script>
 </html>
