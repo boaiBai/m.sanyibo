@@ -7,6 +7,16 @@
         <link rel="stylesheet" href="../../css/mui.min.css" />
         <link rel="stylesheet" href="../../css/sanyibao/commo.css" />
         <link rel="stylesheet" href="../../css/sanyibao/pay.css">
+        <style>
+        	.mui-popup-title{
+        		font-size: 16px;
+        		font-weight:bold
+        	}
+        	.mui-popup-title+.mui-popup-text{
+        		font-size: 16px;
+        		padding-top: 10px;
+        	}
+        </style>
     </head>
     <body class="bg-red">
         <p class="top-tit">账户余额：<span class="top-money">100.00</span>元</p>
@@ -140,6 +150,16 @@
             tLayer.style.display = 'block';
             layerContent.className = 'choose-bank goup';
         })
-
+		
+		document.querySelector(".btn").addEventListener("tap",function(){
+			var btnArray=["取消","授权"]
+			mui.confirm("请先设置授权","温馨提示",btnArray,function(e){
+				if(e.index==1){
+					
+					//进行页面跳转
+					window.location.href="https://www.baidu.com"
+				}
+			})
+		})
     </script>
 </html>
