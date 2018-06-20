@@ -20,6 +20,12 @@ a{
 	color: #666
 }
 
+.mui-bar{
+    background-color: #ffffff;
+    padding: 0 4vw;
+}
+
+
 .box{
 	width: 100vw;
 	float: left;

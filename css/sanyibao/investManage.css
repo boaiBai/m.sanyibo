@@ -1,12 +1,17 @@
 ul,li{
     list-style: none;
 }
+.mui-bar{
+    background-color: #ffffff;
+    padding: 0 4vw;
+}
+
 .tabs{
     width: 100%;
     background-color: #ffffff;
     position: fixed;
     left: 0;
-    top: 0;
+    top: 44px;
 }
 .tabs ul{
     display: flex;
