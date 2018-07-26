@@ -231,13 +231,13 @@ export const appRouter = [
     },
     {
         path: '/project-management',
-        icon: 'android-sad',
+        icon: 'ios-folder',
         title: '项目管理',
         name: 'project-management',
         component: Main,
         children: [
-            { path: 'add', title: '添加项目', name: 'project-add', icon: 'link', component: () => import('@/syb.views/project-management/project-add/project-add.vue') },
-            { path: 'edit', title: '修改项目', name: 'project-edit', icon: 'link',  component: () => import('@/syb.views/project-management/project-edit/project-edit.vue') }
+            { path: 'add', title: '添加项目', name: 'project-add', icon: 'ios-plus-outline', component: () => import('@/syb.views/project-management/project-add/project-add.vue') },
+            { path: 'edit', title: '修改项目', name: 'project-edit', icon: 'android-create',  component: () => import('@/syb.views/project-management/project-edit/project-edit.vue') }
         ]
     }
 ];
