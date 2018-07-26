@@ -228,6 +228,17 @@ export const appRouter = [
         children: [
             { path: 'index', title: '错误页面', name: 'errorpage_index', component: () => import('@/views/error-page/error-page.vue') }
         ]
+    },
+    {
+        path: '/project-management',
+        icon: 'android-sad',
+        title: '项目管理',
+        name: 'project-management',
+        component: Main,
+        children: [
+            { path: 'add', title: '添加项目', name: 'project-add', icon: 'link', component: () => import('@/syb.views/project-management/project-add/project-add.vue') },
+            { path: 'edit', title: '修改项目', name: 'project-edit', icon: 'link',  component: () => import('@/syb.views/project-management/project-edit/project-edit.vue') }
+        ]
     }
 ];
 
