@@ -8,13 +8,14 @@
                 <Button type="primary" icon="ios-search">搜索</Button>
             </div>
             <Table :columns="columns1" :data="data1" border stripe></Table>
-            <Page :total="1000" show-elevator class="pages"></Page>
+            <Page :total="totalPage" :page-size="pageSize" show-elevator show-sizer class="pages" placement="top" @on-page-size-change="changeSize" v-show="totalPage>pageSize"></Page>
         </TabPane>
         <TabPane label="个体贷" name="name2">标签二的内容</TabPane>
     </Tabs>
 </template>
 
 <script>
+    import axios from 'axios';
     export default {
         name: "project-edit",
         data () {
@@ -85,89 +86,29 @@
                         }
                     }
                 ],
-                data1: [
-                    {
-                        name: 'John Brown',
-                        edu: 100,
-                        qixian: '12个月',
-                        lilv: '1.2%',
-                        lianxiren: '蔡**',
-                        phone:'135****1111'
-                    },
-                    {
-                        name: 'John Brown',
-                        edu: 100,
-                        qixian: '12个月',
-                        lilv: '1.2%',
-                        lianxiren: '蔡**',
-                        phone:'135****1111'
-                    },
-                    {
-                        name: 'John Brown',
-                        edu: 100,
-                        qixian: '12个月',
-                        lilv: '1.2%',
-                        lianxiren: '蔡**',
-                        phone:'135****1111'
-                    },
-                    {
-                        name: 'John Brown',
-                        edu: 100,
-                        qixian: '12个月',
-                        lilv: '1.2%',
-                        lianxiren: '蔡**',
-                        phone:'135****1111'
-                    },
-                    {
-                        name: 'John Brown',
-                        edu: 100,
-                        qixian: '12个月',
-                        lilv: '1.2%',
-                        lianxiren: '蔡**',
-                        phone:'135****1111'
-                    },
-                    {
-                        name: 'John Brown',
-                        edu: 100,
-                        qixian: '12个月',
-                        lilv: '1.2%',
-                        lianxiren: '蔡**',
-                        phone:'135****1111'
-                    },
-                    {
-                        name: 'John Brown',
-                        edu: 100,
-                        qixian: '12个月',
-                        lilv: '1.2%',
-                        lianxiren: '蔡**',
-                        phone:'135****1111'
-                    },
-                    {
-                        name: 'John Brown',
-                        edu: 100,
-                        qixian: '12个月',
-                        lilv: '1.2%',
-                        lianxiren: '蔡**',
-                        phone:'135****1111'
-                    },
-                    {
-                        name: 'John Brown',
-                        edu: 100,
-                        qixian: '12个月',
-                        lilv: '1.2%',
-                        lianxiren: '蔡**',
-                        phone:'135****1111'
-                    },
-                    {
-                        name: 'John Brown',
-                        edu: 100,
-                        qixian: '12个月',
-                        lilv: '1.2%',
-                        lianxiren: '蔡**',
-                        phone:'135****1111'
-                    }
-                ]
+                data1: [],
+                totalPage:0,
+                pageSize:10
             }
+        },
+        methods:{
+            getMessage(){
+                let _this = this;
+                axios.get('/static/data.json')
+                    .then(function (response) {
+                        // handle success
+                        console.log(response);
+                        _this.data1 = response.data;
+                        _this.totalPage = response.data.length;
+                    })
+            },
+            changeSize(pages){
+                console.log(pages);
+                this.pageSize = pages;
+            }
+        },
+        created(){
+            this.getMessage();
         }
     }
 </script>
