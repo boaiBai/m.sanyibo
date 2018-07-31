@@ -8,7 +8,7 @@
                 <Button type="primary" icon="ios-search">搜索</Button>
             </div>
             <Table :columns="columns1" :data="data1" border stripe></Table>
-            <Page :total="totalPage" :page-size="pageSize" show-elevator show-sizer class="pages" placement="top" @on-page-size-change="changeSize" v-show="totalPage>pageSize"></Page>
+            <Page :total="totalPage" :page-size="pageSize" show-elevator show-sizer class="pages" placement="top" @on-page-size-change="changeSize" @on-change="changPage" v-show="totalPage>pageSize"></Page>
         </TabPane>
         <TabPane label="个体贷" name="name2">标签二的内容</TabPane>
     </Tabs>
@@ -94,17 +94,23 @@
         methods:{
             getMessage(){
                 let _this = this;
+                console.log(this.$route.query.page);
                 axios.get('/static/data.json')
                     .then(function (response) {
                         // handle success
-                        console.log(response);
-                        _this.data1 = response.data;
-                        _this.totalPage = response.data.length;
+                        console.log(response.data);
+                        _this.data1 = response.data[0].data1;
+                        _this.totalPage = response.data[0].data1.length;
                     })
             },
             changeSize(pages){
                 console.log(pages);
                 this.pageSize = pages;
+            },
+            //换页
+            changPage(page){
+                console.log(page);
+                this.$router.push({ path: '/project-management/edit', query: { page: page }});
             }
         },
         created(){

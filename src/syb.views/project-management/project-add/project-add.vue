@@ -64,7 +64,7 @@
                     </Row>
                 </FormItem>
                 <FormItem label="添加必要保证人">
-                    <Row>
+                    <Row v-for="item in num1">
                         <Col span="3">
                             <Input placeholder="必要保证人姓名" class="p20"></Input>
                         </Col>
@@ -78,12 +78,17 @@
                             <Upload>
                                 <Button type="ghost" icon="ios-cloud-upload-outline" class="upload">上传文件</Button>
                             </Upload>
-                            <Button type="text" class="fc">+继续添加必要保证人</Button>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col span="9" style="opacity:0;">222</Col>
+                        <Col span="3">
+                            <Button type="text" class="fc" @click="addMore(1)">+继续添加必要保证人</Button>
                         </Col>
                     </Row>
                 </FormItem>
                 <FormItem label="添加房产保证人">
-                    <Row>
+                    <Row v-for="item in num2">
                         <Col span="3">
                             <Input placeholder="房产保证人姓名" class="p20"></Input>
                         </Col>
@@ -97,12 +102,17 @@
                             <Upload>
                                 <Button type="ghost" icon="ios-cloud-upload-outline" class="upload">上传文件</Button>
                             </Upload>
-                            <Button type="text" class="fc">+继续添加房产保证人</Button>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col span="9" style="opacity:0;">222</Col>
+                        <Col span="3">
+                            <Button type="text" class="fc" @click="addMore(2)">+继续添加房产保证人</Button>
                         </Col>
                     </Row>
                 </FormItem>
                 <FormItem label="添加一般保证人">
-                    <Row>
+                    <Row v-for="item in num3">
                         <Col span="3">
                             <Input placeholder="一般保证人姓名" class="p20"></Input>
                         </Col>
@@ -116,7 +126,12 @@
                             <Upload>
                                 <Button type="ghost" icon="ios-cloud-upload-outline" class="upload">上传文件</Button>
                             </Upload>
-                            <Button type="text" class="fc">+继续添加一般保证人</Button>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col span="9" style="opacity:0;">222</Col>
+                        <Col span="3">
+                            <Button type="text" class="fc" @click="addMore(3)">+继续添加一般保证人</Button>
                         </Col>
                     </Row>
                 </FormItem>
@@ -136,7 +151,25 @@
             return {
                 formDatas:{
 
-                }
+                },
+                num1:1,
+                num2:1,
+                num3:1
+            }
+        },
+        methods:{
+            addMore(num){
+               switch (num){
+                   case 1:
+                       this.num1++;
+                       break;
+                   case 2:
+                       this.num2++;
+                       break;
+                   case 3:
+                       this.num3++;
+                       break;
+               }
             }
         }
     }
